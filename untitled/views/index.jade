@@ -3,3 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  //script(src="/javascripts/audio.js")
+  form(action="/newScript", id="testformid", method="POST")
+  button(type="submit") submit
+      textarea(form ="testformid" name="taname" id="taid" cols="35" wrap="soft")
