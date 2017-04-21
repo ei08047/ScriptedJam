@@ -4,11 +4,35 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const DeepstreamServer = require('deepstream.io')
+const C = DeepstreamServer.constants
+
+
+const server = new DeepstreamServer({
+    host: 'localhost',
+    port: 6020,
+    auth :
+        {
+          type: 'http',
+          options:{
+            endpointUrl:'http://localhost:3000/auth-user',
+            permittedStatusCodes: [ 200 ],
+            requestTimeout: 2000
+            }
+          },
+});
+
+server.start()
+
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var auth = require('./routes/auth-user');
 
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,9 +46,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use('/', index);
 app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
