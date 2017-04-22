@@ -7,7 +7,8 @@ var router = express.Router();
 
 
 router.post('/auth-user', function(req, res) {
-    if (req.body.authData.username === 'chris') {
+    console.log("entered auth-user route");
+    if (req.body.authData.username === "chris") {
         res.json({
             username: 'chris',
             clientData: { themeColor: 'pink' },
