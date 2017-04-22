@@ -10,13 +10,15 @@ router.get('/', function(req, res, next) {
 
 
 
-router.get('/auth-user', function(req, res) {
+router.post('/auth', function(req, res) {
     const deepstream = require('deepstream.io-client-js')
-    const client = deepstream('localhost:6020'); //Change port to 6020 for browsers
+    const client = deepstream('localhost:6020');
     console.log("entered index route");
+    console.log(req.body);
+
     client.login({
-        username: 'chris',
-        password: 'password' // NEEDS TO BE REAL
+        username: req.body.username,
+        password: req.body.password
     }, function(success, data) {
         success == true
         data == { themeColor: 'pink' }

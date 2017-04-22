@@ -31,8 +31,6 @@ var users = require('./routes/users');
 
 
 
-
-
 var app = express();
 
 
@@ -52,6 +50,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+
+
 app.post('/auth-user', function(req, res) {
     console.log("entered auth-user route");
     if (req.body.authData.username === "chris") {
@@ -64,6 +64,8 @@ app.post('/auth-user', function(req, res) {
         res.status(403).send('Invalid Credentials')
     }
 })
+
+
 
 
 // catch 404 and forward to error handler

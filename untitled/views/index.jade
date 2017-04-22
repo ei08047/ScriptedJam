@@ -4,7 +4,9 @@ block content
   h1= title
   p Welcome to #{title}
   //script(src="/javascripts/audio.js")
-  input(type="text")
+  form(action="/auth" name="login", method="POST")
+    input(type="text", name="username")
+    input(type="password", name="password")
+    input(type="submit", value="add")
   //script(src="/javascripts/client.js")
-
 
