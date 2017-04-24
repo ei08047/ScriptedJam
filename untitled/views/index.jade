@@ -4,9 +4,19 @@ block content
   h1= title
   p Welcome to #{title}
   //script(src="/javascripts/audio.js")
-  form(action="/auth" name="login", method="POST")
+  form(action="" name="login")
     input(type="text", name="username")
     input(type="password", name="password")
     input(type="submit", value="add")
-  //script(src="/javascripts/client.js")
+  form(action="" name="addroom" style="display:none;")
+    span Name
+    input(type="text", name="name")
+    br()
+    span Color
+    input(type="text", name="color")
+    input(type="submit", value="add")
+  p(name="rooms")
+  script(src="/javascripts/deepstream.js")
+  script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+  script(src="/javascripts/client.js")
 
