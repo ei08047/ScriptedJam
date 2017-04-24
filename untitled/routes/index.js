@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
 
 });
 
-
 router.post('/auth', function(req, res) {
     console.log("entered index route");
     console.log(req.body);

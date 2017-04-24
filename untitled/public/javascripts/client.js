@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    //option A
     var ds;
+    var dsReact;
     $("form[name=login]").submit(function(e){
         var username = $("input[name=username]").val();
         var password = $("input[name=password]").val();
@@ -24,6 +24,7 @@ $(document).ready(function() {
                 console.log("ERROR!");
             }
         });
+        dsReact.setDeepstreamClient(ds);
         e.preventDefault(e);
     });
     $("form[name=addroom]").submit(function(e) {
