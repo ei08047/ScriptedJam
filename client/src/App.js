@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Login from './Login';
 
-const ReactDOM = require('react-dom')
-const deepstream = require('deepstream.io-client-js')
-const DeepstreamMixin = require('deepstream.io-tools-react')
 
-var SyncedInput = React.createClass({
-    mixins: [ DeepstreamMixin ],
-    setValue: function( e ) {
-        this.setState({ value: e.target.value });
-    },
-    render: function() {
-        return (
-            <input value={this.state.value} onChange={this.setValue} />
-        )
+function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+        return <UserGreeting />;
     }
-});
+    return <GuestGreeting />;
+}
 
-const client = deepstream('localhost:6020').login({username:"chris",password:"as"}, () => {
-    ReactDOM.render(
-        <SyncedInput dsRecord="some-input" />,
-        document.getElementById('root')
-    )
-})
+function UserGreeting(props) {
+    return <h1>Welcome back!</h1>;
+}
 
-DeepstreamMixin.setDeepstreamClient(client)
-
-
+//<h1>Please sign up.</h1>
+function GuestGreeting(props) {
+    return <Login />;
+}
+//      <div>  <Greeting isLoggedIn={false} </div>/>
 class App extends Component {
   render() {
     return (
@@ -39,6 +32,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+          <div> <Greeting isLoggedIn={false} /> </div>
       </div>
     );
   }

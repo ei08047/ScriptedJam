@@ -2,7 +2,7 @@
   <configuration default="false" name="client start" type="js.build_tools.npm" factoryName="npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="start" />
-    <node-interpreter value="project" />
+    <node-interpreter value="$PROJECT_DIR$/../node-v6.10.2-win-x64/node-v6.10.2-win-x64/node" />
     <envs />
     <method />
   </configuration>
