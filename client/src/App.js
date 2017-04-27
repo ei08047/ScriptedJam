@@ -4,23 +4,21 @@ import './App.css';
 import Login from './Login';
 
 
+// Greeting messages
 function Greeting(props) {
     const isLoggedIn=props.isLoggedIn;
     if (isLoggedIn) {
-        return <UserGreeting />;
+        return <UserGreeting username={props.username}/>;
     }
     return <GuestGreeting />;
 }
-
 function UserGreeting(props) {
-    return <h1>Welcome back!</h1>;
+    const username=props.username;
+    return <h1>Welcome back, {username}!</h1>;
 }
-
-//<h1>Please sign up.</h1>
 function GuestGreeting(props) {
     return <h1>Please sign up.</h1>;
 }
-//      <div>  <Greeting isLoggedIn={false} </div>/>
 
 
 function LogoutButton(props) {
@@ -30,17 +28,15 @@ function LogoutButton(props) {
         </button>
     );
 }
-
-
 class LoginControler extends Component{
     constructor(props){
         super(props);
-        this.state={isLoggedIn:false}
+        this.state={isLoggedIn:false, username:"" }
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
     };
 
-    handleChildFunc(){
-    this.setState({isLoggedIn: true});
+    handleChildFunc(userData){
+        this.setState({isLoggedIn: true , username:userData});
     }
 
     handleLogoutClick() {
@@ -49,6 +45,7 @@ class LoginControler extends Component{
 
     render(){
         const isLoggedIn = this.state.isLoggedIn;
+        const username = this.state.username;
         if(!isLoggedIn)
         {
             return(
@@ -60,7 +57,7 @@ class LoginControler extends Component{
         }
         return (
             <div>
-                <Greeting isLoggedIn={isLoggedIn} />
+                <Greeting isLoggedIn={isLoggedIn} username={username} />
                 <LogoutButton onClick={this.handleLogoutClick} />
             </div>
         );

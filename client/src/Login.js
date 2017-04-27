@@ -42,7 +42,7 @@ class Login extends Component{
         });
     }
     handleSubmit(event){
-        console.log(this.state);
+        //console.log(this.state);
         event.preventDefault();
 
         var SyncedInput = React.createClass({
@@ -60,7 +60,7 @@ class Login extends Component{
         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
             if(success) {
                 DeepstreamMixin.setDeepstreamClient(client);
-                return this.props.myFunc();
+                return this.props.myFunc(this.state.username);
             }
             else {
                 alert("login failed");
