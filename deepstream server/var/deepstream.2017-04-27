@@ -1,0 +1,16 @@
+{"event":"INFO","level":"info","message":"logger ready","timestamp":"2017-04-27T10:59:23.341Z"}
+{"event":"INFO","level":"info","message":"deepstream version: 2.2.1","timestamp":"2017-04-27T10:59:23.344Z"}
+{"event":"INFO","level":"info","message":"configuration file loaded from conf\\config.yml","timestamp":"2017-04-27T10:59:23.353Z"}
+{"event":"INFO","level":"info","message":"library directory set to: D:\\Temp\\ScriptedJam\\deepstream server\\lib","timestamp":"2017-04-27T10:59:23.354Z"}
+{"event":"INFO","level":"info","message":"messageConnector ready","timestamp":"2017-04-27T10:59:23.354Z"}
+{"event":"INFO","level":"info","message":"cache ready","timestamp":"2017-04-27T10:59:23.355Z"}
+{"event":"INFO","level":"info","message":"authenticationHandler ready: file using D:\\Temp\\ScriptedJam\\deepstream server\\conf\\users.yml","timestamp":"2017-04-27T10:59:23.359Z"}
+{"event":"INFO","level":"info","message":"permissionHandler ready: valve permissions loaded from D:\\Temp\\ScriptedJam\\deepstream server\\conf\\permissions.yml","timestamp":"2017-04-27T10:59:23.361Z"}
+{"event":"INFO","level":"info","message":"storage ready","timestamp":"2017-04-27T10:59:24.270Z"}
+{"event":"INFO","level":"info","message":"Listening for health checks on path /health-check","timestamp":"2017-04-27T10:59:24.272Z"}
+{"event":"CLUSTER_JOIN","level":"info","message":"j20arj5l-1mf1bvj5vfls4","timestamp":"2017-04-27T10:59:24.274Z"}
+{"event":"INFO","level":"info","message":"Listening for websocket connections on 0.0.0.0:6020/deepstream","timestamp":"2017-04-27T10:59:24.280Z"}
+{"event":"INFO","level":"info","message":"Deepstream started","timestamp":"2017-04-27T10:59:24.280Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T11:03:12.804Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T11:03:12.863Z"}
+{"event":"CLUSTER_LEAVE","level":"info","message":"j20arj5l-1mf1bvj5vfls4","timestamp":"2017-04-27T11:14:20.745Z"}
