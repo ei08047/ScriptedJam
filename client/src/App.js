@@ -5,7 +5,7 @@ import Login from './Login';
 
 
 function Greeting(props) {
-    const isLoggedIn = props.isLoggedIn;
+    const isLoggedIn=props.isLoggedIn;
     if (isLoggedIn) {
         return <UserGreeting />;
     }
@@ -18,9 +18,55 @@ function UserGreeting(props) {
 
 //<h1>Please sign up.</h1>
 function GuestGreeting(props) {
-    return <Login />;
+    return <h1>Please sign up.</h1>;
 }
 //      <div>  <Greeting isLoggedIn={false} </div>/>
+
+
+function LogoutButton(props) {
+    return (
+        <button onClick={props.onClick}>
+            Logout
+        </button>
+    );
+}
+
+
+class LoginControler extends Component{
+    constructor(props){
+        super(props);
+        this.state={isLoggedIn:false}
+        this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    };
+
+    handleChildFunc(){
+    this.setState({isLoggedIn: true});
+    }
+
+    handleLogoutClick() {
+        this.setState({isLoggedIn: false});
+    }
+
+    render(){
+        const isLoggedIn = this.state.isLoggedIn;
+        if(!isLoggedIn)
+        {
+            return(
+                <div>
+                    <Greeting isLoggedIn={isLoggedIn} />
+                    <Login myFunc={this.handleChildFunc.bind(this)} />
+                </div>
+            )
+        }
+        return (
+            <div>
+                <Greeting isLoggedIn={isLoggedIn} />
+                <LogoutButton onClick={this.handleLogoutClick} />
+            </div>
+        );
+    }
+}
+
 class App extends Component {
   render() {
     return (
@@ -32,7 +78,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <div> <Greeting isLoggedIn={false} /> </div>
+          <div> <LoginControler /> </div>
       </div>
     );
   }

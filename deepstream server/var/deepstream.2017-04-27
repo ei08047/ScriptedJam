@@ -14,3 +14,82 @@
 {"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T11:03:12.804Z"}
 {"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T11:03:12.863Z"}
 {"event":"CLUSTER_LEAVE","level":"info","message":"j20arj5l-1mf1bvj5vfls4","timestamp":"2017-04-27T11:14:20.745Z"}
+{"event":"INFO","level":"info","message":"logger ready","timestamp":"2017-04-27T12:11:44.763Z"}
+{"event":"INFO","level":"info","message":"deepstream version: 2.2.1","timestamp":"2017-04-27T12:11:44.765Z"}
+{"event":"INFO","level":"info","message":"configuration file loaded from conf\\config.yml","timestamp":"2017-04-27T12:11:44.766Z"}
+{"event":"INFO","level":"info","message":"library directory set to: D:\\Temp\\ScriptedJam\\deepstream server\\lib","timestamp":"2017-04-27T12:11:44.775Z"}
+{"event":"INFO","level":"info","message":"messageConnector ready","timestamp":"2017-04-27T12:11:44.775Z"}
+{"event":"INFO","level":"info","message":"cache ready","timestamp":"2017-04-27T12:11:44.776Z"}
+{"event":"INFO","level":"info","message":"authenticationHandler ready: file using D:\\Temp\\ScriptedJam\\deepstream server\\conf\\users.yml","timestamp":"2017-04-27T12:11:44.780Z"}
+{"event":"INFO","level":"info","message":"permissionHandler ready: valve permissions loaded from D:\\Temp\\ScriptedJam\\deepstream server\\conf\\permissions.yml","timestamp":"2017-04-27T12:11:44.783Z"}
+{"event":"INFO","level":"info","message":"storage ready","timestamp":"2017-04-27T12:11:45.571Z"}
+{"event":"INFO","level":"info","message":"Listening for health checks on path /health-check","timestamp":"2017-04-27T12:11:45.573Z"}
+{"event":"CLUSTER_JOIN","level":"info","message":"j20dcl0t-22zcsrtglmg0k","timestamp":"2017-04-27T12:11:45.575Z"}
+{"event":"INFO","level":"info","message":"Listening for websocket connections on 0.0.0.0:6020/deepstream","timestamp":"2017-04-27T12:11:45.580Z"}
+{"event":"INFO","level":"info","message":"Deepstream started","timestamp":"2017-04-27T12:11:45.581Z"}
+{"event":"CLUSTER_LEAVE","level":"info","message":"j20dcl0t-22zcsrtglmg0k","timestamp":"2017-04-27T12:14:58.182Z"}
+{"event":"INFO","level":"info","message":"logger ready","timestamp":"2017-04-27T12:15:00.660Z"}
+{"event":"INFO","level":"info","message":"deepstream version: 2.2.1","timestamp":"2017-04-27T12:15:00.662Z"}
+{"event":"INFO","level":"info","message":"configuration file loaded from conf\\config.yml","timestamp":"2017-04-27T12:15:00.663Z"}
+{"event":"INFO","level":"info","message":"library directory set to: D:\\Temp\\ScriptedJam\\deepstream server\\lib","timestamp":"2017-04-27T12:15:00.672Z"}
+{"event":"INFO","level":"info","message":"messageConnector ready","timestamp":"2017-04-27T12:15:00.673Z"}
+{"event":"INFO","level":"info","message":"cache ready","timestamp":"2017-04-27T12:15:00.673Z"}
+{"event":"INFO","level":"info","message":"authenticationHandler ready: file using D:\\Temp\\ScriptedJam\\deepstream server\\conf\\users.yml","timestamp":"2017-04-27T12:15:00.678Z"}
+{"event":"INFO","level":"info","message":"permissionHandler ready: valve permissions loaded from D:\\Temp\\ScriptedJam\\deepstream server\\conf\\permissions.yml","timestamp":"2017-04-27T12:15:00.680Z"}
+{"event":"INFO","level":"info","message":"storage ready","timestamp":"2017-04-27T12:15:01.492Z"}
+{"event":"INFO","level":"info","message":"Listening for health checks on path /health-check","timestamp":"2017-04-27T12:15:01.494Z"}
+{"event":"CLUSTER_JOIN","level":"info","message":"j20dgs6e-1dc4hyuco3j4k","timestamp":"2017-04-27T12:15:01.495Z"}
+{"event":"INFO","level":"info","message":"Listening for websocket connections on 0.0.0.0:6020/deepstream","timestamp":"2017-04-27T12:15:01.501Z"}
+{"event":"INFO","level":"info","message":"Deepstream started","timestamp":"2017-04-27T12:15:01.502Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:26:35.678Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:26:35.681Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T12:26:35.744Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T12:26:35.744Z"}
+{"event":"CLUSTER_LEAVE","level":"info","message":"j20dgs6e-1dc4hyuco3j4k","timestamp":"2017-04-27T12:26:35.879Z"}
+{"event":"INFO","level":"info","message":"logger ready","timestamp":"2017-04-27T12:26:39.064Z"}
+{"event":"INFO","level":"info","message":"deepstream version: 2.2.1","timestamp":"2017-04-27T12:26:39.067Z"}
+{"event":"INFO","level":"info","message":"configuration file loaded from conf\\config.yml","timestamp":"2017-04-27T12:26:39.068Z"}
+{"event":"INFO","level":"info","message":"library directory set to: D:\\Temp\\ScriptedJam\\deepstream server\\lib","timestamp":"2017-04-27T12:26:39.077Z"}
+{"event":"INFO","level":"info","message":"messageConnector ready","timestamp":"2017-04-27T12:26:39.077Z"}
+{"event":"INFO","level":"info","message":"cache ready","timestamp":"2017-04-27T12:26:39.078Z"}
+{"event":"INFO","level":"info","message":"authenticationHandler ready: file using D:\\Temp\\ScriptedJam\\deepstream server\\conf\\users.yml","timestamp":"2017-04-27T12:26:39.082Z"}
+{"event":"INFO","level":"info","message":"permissionHandler ready: valve permissions loaded from D:\\Temp\\ScriptedJam\\deepstream server\\conf\\permissions.yml","timestamp":"2017-04-27T12:26:39.084Z"}
+{"event":"INFO","level":"info","message":"storage ready","timestamp":"2017-04-27T12:26:39.878Z"}
+{"event":"INFO","level":"info","message":"Listening for health checks on path /health-check","timestamp":"2017-04-27T12:26:39.879Z"}
+{"event":"CLUSTER_JOIN","level":"info","message":"j20dvr2f-m9uj7ydfvw0o","timestamp":"2017-04-27T12:26:39.881Z"}
+{"event":"INFO","level":"info","message":"Listening for websocket connections on 0.0.0.0:6020/deepstream","timestamp":"2017-04-27T12:26:39.887Z"}
+{"event":"INFO","level":"info","message":"Deepstream started","timestamp":"2017-04-27T12:26:39.887Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:26:39.899Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T12:26:39.956Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:26:42.904Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T12:26:42.958Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:26:52.255Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T12:26:52.309Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:04.687Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-27T12:27:04.740Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:14.414Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:14.416Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:15.479Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:15.479Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:15.814Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:15.816Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:16.166Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:16.167Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:16.495Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:16.496Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:16.798Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:16.799Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-27T12:27:17.062Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"sada\",\"password\":\"sad\"}","timestamp":"2017-04-27T12:27:17.063Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.411Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.412Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.412Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.413Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.413Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.414Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-04-27T12:28:16.415Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-27T12:28:16.415Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-27T12:28:16.416Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-27T12:28:16.416Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-27T12:28:16.417Z"}
+{"event":"CLUSTER_LEAVE","level":"info","message":"j20dvr2f-m9uj7ydfvw0o","timestamp":"2017-04-27T12:28:38.221Z"}

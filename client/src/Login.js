@@ -1,14 +1,19 @@
 /**
  * Created by ei08047 on 26/04/2017.
  */
-const ReactDOM = require('react-dom')
-const deepstream = require('deepstream.io-client-js')
-const DeepstreamMixin = require('deepstream.io-tools-react')
+const ReactDOM = require('react-dom');
+const deepstream = require('deepstream.io-client-js');
+const DeepstreamMixin = require('deepstream.io-tools-react');
 
 import React, { Component } from 'react';
 
 
-
+/*
+*                 ReactDOM.render(
+ <SyncedInput dsRecord="some-input" />,
+ document.getElementById('root')
+ )
+* */
 
 
 
@@ -22,8 +27,12 @@ class Login extends Component{
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-
     }
+
+    propTypes = {
+    myFunc : React.PropTypes.func,
+    };
+
     handleChange(event){
         const target = event.target;
         const value = target.value;
@@ -50,18 +59,16 @@ class Login extends Component{
 
         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
             if(success) {
-                ReactDOM.render(
-                    <SyncedInput dsRecord="some-input" />,
-                    document.getElementById('root')
-                )
+                DeepstreamMixin.setDeepstreamClient(client);
+                return this.props.myFunc();
             }
             else {
-                alert("ERROR");
+                alert("login failed");
             }
         })
-
-        DeepstreamMixin.setDeepstreamClient(client)
     }
+
+
     render(){
         return (
             <div className="Login">
