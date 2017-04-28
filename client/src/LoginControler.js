@@ -20,21 +20,28 @@ class LoginControler extends Component{
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
     };
 
-    handleLoginResult(userData){
-        this.setState({isLoggedIn: true , username:userData});
+    propTypes = {
+        myFunc : React.PropTypes.func,
+    };
+
+    handleLoginResult(user){
+        console.log('handleLoginResult');
+        this.setState({isLoggedIn: user.isLoggedIn});
+        this.setState({username:user.username});
+        console.log( user.isLoggedIn + "  "+ user.username);
+        return this.props.myFunc(this.state);
     }
 
     handleLogoutClick() {
         this.setState({isLoggedIn: false});
     }
-    getLoginResult(){
-        return this.state;
-    }
 
     render(){
+
         const isLoggedIn = this.state.isLoggedIn;
         const username = this.state.username;
-        this.props.handle(this.state);
+
+        //this.props.handle(this.state);
         if(!isLoggedIn)
         {
             return(

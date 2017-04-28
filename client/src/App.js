@@ -8,20 +8,20 @@ import {Rooms, AddRoom} from './Rooms';
 
 
 // Greeting messages
-function Greeting(props) {
+export function Greeting(props) {
     const isLoggedIn=props.isLoggedIn;
     if (isLoggedIn) {
         return <UserGreeting username={props.username}/>;
     }
     return <GuestGreeting />;
 }
-function UserGreeting(props) {
+export function UserGreeting(props) {
     const username=props.username;
-    return <Dialog title="Welcome back," message={username}/>
+    return <p>Welcome back,{username}</p>;
 }
 
-function GuestGreeting(props) {
-    return <h1>Please sign up.</h1>;
+export function GuestGreeting(props) {
+    return <p>Please sign up.</p>;
 }
 
 
@@ -29,12 +29,13 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state={isLoggedIn:false, username:"" }
-        this.handler = this.handler.bind(this)
     }
-    handler(e) {
-        this.setState({
-            state: e.target.state
-        })
+
+    handleLoginResult(user){
+        console.log('handleLoginResult');
+        this.setState({isLoggedIn: user.isLoggedIn});
+        this.setState({username:user.username});
+        console.log( user.isLoggedIn + "  "+ user.username);
     }
 
   render() {
@@ -48,7 +49,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <div className="LoginControler"><LoginControler handle={this.handler} /></div>
+          <div className="LoginControler"><LoginControler myFunc={this.handleLoginResult.bind(this)} />
+          </div>
+          <div className="AddRoom"> <AddRoom /> </div>
       </div>
     );
   }

@@ -20,7 +20,8 @@ class Login extends Component{
         super(props);
         this.state = {
             username : "",
-            password : ""
+            password : "",
+            isLoggedIn : false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -57,7 +58,9 @@ class Login extends Component{
         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
             if(success) {
                 DeepstreamMixin.setDeepstreamClient(client);
-                return this.props.myFunc(this.state.username);
+                this.setState({isLoggedIn:true});
+                console.log("deepstream login"+ this.state.username + " " + this.state.isLoggedIn);
+                return this.props.myFunc(this.state);
             }
             else {
                 alert("login failed");

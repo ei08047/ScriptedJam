@@ -13,6 +13,8 @@ export function Border(props) {
     );
 }
 
+//            {props.children}
+
 class Dialog extends Component{
     constructor(props){
         super(props);
@@ -27,10 +29,9 @@ class Dialog extends Component{
                 <p className="Dialog-message">
                     {this.message}
                 </p>
-                {this.children}
             </Border>
         );
     }
 }
-
+//{this.children}
 export default Dialog;
