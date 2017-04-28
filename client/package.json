@@ -6,7 +6,10 @@
     "deepstream.io-client-js": "^2.1.4",
     "deepstream.io-tools-react": "^0.1.5",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "redux": "^3.6.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"

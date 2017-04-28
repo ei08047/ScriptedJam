@@ -1,7 +1,6 @@
 /**
  * Created by ei08047 on 26/04/2017.
  */
-const ReactDOM = require('react-dom');
 const deepstream = require('deepstream.io-client-js');
 const DeepstreamMixin = require('deepstream.io-tools-react');
 
@@ -14,8 +13,6 @@ import React, { Component } from 'react';
  document.getElementById('root')
  )
 * */
-
-
 
 
 class Login extends Component{

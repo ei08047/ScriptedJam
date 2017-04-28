@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Login from './Login';
+import LoginControler from './LoginControler';
+import Dialog from './Dialog';
+import {Rooms, AddRoom} from './Rooms';
+
 
 
 // Greeting messages
@@ -14,58 +17,28 @@ function Greeting(props) {
 }
 function UserGreeting(props) {
     const username=props.username;
-    return <h1>Welcome back, {username}!</h1>;
+    return <Dialog title="Welcome back," message={username}/>
 }
+
 function GuestGreeting(props) {
     return <h1>Please sign up.</h1>;
 }
 
 
-function LogoutButton(props) {
-    return (
-        <button onClick={props.onClick}>
-            Logout
-        </button>
-    );
-}
-class LoginControler extends Component{
+class App extends Component {
     constructor(props){
         super(props);
         this.state={isLoggedIn:false, username:"" }
-        this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    };
-
-    handleChildFunc(userData){
-        this.setState({isLoggedIn: true , username:userData});
+        this.handler = this.handler.bind(this)
+    }
+    handler(e) {
+        this.setState({
+            state: e.target.state
+        })
     }
 
-    handleLogoutClick() {
-        this.setState({isLoggedIn: false});
-    }
-
-    render(){
-        const isLoggedIn = this.state.isLoggedIn;
-        const username = this.state.username;
-        if(!isLoggedIn)
-        {
-            return(
-                <div>
-                    <Greeting isLoggedIn={isLoggedIn} />
-                    <Login myFunc={this.handleChildFunc.bind(this)} />
-                </div>
-            )
-        }
-        return (
-            <div>
-                <Greeting isLoggedIn={isLoggedIn} username={username} />
-                <LogoutButton onClick={this.handleLogoutClick} />
-            </div>
-        );
-    }
-}
-
-class App extends Component {
   render() {
+      const r = ["ddd", "s", "aaaaaa", "dddd", " asda"];
     return (
       <div className="App">
         <div className="App-header">
@@ -75,10 +48,24 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <div> <LoginControler /> </div>
+          <div className="LoginControler"><LoginControler handle={this.handler} /></div>
       </div>
     );
   }
+
+
+/*
+*           <div className="Rooms" > <Rooms rooms={r} /></div>
+ <div className="AddRoom"> <AddRoom /> </div>
+*
+* */
 }
+/*
+ * (<div>
+ <CardSearch shared_var={this.state.shared_var} updateShared={this.updateShared} />
+ <RunOnServer shared_var={this.state.shared_var} updateShared={this.updateShared} />
+ <div> The shared value is {this.state.shared_var} </div>
+ </div>)
+ * */
 
 export default App;
