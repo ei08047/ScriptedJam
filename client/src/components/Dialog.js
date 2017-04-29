@@ -29,9 +29,9 @@ class Dialog extends Component{
                 <p className="Dialog-message">
                     {this.message}
                 </p>
+                {this.children}
             </Border>
         );
     }
 }
-//{this.children}
 export default Dialog;

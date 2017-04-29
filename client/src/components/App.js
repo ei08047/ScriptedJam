@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import LoginControler from './LoginControler';
-import Dialog from './Dialog';
-import {Rooms, AddRoom} from './Rooms';
-
+import Header from './Header';
+import Main from './Main';
 
 
 // Greeting messages
@@ -19,7 +16,6 @@ export function UserGreeting(props) {
     const username=props.username;
     return <p>Welcome back,{username}</p>;
 }
-
 export function GuestGreeting(props) {
     return <p>Please sign up.</p>;
 }
@@ -28,34 +24,29 @@ export function GuestGreeting(props) {
 class App extends Component {
     constructor(props){
         super(props);
-        this.state={isLoggedIn:false, username:"" }
+        this.state={auth: {isLoggedIn:false, username:null}}
+        this.handleAuth = this.handleAuth.bind(this);
     }
 
-    handleLoginResult(user){
-        console.log('handleLoginResult');
-        this.setState({isLoggedIn: user.isLoggedIn});
-        this.setState({username:user.username});
-        console.log( user.isLoggedIn + "  "+ user.username);
+    handleAuth(result){
+        this.setState({auth: {username: result.username, isLoggedIn: result.loggedIn, client: result.client}}, (success) => {
+            console.log("deepstream login "+ this.state.auth.username + " " + this.state.auth.isLoggedIn);
+        });
     }
 
   render() {
       const r = ["ddd", "s", "aaaaaa", "dddd", " asda"];
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="App">
+            <Header handleAuth={this.handleAuth} auth={this.state.auth} />
+            <Main handleAuth={this.handleAuth} auth={this.state.auth}/>
+
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-          <div className="LoginControler"><LoginControler myFunc={this.handleLoginResult.bind(this)} />
-          </div>
-          <div className="AddRoom"> <AddRoom /> </div>
-      </div>
     );
   }
 
+/*<div className="Login"><Login handleAuth={this.handleAuth} isLoggedIn={this.state.isLoggedIn}/></div>
+<div className="AddRoom"> <AddRoom /> </div>*/
 
 /*
 *           <div className="Rooms" > <Rooms rooms={r} /></div>

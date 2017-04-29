@@ -1,11 +1,9 @@
 /**
  * Created by ei08047 on 26/04/2017.
  */
-const deepstream = require('deepstream.io-client-js');
-const DeepstreamMixin = require('deepstream.io-tools-react');
-
 import React, { Component } from 'react';
 
+const deepstream = require('deepstream.io-client-js');
 
 /*
 *                 ReactDOM.render(
@@ -14,22 +12,16 @@ import React, { Component } from 'react';
  )
 * */
 
-
 class Login extends Component{
     constructor(props){
         super(props);
         this.state = {
             username : "",
-            password : "",
-            isLoggedIn : false
+            password : ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-
-    propTypes = {
-    myFunc : React.PropTypes.func,
-    };
 
     handleChange(event){
         const target = event.target;
@@ -40,34 +32,18 @@ class Login extends Component{
         });
     }
     handleSubmit(event){
-        //console.log(this.state);
-        event.preventDefault();
-
-        var SyncedInput = React.createClass({
-            mixins: [ DeepstreamMixin ],
-            setValue: function( e ) {
-                this.setState({ value: e.target.value });
-            },
-            render: function() {
-                return (
-                    <input value={this.state.value} onChange={this.setValue} />
-                )
-            }
-        });
-
         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
             if(success) {
-                DeepstreamMixin.setDeepstreamClient(client);
-                this.setState({isLoggedIn:true});
-                console.log("deepstream login"+ this.state.username + " " + this.state.isLoggedIn);
-                return this.props.myFunc(this.state);
+                //DeepstreamMixin.setDeepstreamClient(client);
+                this.props.handleAuth({username: this.state.username, client: client, loggedIn: true});
             }
             else {
                 alert("login failed");
+                this.props.handleAuth({username: null, client: null, loggedIn: false});
             }
-        })
+        });
+        event.preventDefault(this);
     }
-
 
     render(){
         return (
@@ -90,6 +66,7 @@ class Login extends Component{
                     <input type="submit" value="Submit"></input>
                 </form>
             </div>
+
         );
     }
 }
