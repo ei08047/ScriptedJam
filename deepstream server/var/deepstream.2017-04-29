@@ -133,3 +133,22 @@
 {"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-29T17:10:58.855Z"}
 {"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-29T17:10:58.908Z"}
 {"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-29T17:12:42.314Z"}
+{"event":"INFO","level":"info","message":"logger ready","timestamp":"2017-04-29T21:46:22.462Z"}
+{"event":"INFO","level":"info","message":"deepstream version: 2.2.1","timestamp":"2017-04-29T21:46:22.465Z"}
+{"event":"INFO","level":"info","message":"configuration file loaded from conf\\config.yml","timestamp":"2017-04-29T21:46:22.466Z"}
+{"event":"INFO","level":"info","message":"library directory set to: D:\\Temp\\ScriptedJam\\deepstream server\\lib","timestamp":"2017-04-29T21:46:22.476Z"}
+{"event":"INFO","level":"info","message":"messageConnector ready","timestamp":"2017-04-29T21:46:22.477Z"}
+{"event":"INFO","level":"info","message":"cache ready","timestamp":"2017-04-29T21:46:22.477Z"}
+{"event":"INFO","level":"info","message":"authenticationHandler ready: file using D:\\Temp\\ScriptedJam\\deepstream server\\conf\\users.yml","timestamp":"2017-04-29T21:46:22.481Z"}
+{"event":"INFO","level":"info","message":"permissionHandler ready: valve permissions loaded from D:\\Temp\\ScriptedJam\\deepstream server\\conf\\permissions.yml","timestamp":"2017-04-29T21:46:22.483Z"}
+{"event":"INFO","level":"info","message":"storage ready","timestamp":"2017-04-29T21:46:23.334Z"}
+{"event":"INFO","level":"info","message":"Listening for health checks on path /health-check","timestamp":"2017-04-29T21:46:23.335Z"}
+{"event":"CLUSTER_JOIN","level":"info","message":"j23sr8nn-13axawu21n8gk","timestamp":"2017-04-29T21:46:23.337Z"}
+{"event":"INFO","level":"info","message":"Listening for websocket connections on 0.0.0.0:6020/deepstream","timestamp":"2017-04-29T21:46:23.343Z"}
+{"event":"INFO","level":"info","message":"Deepstream started","timestamp":"2017-04-29T21:46:23.343Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-29T23:10:03.601Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-29T23:10:03.663Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-29T23:17:29.020Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-04-29T23:27:32.931Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"chris","timestamp":"2017-04-29T23:27:32.987Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"chris","timestamp":"2017-04-29T23:30:11.004Z"}

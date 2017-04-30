@@ -6,6 +6,9 @@
  * Created by ei08047 on 28/04/2017.
  */
 import React, { Component } from 'react';
+import PlayGround from "./PlayGround";
+import Dialog from "./Dialog";
+import Login from "./Login";
 
 
 
@@ -13,7 +16,12 @@ class Home extends Component{
 
     render(){
         return (
-           <p>WELCOME TO THE PAGE</p>
+            <div>
+                <div className="PublicSoundSpace">
+                    <Dialog/>
+                   <PlayGround/>
+                </div>
+            </div>
         );
     }
 }

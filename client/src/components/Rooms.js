@@ -89,5 +89,8 @@ export class Rooms extends Component{
     }
 }
 
+export default Rooms;
+
+
 
 

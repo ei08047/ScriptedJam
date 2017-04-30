@@ -2,6 +2,7 @@
  * Created by ei08047 on 26/04/2017.
  */
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 
 const deepstream = require('deepstream.io-client-js');
 
@@ -46,28 +47,33 @@ class Login extends Component{
     }
 
     render(){
-        return (
-            <div className="Login">
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        name="username"
-                        onChange={this.handleChange}
-                        type="text"
-                        placeholder="username"
-                        value={this.state.username}
-                    />
-                    <input
-                        name="password"
-                        onChange={this.handleChange}
-                        type="password"
-                        placeholder="password"
-                        value={this.state.password}
-                    />
-                    <input type="submit" value="Submit"></input>
-                </form>
-            </div>
-
-        );
+        if(this.props.auth.isLoggedIn) //redirect away!!!
+            return <Redirect to={{
+                pathname: "/",
+                state: { from: this.props.location }
+            }}/>
+        else
+            return (
+                <div className="Login">
+                    <form onSubmit={this.handleSubmit}>
+                        <input
+                            name="username"
+                            onChange={this.handleChange}
+                            type="text"
+                            placeholder="username"
+                            value={this.state.username}
+                        />
+                        <input
+                            name="password"
+                            onChange={this.handleChange}
+                            type="password"
+                            placeholder="password"
+                            value={this.state.password}
+                        />
+                        <input type="submit" value="Submit"></input>
+                    </form>
+                </div>
+            );
     }
 }
 

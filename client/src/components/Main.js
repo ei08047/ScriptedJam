@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Login from "./Login";
 import Home from "./Home";
+import Rooms from "./Rooms";
 import PrivateHome from "./PrivateHome";
 
 const renderMergedProps = (component, ...rest) => {
@@ -47,6 +48,7 @@ class Main extends Component{
                 <Route exact path="/" component={Home} />
                 <PropsRoute path='/login' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth}/>
                 <PrivateRoute path="/privatehome" component={PrivateHome} auth={this.props.auth} redirectTo="/login" />
+                <PrivateRoute path="/rooms" component={Rooms} auth={this.props.auth} rooms={["a","b","c","d"]} redirectTo="/login"/>
             </Switch>
         );
     }

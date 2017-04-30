@@ -6,9 +6,9 @@
  * Created by ei08047 on 28/04/2017.
  */
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import Logout from './Logout'
 import logo from '../logo.svg';
-
 
 class Header extends Component{
 
@@ -20,6 +20,13 @@ class Header extends Component{
                 <div className="logout">
                     {this.props.auth.isLoggedIn ? <Logout handleAuth={this.props.handleAuth}/> : null}
                 </div>
+                <nav>
+                    <ul>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/rooms'>Rooms</Link></li>
+                        <li><Link to='/privatehome'>Private home</Link></li>
+                    </ul>
+                </nav>
             </div>
         );
     }

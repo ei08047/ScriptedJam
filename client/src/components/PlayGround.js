@@ -2,6 +2,9 @@
  * Created by ei08047 on 27/04/2017.
  */
 import React, { Component } from 'react';
+import Sound from './Sound';
+import Controler from './SoundControler';
+
 
 /*
 * <script src="%PUBLIC_URL%/flocking/flocking-all.js"></script>
@@ -33,16 +36,21 @@ class PlayGround extends Component{
 
 
     //  <script> myStuff.play(); </script>
+    /*Load and create SoundComponents
+    *
+    * */
     render(){
         return(
         <div className="PlayGround">
             <p> playground</p>
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    Example Script:
-                    <textarea value={this.state.value} onChange={this.handleChange} />
+
+                    <script type="text/javascript" contentEditable={<textarea value={this.state.value} onChange={this.handleChange} />}/>
                 </label>
-                <input type="submit" value="Submit" />
+                <audio controls={Controler}>
+                    <Sound/>
+                </audio>
             </form>
         </div>
         );
