@@ -2,7 +2,9 @@
  * Created by ei08047 on 27/04/2017.
  */
 // Wrap everything in a function to keep your stuff private.
-(function () {
+
+/* global flock, fluid, myStuff*/
+export default function () {
 
     // JavaScript strict mode is a good thing.
     "use strict";
@@ -33,5 +35,4 @@
         // This is because iOS will only play sound if the user initiated it.
         environment.start();
     };
-
-}());
+}

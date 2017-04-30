@@ -43,7 +43,7 @@ class Login extends Component{
                 this.props.handleAuth({username: null, client: null, loggedIn: false});
             }
         });
-        event.preventDefault(this);
+        event.preventDefault();
     }
 
     render(){

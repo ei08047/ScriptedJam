@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import PlayGround from "./PlayGround";
 import Dialog from "./Dialog";
 import Login from "./Login";
+import SoundControler from "./SoundControler";
 
 
 
@@ -19,7 +20,7 @@ class Home extends Component{
             <div>
                 <div className="PublicSoundSpace">
                     <Dialog/>
-                   <PlayGround/>
+                   <PlayGround handlePause={this.props.handlePause}/>
                 </div>
             </div>
         );

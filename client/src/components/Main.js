@@ -54,5 +54,3 @@ class Main extends Component{
     }
 }
 export default Main;
-
-//div className="Login"><Login handleAuth={this.handleAuth} isLoggedIn={this.state.isLoggedIn}/></div>
