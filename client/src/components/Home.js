@@ -10,10 +10,12 @@ import PlayGround from "./PlayGround";
 import Dialog from "./Dialog";
 import Login from "./Login";
 import SoundControler from "./SoundControler";
+import PrivateHome from "./PrivateHome";
 
 
 
 class Home extends Component{
+
 
     render(){
         return (
@@ -27,3 +29,9 @@ class Home extends Component{
     }
 }
 export default Home;
+
+/*
+*  <div className="PrivateSoundSpace">
+ <PrivateHome />
+ </div>
+* */

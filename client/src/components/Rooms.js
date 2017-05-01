@@ -2,22 +2,8 @@
  * Created by ei08047 on 27/04/2017.
  */
 import React, { Component } from 'react';
+import {Room} from './Room';
 
-
-class Room extends Component{
-
-    constructor(props){
-        super(props);
-        this.state ={
-            name : props.name
-        }
-    }
-    render(){
-        return (<li key={this.state.name}>
-            {this.state.name}
-        </li>)
-    }
-}
 
 export class AddRoom extends Component{
     constructor(props){
@@ -54,6 +40,7 @@ export class AddRoom extends Component{
 
     }
     render() {
+        //console.log(this.state.client.getSomeUserRecord());
         return (
             <div >
             <form onSubmit={this.handleSubmit}>
@@ -83,6 +70,7 @@ export class Rooms extends Component{
     }
 
     render(){
+// <PrivateRoute path="/rooms" component={Rooms} auth={this.props.auth}/*fishy*/ rooms={["a","b","c","d"]} client={this.props.auth.client} redirectTo="/login"/>
         return ( <ul> {this.listRooms}</ul>);
     }
 }

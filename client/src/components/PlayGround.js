@@ -3,11 +3,6 @@
  */
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-/*
-* <script src="%PUBLIC_URL%/flocking/flocking-all.js"></script>
- <script src="myStuff.js"> </script>
-*
-* */
 
 
 class PlayGround extends Component{
@@ -55,7 +50,6 @@ class PlayGround extends Component{
         this.setState({value: event.target.value});
         console.log(this.state.value);
     }
-
     handleSubmit(event){
         //get text area value
         var s = JSON.parse(this.state.value);
@@ -65,9 +59,6 @@ class PlayGround extends Component{
         this.synth();
 
     }
-
-
-
     componentDidMount() {
         /* global flock, fluid*/
         fluid.registerNamespace("myStuff");
@@ -83,8 +74,8 @@ class PlayGround extends Component{
                             source: {
                                 ugen: "flock.ugen.lfNoise",
                                 freq: 10,
-                                mul: 540,
-                                add: 660
+                                mul: 100,
+                                add: 44
                             },
                         }
                     }
@@ -92,7 +83,7 @@ class PlayGround extends Component{
 
             );
         environment.start();
-        this.synth();
+        this.synth.play();
     }
 
 //defaultValue={v}
@@ -108,6 +99,5 @@ class PlayGround extends Component{
         );
     }
 }
-
 
 export default PlayGround;
