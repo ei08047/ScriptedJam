@@ -3,9 +3,7 @@
  */
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
-
 const deepstream = require('deepstream.io-client-js');
-
 /*
 *                 ReactDOM.render(
  <SyncedInput dsRecord="some-input" />,

@@ -2,6 +2,7 @@
  * Created by ei08047 on 01/05/2017.
  */
 import React, { Component } from 'react';
+const deepstream = require('deepstream.io-client-js');
 
 
 class Room extends Component{
@@ -16,7 +17,8 @@ class Room extends Component{
     }
 
     componentDidMount(){
-        const r = this.con.record.getRecord('rooms/'+ this.state.roomname );
+        const r = this.state.con.record.getRecord('rooms/'+ this.state.roomname );
+        r.set('owner', this.state.owner);
         console.log(r);
     }
 

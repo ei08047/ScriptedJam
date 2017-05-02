@@ -49,12 +49,17 @@ class Main extends Component{
             auth:props.auth
         }
     }
+
+    componentDidMount(){
+    }
+
     render(){
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
                 <PropsRoute path='/login' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} client={this.props.auth.client}/>
                 <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth} redirectTo="/login" />
+
             </Switch>
         );
     }

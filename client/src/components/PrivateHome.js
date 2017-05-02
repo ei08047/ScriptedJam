@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 import Dialog from './Dialog';
 import Room from './Room'
-const deepstream = require('deepstream.io-client-js');
+import AddRoom from './AddRoom';
 
 class PrivateHome extends Component{
     constructor(props){
@@ -17,11 +17,10 @@ class PrivateHome extends Component{
     }
 
     componentDidMount(){
-        const v = this.state.auth.client.
+        const v = this.state.auth.client.record.getRecord('rooms/');
         //this.setState( {personal : {v} });
-        console.log(v);
+        console.log( v);
         // <Rooms client={this.state.auth.client} />
-        console.log('componendDidMount' );
     }
 
     render(){
@@ -29,11 +28,10 @@ class PrivateHome extends Component{
         <div className="PrivateSoundSpace">
             <p>WELCOME TO THE PAGE,{this.state.auth.username}</p>
             <Dialog title=" to use" />
+            <AddRoom handleSubmit={this.props.handleSubmit} client={this.state.auth.client} owner={this.state.auth.username}  />
             <Room roomname={'test'} client={this.state.auth.client} owner={this.state.auth.username} />
         </div>
         );
     }
 }
 export default PrivateHome;
-
-//            <Rooms username={this.state.me} />
