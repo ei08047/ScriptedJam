@@ -3,8 +3,6 @@
  */
 import React, { Component } from 'react';
 
-
-
 export function Border(props) {
     return (
         <div className={'Border -' + props.color}>
@@ -12,9 +10,7 @@ export function Border(props) {
         </div>
     );
 }
-
 //            {props.children}
-
 class Dialog extends Component{
     constructor(props){
         super(props);

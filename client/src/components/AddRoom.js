@@ -4,37 +4,52 @@
 
 import React, { Component } from 'react';
 
-
-
 export class AddRoom extends Component{
     constructor(props){
         super(props);
         this.state = {
-            client: props.client,
-            owner : props.owner,
-            roomname:props.roomname
-        }
+            auth: props.auth,
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
         const target = event.target;
-        console.log('target:'+target);
         const value = target.value;
-        console.log('value:'+value);
         const name = target.name;
-        console.log('name:'+name);
         this.setState({
             [name]: value
         });
-        console.log(JSON.stringify(this.state));
     }
 
     handleSubmit(event){
         console.log("submit " + this.state.roomname);
-        const roomRec = this.state.client.record.getRecord('rooms/'+ this.state.roomname );
-        roomRec.set('owner', this.state.owner);
+        const s = this.props.auth;
+        if(s!=null)
+        {
+            if(s.client != null)
+            {
+                console.log('connection on addRoom');
+                console.log(s.client.getConnectionState());
+                if(s.client.getConnectionState()==='OPEN')
+                {
+                    const uId = s.client.getUid();
+                    const recordName = 'user/'+s.username;
+                    console.log('record name::'+recordName);
+                    const rooms = s.client.record.getList(recordName + '/rooms');
+                    const shared = s.client.record.getList('shared/');
+                    rooms.addEntry(this.state.roomname);
+
+                }else
+                {
+
+                    console.log("add room no conection");
+                }
+            }
+        }
+        //const roomRec = this.state.client.record.getRecord('rooms/'+ this.state.roomname );
+        //roomRec.set('owner', this.state.owner);
         event.preventDefault();
         /*React.createClass({
          mixins: [ DeepstreamMixin ],

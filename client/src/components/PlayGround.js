@@ -1,9 +1,5 @@
-/**
- * Created by ei08047 on 27/04/2017.
- */
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-
 
 class PlayGround extends Component{
 
@@ -99,5 +95,4 @@ class PlayGround extends Component{
         );
     }
 }
-
 export default PlayGround;

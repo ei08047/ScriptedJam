@@ -1,16 +1,11 @@
-/**
- * Created by ei08047 on 29/04/2017.
- */
-
-/**
- * Created by ei08047 on 28/04/2017.
- */
+const deepstream = require('deepstream.io-client-js');
+const DeepstreamMixin = require('deepstream.io-tools-react');
 import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
+
 import Login from "./Login";
 import Home from "./Home";
 import Rooms from "./Rooms";
-import Room from "./Room";
 import PrivateHome from "./PrivateHome";
 
 const renderMergedProps = (component, ...rest) => {
@@ -47,27 +42,55 @@ class Main extends Component{
         super(props);
         this.state = {
             auth:props.auth
+
         }
     }
 
-    componentDidMount(){
-    }
 
+    componentDidMount(){
+
+        if(this.state.auth!=null)
+        {
+            const s = this.state.auth;
+            console.log("main: " + s.username + " : " + s.isLoggedIn  );
+
+            if(s.client != null)
+            {
+                console.log('connection');
+                console.log(s.client.getConnectionState());
+                if(s.client.getConnectionState()==='OPEN')
+                {
+                    /*
+                    //const uId = s.client.getUid();
+                    const recordName = 'user/'+s.username;
+                    console.log('record name::'+recordName);
+                    const record = s.client.record.getRecord(recordName);
+                    const scripts = s.client.record.getList(recordName + '/scripts');
+                    const rooms = s.client.record.getList(recordName + '/rooms');
+                    rooms.subscribe((data)=>{console.log(data.getEntries())},false);
+                    //this.setState({roomList:rooms});
+                    console.log("main room list");
+                    console.log(this.state.roomList);
+                    const shared = s.client.record.getList('shared/');
+
+                    */
+                } else{console.log("conection not open");}
+            }else{console.log('client no set');}
+        }
+        else{console.log("auth not set");}
+    }
     render(){
+
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <PropsRoute path='/login' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} client={this.props.auth.client}/>
-                <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth} redirectTo="/login" />
-
+                <PropsRoute path='/login' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} />
+                <PrivateRoute path="/rooms" component={Rooms} handlerooms={this.props.handleRooms} auth={this.props.auth} rooms={this.props.rooms} redirectTo="/login" />
+                <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth}  redirectTo="/login" />
             </Switch>
         );
     }
 }
 export default Main;
 
-
-//                <PrivateRoute path="/rooms" component={Rooms} auth={this.props.auth} rooms={["a","b","c","d"]} client={this.props.auth.client} redirectTo="/login"/>
-
-//  <PrivateRoute path="/rooms/*" component={Room} auth={this.props.auth} rooms={["a","b","c","d"]} client={this.props.auth.client} redirectTo="/login"/>
-
+//<PrivateRoute path="/privatehome/" handleRooms={this.props.handlerooms} component={PrivateHome} auth={this.props.auth}  redirectTo="/login" />

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header';
 import Main from './Main';
-
-
 // Greeting messages
 export function Greeting(props) {
     const isLoggedIn=props.isLoggedIn;
@@ -19,7 +17,6 @@ export function UserGreeting(props) {
 export function GuestGreeting(props) {
     return <p>Please sign up.</p>;
 }
-
 
 class App extends Component {
     constructor(props){

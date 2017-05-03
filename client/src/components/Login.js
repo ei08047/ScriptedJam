@@ -30,6 +30,7 @@ class Login extends Component{
             [name] : value
         });
     }
+
     handleSubmit(event){
         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
             if(success) {
@@ -74,5 +75,4 @@ class Login extends Component{
             );
     }
 }
-
 export default Login;

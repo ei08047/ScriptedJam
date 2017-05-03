@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 const deepstream = require('deepstream.io-client-js');
 
-
 class Room extends Component{
 
     constructor(props){

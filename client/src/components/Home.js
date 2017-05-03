@@ -1,18 +1,9 @@
-/**
- * Created by ei08047 on 29/04/2017.
- */
-
-/**
- * Created by ei08047 on 28/04/2017.
- */
 import React, { Component } from 'react';
 import PlayGround from "./PlayGround";
 import Dialog from "./Dialog";
 import Login from "./Login";
-import SoundControler from "./SoundControler";
+import SoundControler from "../backlog/SoundControler";
 import PrivateHome from "./PrivateHome";
-
-
 
 class Home extends Component{
 
@@ -29,9 +20,3 @@ class Home extends Component{
     }
 }
 export default Home;
-
-/*
-*  <div className="PrivateSoundSpace">
- <PrivateHome />
- </div>
-* */

@@ -9,7 +9,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Logout from './Logout'
 import logo from '../logo.svg';
-
 class Header extends Component{
 
     render(){
