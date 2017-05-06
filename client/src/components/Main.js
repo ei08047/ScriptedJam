@@ -85,12 +85,12 @@ class Main extends Component{
             <Switch>
                 <Route exact path="/" component={Home} />
                 <PropsRoute path='/login' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} />
-                <PrivateRoute path="/rooms" component={Rooms} handlerooms={this.props.handleRooms} auth={this.props.auth} rooms={this.props.rooms} redirectTo="/login" />
+                <PrivateRoute path="/rooms" component={Rooms} auth={this.props.auth} handlerooms={this.props.handlerooms} redirectTo="/login" />
                 <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth}  redirectTo="/login" />
             </Switch>
         );
     }
-}
+}//handlerooms={this.props.handleRooms}
 export default Main;
 
 //<PrivateRoute path="/privatehome/" handleRooms={this.props.handlerooms} component={PrivateHome} auth={this.props.auth}  redirectTo="/login" />

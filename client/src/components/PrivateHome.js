@@ -8,10 +8,9 @@ class PrivateHome extends Component{
         this.state={auth : props.auth
         }
         this.handlerooms=this.handlerooms.bind(this);
-        this.test = this.test.bind(this);
+        this.setRooms = this.setRooms.bind(this);
     }
-    test(data){
-        console.log(data);
+    setRooms(data){
         console.log(data);
         this.setState({rooms:data});
     }
@@ -29,7 +28,7 @@ class PrivateHome extends Component{
                     //const record = s.client.record.getRecord(recordName);
                     const rooms = s.client.record.getList(recordName + '/rooms');
                     console.log("read on private home");
-                    rooms.subscribe( this.test , true );
+                    rooms.subscribe( this.setRooms , true );
                 }
                 else
                 {
