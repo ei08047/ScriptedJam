@@ -82,7 +82,7 @@ class PlayGround extends Component{
         this.synth.play();
     }
 
-//defaultValue={v}
+
     render(){
         const v = JSON.stringify(this.state.value , undefined, 4);
         return(

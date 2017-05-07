@@ -4,8 +4,8 @@
 import React, { Component } from 'react';
 const deepstream = require('deepstream.io-client-js');
 const DeepstreamMixin = require('deepstream.io-tools-react');
-import {Room} from './Room';
-
+import {Link, Switch, Route} from 'react-router-dom';
+import Room from './Room';
 
 export class Rooms extends Component{
     constructor(props){
@@ -14,15 +14,6 @@ export class Rooms extends Component{
         this.handlerooms = this.handlerooms.bind(this);
         this.roomsList=[];
         this.recordName ='';
-
-        /*
-         this.listRooms = roomNames.map((room) =>
-         {
-             return (<li key={room}>
-             {room}
-         </li>)}
-        );
-        */
     }
 
 
@@ -51,31 +42,38 @@ export class Rooms extends Component{
 
     componentDidMount() {
         this.handlerooms();
-
-        if(this.state.rooms !== null)
-        {
-            console.log("rooms: "+this.state.rooms);
-        } else{
-            console.log('No rooms');
-        }
     }
 
-
-    componentWillUnmount(){
-    }
+    // componentDidMount() {
+    //     this.handlerooms();
+    //
+    //     if(this.state.rooms != null)
+    //     {
+    //         console.log("rooms: "+this.state.rooms);
+    //         if(this.state.rooms.length > 0 )
+    //         {
+    //             this.renderedRoomList = this.state.rooms.map( (room) =>
+    //                 <li>{room}</li>);
+    //         }
+    //
+    //     } else{
+    //         console.log('No rooms');
+    //     }
+    // }
+    //
+    //
+    // componentWillUnmount(){
+    // }
 
 
     render(){
-        var hasRooms=  this.state.rooms === null? false : true;
-        hasRooms.map( (room) =>
-            <li>{room}</li>)
-        if(hasRooms)
-        {
-            console.log(this.state.rooms)
-
-            return <h1>It is hasRooms.</h1>
-        }else
-            return  <h2>It is {this.state.auth.username}.</h2>
+        return (
+            <div>
+                <ul>{
+                    this.state.rooms.map( (room) =>
+                        <li><Link to={'/rooms/'+room}>{room}</Link></li>)
+                }</ul>
+            </div>)
     }
 }
 

@@ -6,6 +6,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import Login from "./Login";
 import Home from "./Home";
 import Rooms from "./Rooms";
+import Room from "./Room";
 import PrivateHome from "./PrivateHome";
 
 const renderMergedProps = (component, ...rest) => {
@@ -40,18 +41,14 @@ const PrivateRoute = ({ component, redirectTo, ...rest }) => {
 class Main extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            auth:props.auth
-
-        }
     }
 
 
     componentDidMount(){
 
-        if(this.state.auth!=null)
+        if(this.props.auth!=null)
         {
-            const s = this.state.auth;
+            const s = this.props.auth;
             console.log("main: " + s.username + " : " + s.isLoggedIn  );
 
             if(s.client != null)
@@ -84,9 +81,10 @@ class Main extends Component{
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <PropsRoute path='/login' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} />
-                <PrivateRoute path="/rooms" component={Rooms} auth={this.props.auth} handlerooms={this.props.handlerooms} redirectTo="/login" />
-                <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth}  redirectTo="/login" />
+                <PropsRoute path='/login/' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} />
+                <PrivateRoute exact path="/rooms" component={Rooms} auth={this.props.auth} redirectTo="/login"/>
+                <PrivateRoute path="/rooms/:roomname" component={Room} auth={this.props.auth} redirectTo="/login" />
+                <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth} redirectTo="/login" />
             </Switch>
         );
     }

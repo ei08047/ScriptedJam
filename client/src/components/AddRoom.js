@@ -64,7 +64,6 @@ export class AddRoom extends Component{
          });*/
     }
     render() {
-        //console.log(this.state.client.getSomeUserRecord());
         return (
             <div >
                 <form onSubmit={this.handleSubmit}>
