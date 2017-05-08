@@ -23,6 +23,7 @@ class PlayGround extends Component{
                 }
             }
         }
+        this.environment;
         this.handlePause = this.handlePause.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -58,7 +59,7 @@ class PlayGround extends Component{
     componentDidMount() {
         /* global flock, fluid*/
         fluid.registerNamespace("myStuff");
-        var environment = flock.init();
+        this.environment = flock.init();
         this.synth = flock.synth(
             //text area value here
             {
@@ -78,8 +79,12 @@ class PlayGround extends Component{
                 }
 
             );
-        environment.start();
+        this.environment.start();
         this.synth.play();
+    }
+
+    componentWillUnmount(){
+        this.environment.stop();
     }
 
 

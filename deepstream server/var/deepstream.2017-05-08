@@ -1,0 +1,6 @@
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-08T01:37:32.845Z"}
+{"event":"INVALID_AUTH_DATA","level":"info","message":"invalid authentication data: {\"username\":\"\",\"password\":\"password\"}","timestamp":"2017-05-08T01:37:32.850Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-08T01:37:36.770Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-08T01:37:36.852Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"null","timestamp":"2017-05-08T01:38:06.227Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-08T01:38:06.229Z"}

@@ -9,21 +9,27 @@ export class AddRoom extends Component{
         super(props);
         this.state = {
             auth: props.auth,
+            type:false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+
     }
 
     handleChange(event) {
         const target = event.target;
-        const value = target.value;
         const name = target.name;
+        var value = target.type === 'checkbox' ? target.checked : target.value;
+        console.log('target:'+target + ' value:'+ value + '  name:' + name);
         this.setState({
             [name]: value
         });
     }
 
+
+
     handleSubmit(event){
+        alert('A name was submitted: ' + this.input.value);
         console.log("submit " + this.state.roomname);
         const s = this.props.auth;
         if(s!=null)
@@ -31,23 +37,42 @@ export class AddRoom extends Component{
             if(s.client != null)
             {
                 console.log('connection on addRoom');
-                console.log(s.client.getConnectionState());
                 if(s.client.getConnectionState()==='OPEN')
                 {
-                    const uId = s.client.getUid();
                     const recordName = 'user/'+s.username;
-                    console.log('record name::'+recordName);
                     const rooms = s.client.record.getList(recordName + '/rooms');
-                    const shared = s.client.record.getList('shared/');
-                    rooms.addEntry(this.state.roomname);
+                    const shared = s.client.record.getList('shared/rooms');
+                    var room = {name:this.state.roomname, owner: this.state.auth.username};
+                    if(s.client.record.has(recordName+'/rooms/' + this.state.roomname))
+                    {
+                        const roomRec = s.client.record.getRecord(recordName+'/rooms/' + this.state.roomname);
+                        console.log('set owner');
+                        roomRec.set('owner',this.state.auth.username);
+                    }
+                    else
+                    {
+                        console.log('dont have that record');
+                        const roomRec = s.client.record.getRecord(recordName+'/rooms/' + this.state.roomname);
+                        roomRec.set('owner',this.state.auth.username);
+
+                        if(!this.state.type)
+                        {
+                            rooms.addEntry(this.state.roomname);
+                        }
+                        else
+                        {
+                            rooms.addEntry(this.state.roomname);
+                            shared.addEntry(this.state.roomname);
+                        }
+                    }
 
                 }else
                 {
-
                     console.log("add room no conection");
                 }
             }
         }
+
         //const roomRec = this.state.client.record.getRecord('rooms/'+ this.state.roomname );
         //roomRec.set('owner', this.state.owner);
         event.preventDefault();
@@ -73,7 +98,18 @@ export class AddRoom extends Component{
                         type="text"
                         placeholder="name"
                     />
-                    <input type="submit" value="Submit"></input>
+                    <input name="owner" type="hidden" value={this.state.auth}/>
+
+
+                    <input id ="type" name="type"
+                           defaultChecked={false}
+                           onChange={this.handleChange}
+                           type="checkbox"
+                    />
+                    <label for="type">{this.state.type?"ON":"OFF"} </label>
+                    <input type="submit" value="Submit">
+
+                    </input>
                 </form>
             </div>);
     }

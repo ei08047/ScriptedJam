@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from './Dialog';
 import AddRoom from './AddRoom';
+import Rooms from "./Rooms";
 
 class PrivateHome extends Component{
     constructor(props){
@@ -23,11 +24,10 @@ class PrivateHome extends Component{
                 console.log('connection');
                 console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
-                    const recordName = 'user/' + s.username;
+                    const recordName = 'user/' + s.username + '/rooms' ;
                     console.log('record name::' + recordName);
-                    //const record = s.client.record.getRecord(recordName);
-                    const rooms = s.client.record.getList(recordName + '/rooms');
-                    console.log("read on private home");
+                    const rooms = s.client.record.getList(recordName );
+                    console.log("subscribing" + recordName );
                     rooms.subscribe( this.setRooms , true );
                 }
                 else
@@ -38,14 +38,14 @@ class PrivateHome extends Component{
         }
     }
     componentDidMount(){
+        this.handlerooms();
     }
     render(){
         return (
         <div className="PrivateSoundSpace">
             <p>WELCOME TO THE PAGE,{this.state.auth.username}</p>
-            <Dialog title=" to use" />
-            <input type="button" name="fetch rooms" onClick={this.handlerooms}></input>
-            <AddRoom handleSubmit={this.props.handleSubmit} auth={this.state.auth}   />
+            <AddRoom handleSubmit={this.props.handleSubmit} auth={this.state.auth}/>
+            <Rooms auth = {this.state.auth}/>
         </div>
         );
     }
