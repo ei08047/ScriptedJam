@@ -66,7 +66,8 @@ export class AddRoom extends Component{
                         }
                     }
 
-                }else
+                }
+                else
                 {
                     console.log("add room no conection");
                 }

@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import PlayGround from "./PlayGround";
 import Dialog from "./Dialog";
-import Login from "./Login";
-import SoundControler from "../backlog/SoundControler";
-import PrivateHome from "./PrivateHome";
+import DynForm from "./DynForm";
+
+// <PlayGround handlePause={this.props.handlePause}/>
 
 class Home extends Component{
-
-
     render(){
         return (
             <div>
                 <div className="PublicSoundSpace">
-                    <Dialog/>
-                   <PlayGround handlePause={this.props.handlePause}/>
+                    <Dialog title="welcome to playground" message="try some scripts"/>
+                    <DynForm/>
+
                 </div>
             </div>
         );

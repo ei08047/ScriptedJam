@@ -2,7 +2,6 @@
  * Created by ei08047 on 07/05/2017.
  */
 import React, { Component } from 'react';
-import PlayGround from "./PlayGround";
 
 
 export class AddPlayground extends Component{
@@ -18,8 +17,6 @@ export class AddPlayground extends Component{
         //this.playgroundExists = this.playgroundExists.bind(this);
     }
 
-
-
     handleChange(event) {
         const target = event.target;
         const name = target.name;
@@ -29,9 +26,6 @@ export class AddPlayground extends Component{
             [name]: value
         });
     }
-
-
-
     handleSubmit(event){
         alert('A name was submitted: ' + this.input.value);
         console.log("submit " + this.state.playground);
@@ -51,6 +45,7 @@ export class AddPlayground extends Component{
          }
          });*/
     }
+
     render() {
         return (
             <div >

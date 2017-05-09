@@ -50,35 +50,33 @@ class PlayGround extends Component{
     handleSubmit(event){
         //get text area value
         var s = JSON.parse(this.state.value);
+        console.log("parsed:");
         console.log(s);
         this.synth.pause();
         this.synth.set({synthDef : s});
-        this.synth();
+        //this.synth();
 
     }
     componentDidMount() {
         /* global flock, fluid*/
         fluid.registerNamespace("myStuff");
         this.environment = flock.init();
+
         this.synth = flock.synth(
             //text area value here
             {
+                synthDef: {
                     synthDef: {
-                        ugen: "flock.ugen.sin",
-                        freq: {
-                            ugen: "flock.ugen.latch",
-                            rate: "audio",
-                            source: {
-                                ugen: "flock.ugen.lfNoise",
-                                freq: 10,
-                                mul: 100,
-                                add: 44
-                            },
-                        }
+                        ugen: "flock.ugen.sinOsc",
+                        freq: 440,
+                        mul: 0.25
                     }
                 }
+            }
 
             );
+        console.log("current synth");
+        console.log(this.synth);
         this.environment.start();
         this.synth.play();
     }
@@ -86,7 +84,6 @@ class PlayGround extends Component{
     componentWillUnmount(){
         this.environment.stop();
     }
-
 
     render(){
         const v = JSON.stringify(this.state.value , undefined, 4);
