@@ -16,7 +16,7 @@ class Header extends Component{
             <div className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <h2>Welcome to React, {this.props.auth.isLoggedIn ? this.props.auth.username : "GUEST"}</h2>
-                <div className="logout">
+                <div className="Logout">
                     {this.props.auth.isLoggedIn ? <Logout handleAuth={this.props.handleAuth}/> : null}
                 </div>
                 <nav>
@@ -24,6 +24,7 @@ class Header extends Component{
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/rooms'>Rooms</Link></li>
                         <li><Link to='/privatehome'>Private home</Link></li>
+                        <li><Link to='/users'>Users</Link></li>
                     </ul>
                 </nav>
             </div>

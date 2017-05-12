@@ -2,6 +2,28 @@
  * Created by ei08047 on 07/05/2017.
  */
 import React, { Component } from 'react';
+import Form from "react-jsonschema-form";
+
+const log = (type) => console.log.bind(console, type);
+
+
+
+
+const schema = {
+    ugen: "flock.ugen",
+    type: "object",
+    required: ["ugen","freq","mul"],
+    properties: {
+        ugen: {type: "string", title: "ugen", default: "sinOsc"},
+        freq : {type: "number"  , title:"freq", default: "440"},
+        mul : {type: "number" , title:"mul", default: "0.25"},
+        done: {type: "boolean", title: "Done?", default: false}
+    }
+};
+const uiSchema = {
+    freq: {"ui:widget": "range"}
+};
+
 
 
 export class AddPlayground extends Component{
@@ -30,7 +52,8 @@ export class AddPlayground extends Component{
         alert('A name was submitted: ' + this.input.value);
         console.log("submit " + this.state.playground);
         const s = this.props.auth.client;
-        //create playgroundRec
+        //TODO:need to check if room name is already being used
+        //TODO:create playgroundRec
         //s.record.getList({'/users/' + this.state.auth this.state.aut})
         event.preventDefault();
         /*React.createClass({
@@ -60,6 +83,10 @@ export class AddPlayground extends Component{
                     <input type="submit" value="Submit">
                     </input>
                 </form>
+                <Form schema={schema} uiSchema={uiSchema}
+                      onChange={log("changed")}
+                      onSubmit={log("submitted")}
+                      onError={log("errors")} />
             </div>);
     }
 }

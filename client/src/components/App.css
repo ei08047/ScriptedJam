@@ -1,21 +1,48 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 }
-
 .App-intro {
   font-size: large;
+}
+
+.Login{
+  margin-top: 200px;
+}
+.Login  input[type="text"]{
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.Login input[type="password"]{
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.Login input[type="submit"]{
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.Login input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+.Logout button{
+  margin-top: 80px;
+  float: right;
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
 }
 
 @keyframes App-logo-spin {
@@ -23,20 +50,57 @@
   to { transform: rotate(360deg); }
 }
 
+nav{
+  margin-top: 50px;
+  margin-left: 60px;
+}
 nav>ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-
 nav>ul li {
   float: left;
 }
-
 nav>ul li a {
   display: block;
   text-align: center;
   padding: 16px;
   text-decoration: none;
+}
+li a:hover {
+  background-color: #222222;
+  color: #707070;
+}
+
+
+.RoomList{
+  margin-top: 40px;
+}
+
+.RoomList p{
+  display: block;
+  text-align: start;
+  padding: 16px;
+  text-decoration: none;
+}
+.RoomList>ul{  list-style-type: none;}
+
+.RoomList>ul li a{float: left;}
+
+.RoomList>ul li a{
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;}
+
+.RoomListElem {
+  background-color: black;
+  margin-right: 20px;
+  color:white;
+}
+
+.RoomListElem:hover {
+  background-color: red;
 }

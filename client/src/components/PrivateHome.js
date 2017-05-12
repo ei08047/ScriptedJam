@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Dialog from './Dialog';
 import AddRoom from './AddRoom';
 import Rooms from "./Rooms";
 

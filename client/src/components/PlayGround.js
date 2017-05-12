@@ -1,7 +1,34 @@
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
+const log = (type) => console.log.bind(console, type);
+
+const schema_playground = {
+    playground: "playground",
+    type: "object",
+    required: ["playground"],
+    properties: {
+        name: {type: "string", title: "name", default: ""},
+        shared : {type: "boolean"  , title:"shared", default: "false"},
+
+    }
+};
+
+const schema_playground_readOnly = {
+    name: "room.name",
+    type: "object",
+    required: ["name","shared"],
+    //TODO: define name domain (size,symbols)
+    properties: {
+        name: {type: "string", title: "name", default: ""},
+        shared : {type: "boolean"  , title:"shared", default: "false"},
+
+    }
+};
+
 
 class PlayGround extends Component{
+
+
 
     constructor(props) {
         super(props);

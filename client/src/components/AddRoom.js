@@ -3,6 +3,21 @@
  */
 
 import React, { Component } from 'react';
+import Form from "react-jsonschema-form";
+
+const log = (type) => console.log.bind(console, type);
+
+const schema_room = {
+    name: "room.name",
+    type: "object",
+    required: ["name","shared"],
+    //TODO: define name domain (size,symbols)
+    properties: {
+        name: {type: "string", title: "name", default: ""},
+        shared : {type: "boolean"  , title:"shared", default: "false"},
+
+    }
+};
 
 export class AddRoom extends Component{
     constructor(props){
@@ -43,6 +58,7 @@ export class AddRoom extends Component{
                     const rooms = s.client.record.getList(recordName + '/rooms');
                     const shared = s.client.record.getList('shared/rooms');
                     var room = {name:this.state.roomname, owner: this.state.auth.username};
+                    //TODO:need to check if room name is already being used
                     if(s.client.record.has(recordName+'/rooms/' + this.state.roomname))
                     {
                         const roomRec = s.client.record.getRecord(recordName+'/rooms/' + this.state.roomname);
@@ -90,6 +106,7 @@ export class AddRoom extends Component{
          });*/
     }
     render() {
+        //uiSchema={uiSchema}
         return (
             <div >
                 <form onSubmit={this.handleSubmit}>
@@ -100,8 +117,6 @@ export class AddRoom extends Component{
                         placeholder="name"
                     />
                     <input name="owner" type="hidden" value={this.state.auth}/>
-
-
                     <input id ="type" name="type"
                            defaultChecked={false}
                            onChange={this.handleChange}
@@ -112,6 +127,10 @@ export class AddRoom extends Component{
 
                     </input>
                 </form>
+                <Form schema={schema_room}
+                      onChange={log("changed")}
+                      onSubmit={log("submitted")}
+                      onError={log("errors")} />
             </div>);
     }
 }
