@@ -6,15 +6,14 @@ import React, { Component } from 'react';
 import Form from "react-jsonschema-form";
 
 const log = (type) => console.log.bind(console, type);
-
 const schema_room = {
     name: "room.name",
     type: "object",
-    required: ["name","shared"],
+    required: ["name"],
     //TODO: define name domain (size,symbols)
     properties: {
         name: {type: "string", title: "name", default: ""},
-        shared : {type: "boolean"  , title:"shared", default: "false"},
+        shared : {type: "boolean"  , title:"shared", default: false},
 
     }
 };
@@ -27,7 +26,8 @@ export class AddRoom extends Component{
             type:false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.validate = this.validate.bind(this);
+        //this.handleChange = this.handleChange.bind(this);
 
     }
 
@@ -40,12 +40,9 @@ export class AddRoom extends Component{
             [name]: value
         });
     }
-
-
-
-    handleSubmit(event){
-        alert('A name was submitted: ' + this.input.value);
-        console.log("submit " + this.state.roomname);
+    handleSubmit({formData}){
+        console.log('A name was submitted: ' + {formData});
+        /*
         const s = this.props.auth;
         if(s!=null)
         {
@@ -90,6 +87,7 @@ export class AddRoom extends Component{
             }
         }
 
+*/
         //const roomRec = this.state.client.record.getRecord('rooms/'+ this.state.roomname );
         //roomRec.set('owner', this.state.owner);
         event.preventDefault();
@@ -105,34 +103,68 @@ export class AddRoom extends Component{
          }
          });*/
     }
-    render() {
-        //uiSchema={uiSchema}
-        return (
-            <div >
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        name="roomname"
-                        onChange={this.handleChange}
-                        type="text"
-                        placeholder="name"
-                    />
-                    <input name="owner" type="hidden" value={this.state.auth}/>
-                    <input id ="type" name="type"
-                           defaultChecked={false}
-                           onChange={this.handleChange}
-                           type="checkbox"
-                    />
-                    <label for="type">{this.state.type?"ON":"OFF"} </label>
-                    <input type="submit" value="Submit">
 
-                    </input>
-                </form>
-                <Form schema={schema_room}
+
+    //TODO: check if another room with this name exists
+    validate(formData, errors) {
+        const s = this.props.auth;
+        if(s!=null)
+        {
+            if(s.client != null)
+            {
+                console.log('connection on addRoom');
+                if(s.client.getConnectionState()==='OPEN')
+                {
+                    const shared = s.client.record.getList('shared/rooms');
+                    const entries = shared.getEntries();
+                    if (entries.indexOf(formData.name) > -1) {
+                        errors.name.addError('room name in use');
+                    } else {
+                    }
+                }
+                else
+                {
+                    console.log("add room no conection");
+                }
+            }
+        }
+    return errors;
+}
+
+
+    render() {
+        return (
+            <div className="AddRoom" >
+                <Form schema={schema_room} validate={this.validate}
                       onChange={log("changed")}
-                      onSubmit={log("submitted")}
-                      onError={log("errors")} />
+                      onSubmit={this.handleSubmit}
+                      onError={log("errors")}>
+                    <button type="submit">Submit</button>
+                </Form>
             </div>);
     }
 }
-
 export default AddRoom;
+
+/*
+*                 <form onSubmit={this.handleSubmit}>
+ <input
+ name="roomname"
+ onChange={this.handleChange}
+ type="text"
+ placeholder="name"
+ />
+ <input name="owner" type="hidden" value={this.state.auth.username}/>
+ <input id ="type" name="type"
+ defaultChecked={false}
+ onChange={this.handleChange}
+ type="checkbox"
+ />
+ <label for="type">{this.state.type?"ON":"OFF"} </label>
+ <input type="submit" value="Submit">
+
+ </input>
+ </form>
+*
+*
+* */

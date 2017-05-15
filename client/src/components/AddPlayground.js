@@ -5,10 +5,6 @@ import React, { Component } from 'react';
 import Form from "react-jsonschema-form";
 
 const log = (type) => console.log.bind(console, type);
-
-
-
-
 const schema = {
     ugen: "flock.ugen",
     type: "object",
@@ -23,8 +19,6 @@ const schema = {
 const uiSchema = {
     freq: {"ui:widget": "range"}
 };
-
-
 
 export class AddPlayground extends Component{
     constructor(props){

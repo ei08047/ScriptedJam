@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PlayGround from "./PlayGround";
-import DynForm from "./DynForm";
 
 // <PlayGround handlePause={this.props.handlePause}/>
 
@@ -15,5 +14,3 @@ class Home extends Component{
     }
 }
 export default Home;
-
-//     <DynForm/>

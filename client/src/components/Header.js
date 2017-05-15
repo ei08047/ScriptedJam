@@ -15,7 +15,7 @@ class Header extends Component{
         return (
             <div className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <h2>Welcome to React, {this.props.auth.isLoggedIn ? this.props.auth.username : "GUEST"}</h2>
+                <h2>Welcome to Scripted Jam, {this.props.auth.isLoggedIn ? this.props.auth.username : "GUEST"}</h2>
                 <div className="Logout">
                     {this.props.auth.isLoggedIn ? <Logout handleAuth={this.props.handleAuth}/> : null}
                 </div>

@@ -4,23 +4,19 @@
 import React, { Component } from 'react';
 const deepstream = require('deepstream.io-client-js');
 const DeepstreamMixin = require('deepstream.io-tools-react');
-import {Link, Switch, Route} from 'react-router-dom';
-import Room from './Room';
+import {Link} from 'react-router-dom';
+
 
 
 export class Rooms extends Component{
     constructor(props){
         super(props);
-        this.state={auth : props.auth , rooms:[], sharedRooms:[] , focusRoom:null};
+        this.state={auth : props.auth , rooms:[], sharedRooms:[]};
         this.getUserRooms = this.getUserRooms.bind(this);
         this.getSharedRooms = this.getSharedRooms.bind(this);
-        this.getRoomInfo = this.getRoomInfo.bind(this);
         this.roomsList=[];
         this.recordName ='';
     }
-
-
-
 
     getSharedRooms(){
         const s= this.state.auth;
@@ -58,7 +54,6 @@ export class Rooms extends Component{
             }
         }
     }
-
     getUserRooms(){
         const s= this.state.auth;
         if(s!=null) {
@@ -80,25 +75,6 @@ export class Rooms extends Component{
         }
     }
 
-    getRoomInfo(event){
-        alert(event);
-        console.log(event);
-
-        const s= this.state.auth;
-        if(s!=null) {
-            if (s.client != null) {
-                console.log(s.client.getConnectionState());
-                if (s.client.getConnectionState() === 'OPEN') {
-                    console.log('connection on getRoomInfo');
-                }
-                else
-                {
-                    console.log("this cant be null");
-                }
-            }
-        }
-        event.preventDefault();
-    }
 
     componentDidMount() {
         this.getSharedRooms();
@@ -114,7 +90,7 @@ export class Rooms extends Component{
                     <p>My Rooms</p>
                     <ul>{
                         this.state.rooms.map( (room) =>
-                            <li><Link onBlur={this.getRoomInfo} to={'/rooms/'+room}>{room}</Link></li>)
+                            <li><Link className="RoomListElem" to={'/rooms/'+room}>{room}</Link></li>)
                     }</ul>
                 </div>
 
@@ -122,7 +98,7 @@ export class Rooms extends Component{
                     <p>Shared Rooms</p>
                     <ul>{
                         this.state.sharedRooms.map( (room) =>
-                            <li onFocus ={this.getRoomInfo} ><Link className="RoomListElem" to={'/rooms/'+room}>{room}</Link></li>)
+                            <li><Link className="RoomListElem" to={'/rooms/'+room}>{room}</Link> </li>)
                     }</ul>
                 </div>
             </div>

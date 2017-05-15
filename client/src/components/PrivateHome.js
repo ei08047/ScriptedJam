@@ -42,7 +42,6 @@ class PrivateHome extends Component{
     render(){
         return (
         <div className="PrivateSoundSpace">
-            <p>WELCOME TO THE PAGE,{this.state.auth.username}</p>
             <AddRoom handleSubmit={this.props.handleSubmit} auth={this.state.auth}/>
             <Rooms auth = {this.state.auth}/>
         </div>

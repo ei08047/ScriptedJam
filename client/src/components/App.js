@@ -32,7 +32,6 @@ class App extends Component {
     }
 
   render() {
-      const r = ["ddd", "s", "aaaaaa", "dddd", " asda"];
     return (
         <div className="App">
             <Header handleAuth={this.handleAuth} auth={this.state.auth} />
@@ -41,22 +40,7 @@ class App extends Component {
         </div>
     );
   }
-
-/*<div className="Login"><Login handleAuth={this.handleAuth} isLoggedIn={this.state.isLoggedIn}/></div>
-<div className="AddRoom"> <AddRoom /> </div>*/
-
-/*
-*           <div className="Rooms" > <Rooms rooms={r} /></div>
- <div className="AddRoom"> <AddRoom /> </div>
-*
-* */
 }
-/*
- * (<div>
- <CardSearch shared_var={this.state.shared_var} updateShared={this.updateShared} />
- <RunOnServer shared_var={this.state.shared_var} updateShared={this.updateShared} />
- <div> The shared value is {this.state.shared_var} </div>
- </div>)
- * */
+
 
 export default App;

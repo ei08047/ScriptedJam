@@ -2,7 +2,6 @@ const deepstream = require('deepstream.io-client-js');
 const DeepstreamMixin = require('deepstream.io-tools-react');
 import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-
 import Login from "./Login";
 import Home from "./Home";
 import Rooms from "./Rooms";
@@ -43,8 +42,6 @@ class Main extends Component{
     constructor(props){
         super(props);
     }
-
-
     componentDidMount(){
 
         if(this.props.auth!=null)
@@ -61,7 +58,7 @@ class Main extends Component{
 
                     s.client.presence.subscribe((username, isLoggedIn) => {
 
-                        console.log('entered'+username);
+                        console.log('entered: '+username);
                     })
 
                     /*
@@ -96,7 +93,5 @@ class Main extends Component{
             </Switch>
         );
     }
-}//handlerooms={this.props.handleRooms}
+}
 export default Main;
-
-//<PrivateRoute path="/privatehome/" handleRooms={this.props.handlerooms} component={PrivateHome} auth={this.props.auth}  redirectTo="/login" />
