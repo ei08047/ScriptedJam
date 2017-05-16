@@ -1,0 +1,46 @@
+{"event":"INFO","level":"info","message":"logger ready","timestamp":"2017-05-16T01:11:40.271Z"}
+{"event":"INFO","level":"info","message":"deepstream version: 2.2.1","timestamp":"2017-05-16T01:11:40.274Z"}
+{"event":"INFO","level":"info","message":"configuration file loaded from conf\\config.yml","timestamp":"2017-05-16T01:11:40.274Z"}
+{"event":"INFO","level":"info","message":"library directory set to: C:\\Users\\ei08047\\Desktop\\ScriptedJam\\deepstream server\\lib","timestamp":"2017-05-16T01:11:40.274Z"}
+{"event":"INFO","level":"info","message":"messageConnector ready","timestamp":"2017-05-16T01:11:40.275Z"}
+{"event":"INFO","level":"info","message":"cache ready","timestamp":"2017-05-16T01:11:40.275Z"}
+{"event":"INFO","level":"info","message":"authenticationHandler ready: file using C:\\Users\\ei08047\\Desktop\\ScriptedJam\\deepstream server\\conf\\users.yml","timestamp":"2017-05-16T01:11:40.279Z"}
+{"event":"INFO","level":"info","message":"permissionHandler ready: valve permissions loaded from C:\\Users\\ei08047\\Desktop\\ScriptedJam\\deepstream server\\conf\\permissions.yml","timestamp":"2017-05-16T01:11:40.281Z"}
+{"event":"INFO","level":"info","message":"storage ready","timestamp":"2017-05-16T01:11:41.181Z"}
+{"event":"INFO","level":"info","message":"Listening for health checks on path /health-check","timestamp":"2017-05-16T01:11:41.183Z"}
+{"event":"CLUSTER_JOIN","level":"info","message":"j2qv4vcf-1j6pwq44dda88","timestamp":"2017-05-16T01:11:41.184Z"}
+{"event":"INFO","level":"info","message":"Listening for websocket connections on 0.0.0.0:6020/deepstream","timestamp":"2017-05-16T01:11:41.190Z"}
+{"event":"INFO","level":"info","message":"Deepstream started","timestamp":"2017-05-16T01:11:41.190Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:11:46.805Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:11:46.865Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:11:57.055Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:11:57.111Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:13:10.053Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:13:10.055Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:13:16.656Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:13:16.714Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:21:12.962Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:21:15.258Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:21:15.314Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:31:53.591Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:32:50.462Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:32:50.517Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:41:03.915Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:41:05.575Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:41:05.629Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:42:17.724Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:42:19.789Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:42:19.845Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:43:05.675Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:43:07.516Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:43:07.574Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:46:13.543Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:46:15.639Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:46:15.694Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:47:01.774Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:47:03.565Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:47:03.622Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:48:37.956Z"}
+{"event":"INCOMING_CONNECTION","level":"info","message":"from undefined (127.0.0.1)","timestamp":"2017-05-16T01:48:42.107Z"}
+{"event":"AUTH_SUCCESSFUL","level":"info","message":"alice","timestamp":"2017-05-16T01:48:42.164Z"}
+{"event":"CLIENT_DISCONNECTED","level":"info","message":"alice","timestamp":"2017-05-16T01:54:54.514Z"}

@@ -4,7 +4,15 @@
 import React, { Component } from 'react';
 import AddPlayground from "./AddPlayground";
 const deepstream = require('deepstream.io-client-js');
+
+
+
+
 class Room extends Component{
+
+
+
+
 
     /*A room has a creator ,
      * , can be private or public
@@ -16,7 +24,7 @@ class Room extends Component{
         this.state ={
             auth : props.auth,
             roomname : props.match.params.roomname,
-            roomowner : 'ze',
+            owner : 'ze',
             currrentPlayGrounds:[]
         }
         this.currentMembers=[];
@@ -35,7 +43,7 @@ class Room extends Component{
                 console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
                     console.log('connection on entering room: '+this.state.roomname);
-                    s.client.event.emit('rooms/'+this.state.roomname, 'event: rooms/'+this.state.roomname + this.state.auth.username + "is entering in room "+this.state.roomname + "owned by" + this.state.roomowner);
+                    s.client.event.emit('rooms/'+this.state.roomname, 'event: rooms/'+this.state.roomname + this.state.auth.username + "is entering in room "+this.state.roomname + "owned by" + this.state.owner);
                     s.client.event.emit('rooms/', 'event: rooms/' +" || "+ this.state.auth.username + " is entering in room "+this.state.roomname + "owned by" + this.state.roomowner);
                     s.client.event.subscribe('shared/rooms/'+this.state.roomname , data => {
                         // handle published data
@@ -75,15 +83,14 @@ class Room extends Component{
 
     render(){
         return (
-            <div>
-                <h1>welcome,{this.state.auth.username}</h1>
-                <h2>{this.state.roomname}</h2>
+            <div className="Room" >
+                <h1>{this.state.roomname}</h1>
                 <ul>{
                     this.currentMembers.map( (member) =>
                         <li>{member}</li>)
                 }</ul>
 
-                <AddPlayground roomname={this.state.roomname} auth={this.state.auth}/>
+                <AddPlayground  roomname={this.state.roomname} auth={this.state.auth}/>
                 <div className="Band">
 
                 </div>

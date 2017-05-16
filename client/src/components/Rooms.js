@@ -78,7 +78,7 @@ export class Rooms extends Component{
 
     componentDidMount() {
         this.getSharedRooms();
-        this.getUserRooms();
+        //this.getUserRooms();
     }
 
 
@@ -86,14 +86,6 @@ export class Rooms extends Component{
 
         return (
             <div>
-                <div className="RoomList" >
-                    <p>My Rooms</p>
-                    <ul>{
-                        this.state.rooms.map( (room) =>
-                            <li><Link className="RoomListElem" to={'/rooms/'+room}>{room}</Link></li>)
-                    }</ul>
-                </div>
-
                 <div className="RoomList">
                     <p>Shared Rooms</p>
                     <ul>{

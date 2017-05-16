@@ -62,21 +62,10 @@ export class AddPlayground extends Component{
          }
          });*/
     }
-
     render() {
         return (
             <div >
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        name="playground"
-                        onChange={this.handleChange}
-                        type="text"
-                        placeholder="name"
-                    />
-                    <input name="owner" type="hidden" value={this.state.auth}/>
-                    <input type="submit" value="Submit">
-                    </input>
-                </form>
+
                 <Form schema={schema} uiSchema={uiSchema}
                       onChange={log("changed")}
                       onSubmit={log("submitted")}
@@ -86,3 +75,21 @@ export class AddPlayground extends Component{
 }
 
 export default AddPlayground;
+
+
+
+/*
+*                 <form onSubmit={this.handleSubmit}>
+ <input
+ name="playground"
+ onChange={this.handleChange}
+ type="text"
+ placeholder="name"
+ />
+ <input name="owner" type="hidden" value={this.state.auth}/>
+ <input type="submit" value="Submit">
+ </input>
+ </form>
+*
+*
+* */

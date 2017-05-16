@@ -19,14 +19,18 @@ class Header extends Component{
                 <div className="Logout">
                     {this.props.auth.isLoggedIn ? <Logout handleAuth={this.props.handleAuth}/> : null}
                 </div>
-                <nav>
-                    <ul>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/rooms'>Rooms</Link></li>
-                        <li><Link to='/privatehome'>Private home</Link></li>
-                        <li><Link to='/users'>Users</Link></li>
-                    </ul>
-                </nav>
+                <div className="navigationContainer" >
+                    <nav>
+                        <ul>
+                            <li><Link to='/'>Home</Link></li>
+                            <li><Link to='/rooms'>Rooms</Link></li>
+                            <li><Link to='/privatehome'>Private home</Link></li>
+                            <li><Link to='/users'>Users</Link></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
             </div>
         );
     }
