@@ -1,0 +1,18 @@
+on cloning
+
+git clone ...
+cd ScriptedJam
+git config core.longpaths true
+git checkout -f HEAD
+
+________________________________
+
+on starting deepstream
+
+deeptream install storage mongodb
+deepstream start
+
+________________________________
+mlab 
+ei08047
+maradona10

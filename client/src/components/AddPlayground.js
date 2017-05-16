@@ -65,7 +65,6 @@ export class AddPlayground extends Component{
     render() {
         return (
             <div >
-
                 <Form schema={schema} uiSchema={uiSchema}
                       onChange={log("changed")}
                       onSubmit={log("submitted")}

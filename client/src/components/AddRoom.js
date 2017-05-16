@@ -44,13 +44,16 @@ export class AddRoom extends Component{
         console.log('A name was submitted: ' + {formData});
         const s = this.props.auth;
         if(s!=null)
-        {if(s.client != null){
+        {
+            if(s.client != null){
             if(s.client.getConnectionState()==='OPEN')
                 {
                 console.log('connection on addRoom');
                 const shared = s.client.record.getList('shared/rooms');
-                const roomRec = s.client.record.getRecord('shared/rooms' + formData.name);
+                let roomRec = s.client.record.getRecord('shared/rooms/' + formData.name);
                 roomRec.set('owner',this.state.auth.username);
+                console.log("setting owner with" + this.state.auth.username);
+                roomRec.set('users',[]);
                 shared.addEntry(formData.name);
                 }
                 else
