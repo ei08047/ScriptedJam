@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
+import Register from './Register';
 const deepstream = require('deepstream.io-client-js');
 /*
 *                 ReactDOM.render(
@@ -69,8 +70,11 @@ class Login extends Component{
                             value={this.state.password}
                         />
                         <input type="submit" value="Submit"></input>
+                        <Register/>
                     </form>
                 </div>
+
+
             );
     }
 }
