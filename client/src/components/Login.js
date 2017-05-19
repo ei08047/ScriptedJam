@@ -32,6 +32,11 @@ class Login extends Component{
         });
     }
     handleSubmit(event){
+        event.preventDefault();
+
+
+
+        /*
         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
             if(success) {
                 //DeepstreamMixin.setDeepstreamClient(client);
@@ -42,7 +47,9 @@ class Login extends Component{
                 this.props.handleAuth({username: null, client: null, loggedIn: false});
             }
         });
-        event.preventDefault();
+
+        */
+
     }
 
     render(){

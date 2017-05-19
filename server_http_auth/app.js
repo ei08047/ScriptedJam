@@ -4,8 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const DeepstreamServer = require('deepstream.io')
-const C = DeepstreamServer.constants
+const DeepstreamServer = require('deepstream.io');
+const C = DeepstreamServer.constants;
+
+var jwt = require('jsonwebtoken');
 
 
 const server = new DeepstreamServer({
@@ -15,29 +17,17 @@ const server = new DeepstreamServer({
         {
           type: 'http',
           options:{
-            endpointUrl:'http://localhost:3002/auth-user',
+            endpointUrl:'http://localhost:3002/check-token',
             permittedStatusCodes: [ 200 ],
             requestTimeout: 2000
             }
           },
 });
-
 server.start();
-
-
-
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
-
-
-
-
 var app = express();
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -54,6 +44,39 @@ app.use('/', index);
 app.use('/users', users);
 
 app.post('/auth-user', function(req, res) {
+    console.log("(SERVER)entered auth-user route");
+    res.header("Access-Control-Allow-Origin", "*");
+    var users = {
+        wolfram: {
+            username: 'wolfram',
+            password: 'password'
+        },
+        chris: {
+            username: 'chris',
+            password: 'password'
+        }
+    }
+
+    var user = users[req.body.username];
+
+    if (req.body.username === "chris") {
+        /*
+        res.json({
+            username: 'chris',
+            clientData: { themeColor: 'pink' },
+            serverData: { role: 'admin' }
+        })*/
+        var token = jwt.sign(user, 'abrakadabra');
+
+        res.cookie('access_token', token, {httpOnly: true}).status(301).redirect('http://localhost:3000/');
+
+
+    } else {
+        res.status(403).send('Invalid Credentials')
+    }
+})
+
+app.post('/check-token', function(req, res) {
     console.log("entered auth-user route");
     if (req.body.authData.username === "chris") {
         res.json({

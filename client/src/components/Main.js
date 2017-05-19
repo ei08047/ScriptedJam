@@ -2,7 +2,7 @@ const deepstream = require('deepstream.io-client-js');
 const DeepstreamMixin = require('deepstream.io-tools-react');
 import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Login from "./Login";
+import Login2 from "./Login2";
 import Home from "./Home";
 import Rooms from "./Rooms";
 import Room from "./Room";
@@ -85,7 +85,7 @@ class Main extends Component{
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <PropsRoute path='/login/' component={Login} handleAuth={this.props.handleAuth} auth={this.props.auth} />
+                <PropsRoute path='/login/' component={Login2} handleAuth={this.props.handleAuth} auth={this.props.auth} />
                 <PrivateRoute exact path="/rooms" component={Rooms} auth={this.props.auth} redirectTo="/login"/>
                 <PrivateRoute path="/rooms/:roomname" component={Room} auth={this.props.auth} redirectTo="/login" />
                 <PrivateRoute path="/privatehome/" component={PrivateHome} auth={this.props.auth} redirectTo="/login" />

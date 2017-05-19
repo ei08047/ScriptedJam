@@ -9,11 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 
-
-router.get('/auth-user', function(req, res) {
+/*
+router.get('/login', function(req, res) {
     const deepstream = require('deepstream.io-client-js')
     const client = deepstream('localhost:6020'); //Change port to 6020 for browsers
-    console.log("entered index route");
+    console.log("(APP)entered index route");
     client.login({
         username: 'chris',
         password: 'password' // NEEDS TO BE REAL
@@ -26,5 +26,7 @@ router.get('/auth-user', function(req, res) {
           res.status(400).send()
     })
 });
+*/
+
 
 module.exports = router;
