@@ -1,4 +1,7 @@
+
+
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -6,7 +9,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const DeepstreamServer = require('deepstream.io');
 const C = DeepstreamServer.constants;
-
 var jwt = require('jsonwebtoken');
 
 
@@ -28,24 +30,44 @@ server.start();
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
+app.use(cors());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use('/', index);
+//app.use('/users', users);
 
-app.use('/', index);
-app.use('/users', users);
+var whitelist = ['http://localhost:3000', 'http://localhost:3000/#/login'];
+var corsOptionsDelegate = function (req, callback) {
+    var corsOptions;
+    if (whitelist.indexOf(req.header('Origin')) !== -1) {
+        console.log("header::"+req.header('Origin'));
+        corsOptions = { origin: true ,credentials:true} // reflect (enable) the requested origin in the CORS response
+    }else{
+        corsOptions = { origin: false } // disable CORS for this request
+    }
+    callback(null, corsOptions) // callback expects two parameters: error and options
+}
 
-app.post('/auth-user', function(req, res) {
+app.options("/*", function(req, res, next){
+    console.log("GOT IT");
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header.set('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header.set('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    res.header.set('origin', 'http://localhost:3002');
+    res.send(200);
+});
+
+app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
     console.log("(SERVER)entered auth-user route");
-    res.header("Access-Control-Allow-Origin", "*");
     var users = {
         wolfram: {
             username: 'wolfram',
@@ -58,7 +80,7 @@ app.post('/auth-user', function(req, res) {
     }
 
     var user = users[req.body.username];
-
+    console.log("username::"+req.body.username);
     if (req.body.username === "chris") {
         /*
         res.json({
@@ -67,15 +89,15 @@ app.post('/auth-user', function(req, res) {
             serverData: { role: 'admin' }
         })*/
         var token = jwt.sign(user, 'abrakadabra');
-
-        res.cookie('access_token', token, {httpOnly: true}).status(301).redirect('http://localhost:3000/');
-
+        console.log("token::"+token); // ,
+        res.set('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
+        res.cookie('access_token', token,{httpOnly: true}).status(301);//.redirect('http://localhost:3000/#/rooms')
+        res.json({'hello':'world'});
 
     } else {
         res.status(403).send('Invalid Credentials')
     }
-})
-
+});
 app.post('/check-token', function(req, res) {
     console.log("entered auth-user route");
     if (req.body.authData.username === "chris") {

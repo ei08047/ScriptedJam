@@ -26,15 +26,32 @@ class Login2 extends Component{
     handleSubmit(event){
         event.preventDefault();
 
-        axios.post('http://localhost:3002/handle-login', {
-            firstName: 'Fred',
-            lastName: 'Flintstone'
-        })
+
+        const config = {
+            method: 'post',
+            url: 'http://localhost:3002/handle-login',
+            crossDomain: true,
+            credentials:true,
+            //headers: {'X-Requested-With': 'XMLHttpRequest'},
+            data: {
+                username: 'chris',
+                password: 'password'
+            },
+            responseType: 'json',
+            //xsrfCookieName: 'XSRF-TOKEN',
+            validateStatus: function (status) {
+                return status >= 200 && status < 302; // default
+            },
+
+        }
+
+        axios.request(config)
             .then(function (response) {
-                console.log(response);
+                console.log(response.status);
             })
             .catch(function (error) {
                 console.log(error);
+
             });
 
 

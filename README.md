@@ -8,4 +8,8 @@ https://github.com/mozilla-services/react-jsonschema-form
 
 https://deepstream.io/docs/client-js/datasync-list/
 
+https://github.com/expressjs/cors
+
+https://www.npmjs.com/package/axios
+
 flockingjs.org
