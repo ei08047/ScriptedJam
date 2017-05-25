@@ -3,25 +3,29 @@ import {Redirect} from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 
-
 const cookies = new Cookies();
 const deepstream = require('deepstream.io-client-js');
 
 class Login2 extends Component{
     constructor(props){
         super(props);
+        console.log('building login comp');
+        console.log(props);
         this.state = {
             username : "",
-            password : "password"
+            password : "password",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.setCookie = this.setCookie.bind(this);
     }
 
-    setCookie(cname, cvalue) {
-        cookies.set(cname, cvalue, { path: '/' });
-}
+    componentDidMount(){
+        const t = cookies.get('mount access_token');
+        if(t != null){
+            this.setState({cookie:t});
+        }
+    }
+
 
     handleChange(event){
         const target = event.target;
@@ -54,15 +58,29 @@ class Login2 extends Component{
 
         axios.request(config)
             .then(function (response) {
-                console.log(response.status);
-                console.log(response.data.access_token);
-                //if login sucessfull do deepstream login with token
-                // else refresh token
-                this.setCookie('access_token', 'asd');
+                if(response.status == '200')
+                {
+
+                    console.log("response to login request");
+                    if(typeof response.data.access_token !== "undefined")
+                    {
+                        console.log(response.data.access_token);
+                        cookies.set('access_token',response.data.access_token,[]);
+                        this.props.handleAuth({username: this.state.username, token: response.data.access_token, loggedIn: true});
+                    }
+                } else
+                {
+                    this.props.handleAuth({username: null, token: null, loggedIn: false});
+                    console.log("login failed");
+                }
+
+                //this.props.handleAuth({username: this.state.username, client: client, loggedIn: true});
+                //var cookie = [name, '=', JSON.stringify(response.cookie), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+                //document.cookie = cookie;
+
             })
             .catch(function (error) {
                 console.log(error);
-
             });
 
 

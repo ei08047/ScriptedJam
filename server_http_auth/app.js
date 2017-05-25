@@ -79,7 +79,6 @@ app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
             password: 'password'
         }
     }
-
     var user = users[req.body.username];
     console.log("username::"+req.body.username);
     if (req.body.username === "chris") {
@@ -102,13 +101,19 @@ app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
 });
 
 app.post('/check-token', function(req, res) {
-    console.log("entered check-token route");
-    //console.log(req);
-    res.json({
-        username: 'chris',
-        clientData: { themeColor: 'pink' },
-        serverData: { role: 'admin' }
+
+    var token = getCookie(req.body.connectionData.headers.cookie, 'access_token');
+    jwt.verify(token, 'abrakadabra', function(err, decoded) {
+        if (err) {
+            res.status(403).send('Failed to authenticate token.' );
+        } else {
+            // if everything is good, save to request for use in other routes
+            res.status(200).json({
+                username: decoded.username
+            });
+        }
     });
+
     /*
     if (req.body.authData.username === "chris") {
         res.json({

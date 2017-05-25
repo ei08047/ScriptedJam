@@ -18,7 +18,7 @@ class Login extends Component{
         this.state = {
             username : "",
             password : "password"
-        }
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -34,19 +34,19 @@ class Login extends Component{
     handleSubmit(event){
         event.preventDefault();
 
-        /*
-        const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
+
+        const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
             if(success) {
                 //DeepstreamMixin.setDeepstreamClient(client);
-                this.props.handleAuth({username: this.state.username, client: client, loggedIn: true});
+                this.props.handleAuth({username: this.state.username, token: token, loggedIn: true});
             }
             else {
                 alert("login failed");
-                this.props.handleAuth({username: null, client: null, loggedIn: false});
+                this.props.handleAuth({username: null, token: null, loggedIn: false});
             }
         });
 
-        */
+
 
     }
 

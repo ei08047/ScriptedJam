@@ -9,6 +9,9 @@ import Room from "./Room";
 import Users from "./Users";
 import PrivateHome from "./PrivateHome";
 
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 const renderMergedProps = (component, ...rest) => {
     const finalProps = Object.assign({}, ...rest);
     return (
@@ -43,34 +46,35 @@ class Main extends Component{
         this.getCookie = this.getCookie.bind(this);
     }
 
-    getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
+
+    getCookie(){
+        const t= cookies.get('access_token');
+        this.setState({auth:{token:t}});
     }
-    return "";
-}
+
 
 
     componentDidMount(){
-
-
-
-
-
         if(this.props.auth!=null)
         {
             const s = this.props.auth;
             console.log("main: " + s.username + " : " + s.isLoggedIn  );
 
+            if(s.token != null)
+            {
+                console.log("here sir :" +s.token);
+                const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
+                    if(success) {
+                        //DeepstreamMixin.setDeepstreamClient(client);
+                        console.log('suc');
+                        this.props.handleAuth({username: this.state.username, token: this.state.token, loggedIn: true});
+                    }
+                    else {
+                        alert("login failed");
+                        this.props.handleAuth({username: null, token: null, loggedIn: false});
+                    }
+                });
+            }
             if(s.client != null)
             {
                 console.log('connection in main');
@@ -98,14 +102,25 @@ class Main extends Component{
 
                     */
                 } else{console.log("conection not open");}
-            }else{console.log('client not set');}
+            }else{
+                console.log('client not set');
+                if(this.props.auth.token != null)
+                {
+                    s.client = deepstream.login({access_token: this.props.auth.token}, (sucess) =>{
+                        console.log("Hello you "+s.client.username);
+                    });
+                    console.log('fin set cli');
+                }
+            }
         }
-        else{console.log("auth not set");}
-    }
-    render(){
+        else{
+            console.log("auth not set");
 
+        }
+    }
+
+    render(){
     console.log( 'getting cookie on main render');
-    console.log(this.getCookie('access_token'));
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
