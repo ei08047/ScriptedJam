@@ -15,7 +15,6 @@ const renderMergedProps = (component, ...rest) => {
         React.createElement(component, finalProps)
     );
 }
-
 const PropsRoute = ({ component, ...rest }) => {
     return (
         <Route {...rest} render={routeProps => {
@@ -41,8 +40,31 @@ const PrivateRoute = ({ component, redirectTo, ...rest }) => {
 class Main extends Component{
     constructor(props){
         super(props);
+        this.getCookie = this.getCookie.bind(this);
     }
+
+    getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
     componentDidMount(){
+
+
+
+
 
         if(this.props.auth!=null)
         {
@@ -76,12 +98,14 @@ class Main extends Component{
 
                     */
                 } else{console.log("conection not open");}
-            }else{console.log('client no set');}
+            }else{console.log('client not set');}
         }
         else{console.log("auth not set");}
     }
     render(){
 
+    console.log( 'getting cookie on main render');
+    console.log(this.getCookie('access_token'));
         return (
             <Switch>
                 <Route exact path="/" component={Home} />

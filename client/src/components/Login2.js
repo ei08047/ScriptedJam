@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
+import Cookies from 'universal-cookie';
 import axios from 'axios';
 
 
+const cookies = new Cookies();
+const deepstream = require('deepstream.io-client-js');
 
 class Login2 extends Component{
     constructor(props){
@@ -10,10 +13,15 @@ class Login2 extends Component{
         this.state = {
             username : "",
             password : "password"
-        }
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.setCookie = this.setCookie.bind(this);
     }
+
+    setCookie(cname, cvalue) {
+        cookies.set(cname, cvalue, { path: '/' });
+}
 
     handleChange(event){
         const target = event.target;
@@ -25,7 +33,6 @@ class Login2 extends Component{
     }
     handleSubmit(event){
         event.preventDefault();
-
 
         const config = {
             method: 'post',
@@ -43,11 +50,15 @@ class Login2 extends Component{
                 return status >= 200 && status < 302; // default
             },
 
-        }
+        };
 
         axios.request(config)
             .then(function (response) {
                 console.log(response.status);
+                console.log(response.data.access_token);
+                //if login sucessfull do deepstream login with token
+                // else refresh token
+                this.setCookie('access_token', 'asd');
             })
             .catch(function (error) {
                 console.log(error);
@@ -95,7 +106,7 @@ class Login2 extends Component{
                             placeholder="password"
                             value={this.state.password}
                         />
-                        <input type="submit" value="Submit"></input>
+                        <input type="submit" value="Login"></input>
                     </form>
                 </div>
 

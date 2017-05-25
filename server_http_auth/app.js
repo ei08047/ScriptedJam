@@ -68,6 +68,7 @@ app.options("/*", function(req, res, next){
 
 app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
     console.log("(SERVER)entered auth-user route");
+    //TODO: get users from file
     var users = {
         wolfram: {
             username: 'wolfram',
@@ -91,15 +92,24 @@ app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
         var token = jwt.sign(user, 'abrakadabra');
         console.log("token::"+token); // ,
         res.set('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
-        res.cookie('access_token', token,{httpOnly: true}).status(301);//.redirect('http://localhost:3000/#/rooms')
-        res.json({'hello':'world'});
+        //res.json({'hello':'world'});
+        res.json({'access_token':token});
+        //res.cookie('access_token', token,{httpOnly: false}).status(301);//.redirect('http://localhost:3000/#/rooms')
 
     } else {
         res.status(403).send('Invalid Credentials')
     }
 });
+
 app.post('/check-token', function(req, res) {
-    console.log("entered auth-user route");
+    console.log("entered check-token route");
+    //console.log(req);
+    res.json({
+        username: 'chris',
+        clientData: { themeColor: 'pink' },
+        serverData: { role: 'admin' }
+    });
+    /*
     if (req.body.authData.username === "chris") {
         res.json({
             username: 'chris',
@@ -109,7 +119,15 @@ app.post('/check-token', function(req, res) {
     } else {
         res.status(403).send('Invalid Credentials')
     }
+    */
 })
+
+app.post('/handle-register', function(req,res){
+    // TODO:
+    //generate hash with deepstream
+    // save user and password to file
+})
+
 
 
 // catch 404 and forward to error handler

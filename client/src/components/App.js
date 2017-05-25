@@ -15,6 +15,7 @@ class App extends Component {
     handleAuth(result){
         alert('handleAuth');
         this.setState({auth: {username: result.username, isLoggedIn: result.loggedIn, client: result.client}}, (success) => {
+            //TODO: save token!
             console.log("deepstream login "+ this.state.auth.username + " " + this.state.auth.isLoggedIn);
         });
 
