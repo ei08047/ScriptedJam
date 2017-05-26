@@ -17,6 +17,7 @@ class App extends Component {
         console.log('handleAuth in app');
         const t = cookies.get('access_token');
         console.log(t);
+        this.setState({auth:{isLoggedIn:true} });
         this.setState({auth:{token:t} });
 
         const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {

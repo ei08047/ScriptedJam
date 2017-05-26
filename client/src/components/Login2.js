@@ -13,19 +13,24 @@ class Login2 extends Component{
         console.log(props);
         this.state = {
             username : "",
-            password : "password",
+            password : "password"
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.printState = this.printState.bind(this);
+    }
+
+    printState(){
+        console.log("state");
+        console.log(this.state);
     }
 
     componentDidMount(){
-        const t = cookies.get('mount access_token');
+        const t = cookies.get('access_token');
         if(t != null){
             this.setState({cookie:t});
         }
     }
-
 
     handleChange(event){
         const target = event.target;
@@ -60,17 +65,19 @@ class Login2 extends Component{
             .then(function (response) {
                 if(response.status == '200')
                 {
-
                     console.log("response to login request");
                     if(typeof response.data.access_token !== "undefined")
                     {
-                        console.log(response.data.access_token);
+                        console.log("token about to be set on cookies:: "+response.data.access_token);
                         cookies.set('access_token',response.data.access_token,[]);
-                        this.props.handleAuth({username: this.state.username, token: response.data.access_token, loggedIn: true});
+                        //this.props.handleAuth({username: this.state.username, token: response.data.access_token, loggedIn: true});
+                        //console.log("token about to be set on login State:: "+response.data.access_token);
+                        //this.setState({token:cookies.get('access_token')});
                     }
-                } else
+                }
+                else
                 {
-                    this.props.handleAuth({username: null, token: null, loggedIn: false});
+                    //this.props.handleAuth({username: null, token: null, loggedIn: false});
                     console.log("login failed");
                 }
 
@@ -101,6 +108,9 @@ class Login2 extends Component{
     }
 
     render(){
+
+        this.printState();
+
         if(this.props.auth.isLoggedIn) //redirect away!!!
             return <Redirect to={{
                 pathname: "/",

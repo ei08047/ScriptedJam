@@ -78,7 +78,7 @@ app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
             username: 'chris',
             password: 'password'
         }
-    }
+    };
     var user = users[req.body.username];
     console.log("username::"+req.body.username);
     if (req.body.username === "chris") {
