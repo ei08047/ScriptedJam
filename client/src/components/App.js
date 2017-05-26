@@ -9,21 +9,21 @@ const cookies = new Cookies();
 class App extends Component {
     constructor(props){
         super(props);
-        this.state={auth: {isLoggedIn:false, username:null, client:null}};
+        this.state={auth: {isLoggedIn:false, username:null, token:null}};
         this.handleAuth = this.handleAuth.bind(this);
     }
 
-    handleAuth(){
+    handleAuth(res){
         console.log('handleAuth in app');
-        const t = cookies.get('access_token');
-        console.log(t);
-        this.setState({auth:{isLoggedIn:true} });
-        this.setState({auth:{token:t} });
+        console.log(res);
+        this.setState({auth:{username:res.username ,isLoggedIn:res.loggedIn,token:res.token }});
+        console.log('state handleAuth');
+        console.log(this.state.auth.isLoggedIn + '     '+this.state.auth.username + '   ' +this.state.auth.token);
 
         const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
             if(success) {
                 //DeepstreamMixin.setDeepstreamClient(client);
-                //this.props.handleAuth({username: this.state.username, token: token, loggedIn: true});
+                //console.log(client);
                 console.log('huge!!');
             }
             else {
@@ -31,21 +31,17 @@ class App extends Component {
                 //this.props.handleAuth({username: null, token: null, loggedIn: false});
             }
         });
-
-        /*
-        this.setState({auth: {username: result.username, isLoggedIn: result.loggedIn, token: result.token}}, (success) => {
-            //TODO: save token!
-           // console.log("deepstream login "+ this.state.auth.username + " " + this.state.auth.isLoggedIn);
-        });
-        */
-
     }
 
     componentDidMount(){
-        this.handleAuth();
+        console.log('mounting component App');
+        //this.handleAuth();
     }
 
   render() {
+      console.log('check if state is updated');
+      console.log(this.state.auth.isLoggedIn + '     '+this.state.auth.username + '   ' +this.state.auth.token);
+
     return (
         <div className="App">
             <Header handleAuth={this.handleAuth} auth={this.state.auth} />

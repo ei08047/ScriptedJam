@@ -11,6 +11,11 @@ const DeepstreamServer = require('deepstream.io');
 const C = DeepstreamServer.constants;
 var jwt = require('jsonwebtoken');
 
+function getCookie( src, name ) {
+    var value = "; " + src;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+}
 
 const server = new DeepstreamServer({
     host: 'localhost',
@@ -107,7 +112,6 @@ app.post('/check-token', function(req, res) {
         if (err) {
             res.status(403).send('Failed to authenticate token.' );
         } else {
-            // if everything is good, save to request for use in other routes
             res.status(200).json({
                 username: decoded.username
             });

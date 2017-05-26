@@ -55,6 +55,7 @@ class Main extends Component{
 
 
     componentDidMount(){
+
         if(this.props.auth!=null)
         {
             const s = this.props.auth;
@@ -67,7 +68,7 @@ class Main extends Component{
                     if(success) {
                         //DeepstreamMixin.setDeepstreamClient(client);
                         console.log('suc');
-                        this.props.handleAuth({username: this.state.username, token: this.state.token, loggedIn: true});
+                        this.props.handleAuth({ola:'mundo'}); //{username: this.state.username, token: this.state.token, loggedIn: true}
                     }
                     else {
                         alert("login failed");

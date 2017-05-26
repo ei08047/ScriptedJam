@@ -26,10 +26,7 @@ class Login2 extends Component{
     }
 
     componentDidMount(){
-        const t = cookies.get('access_token');
-        if(t != null){
-            this.setState({cookie:t});
-        }
+        console.log('mounting componet login');
     }
 
     handleChange(event){
@@ -66,11 +63,13 @@ class Login2 extends Component{
                 if(response.status == '200')
                 {
                     console.log("response to login request");
-                    if(typeof response.data.access_token !== "undefined")
+                    console.log("showing data");
+                    console.log(response.data);
+
+                    if(typeof(response.data.access_token) !== "undefined")
                     {
                         console.log("token about to be set on cookies:: "+response.data.access_token);
-                        cookies.set('access_token',response.data.access_token,[]);
-                        //this.props.handleAuth({username: this.state.username, token: response.data.access_token, loggedIn: true});
+                        cookies.set('access_token',response.data.access_token);
                         //console.log("token about to be set on login State:: "+response.data.access_token);
                         //this.setState({token:cookies.get('access_token')});
                     }
@@ -90,6 +89,7 @@ class Login2 extends Component{
                 console.log(error);
             });
 
+        this.props.handleAuth({username: this.state.username, token:cookies.get('access_token'), loggedIn: true});
 
         /*
          const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
