@@ -15,9 +15,6 @@ export class Rooms extends Component{
         this.state={auth : props.auth ,scripts:[]};
         this.scripts=[];
     }
-
-
-
     getUserScripts(){
         const s= this.state.auth;
         if(s!=null) {
@@ -41,6 +38,7 @@ export class Rooms extends Component{
     }
 
     componentDidMount() {
+        console.log('mount component Script');
         this.getUserScripts();
     }
 

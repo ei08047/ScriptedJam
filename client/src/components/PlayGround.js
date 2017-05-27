@@ -28,8 +28,6 @@ const schema_playground_readOnly = {
 
 class PlayGround extends Component{
 
-
-
     constructor(props) {
         super(props);
         this.state = {

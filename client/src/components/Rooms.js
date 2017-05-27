@@ -77,6 +77,7 @@ export class Rooms extends Component{
 
 
     componentDidMount() {
+        console.log('mount componetn room');
         this.getSharedRooms();
         //this.getUserRooms();
     }

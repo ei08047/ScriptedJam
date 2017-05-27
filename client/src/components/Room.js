@@ -117,6 +117,7 @@ class Room extends Component{
          console.log("username"+this.props.auth.username);
         this.currentMembers.push(this.state.auth.username);
         */
+        console.log('component Room mounted');
     }
 
     //TODO: remove user to room members

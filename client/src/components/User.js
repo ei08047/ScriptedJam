@@ -1,15 +1,4 @@
-/**
- * Created by ei08047 on 16/05/2017.
- */
 
-
-/**
- * Created by ei08047 on 11/05/2017.
- */
-
-/**
- * Created by ei08047 on 27/04/2017.
- */
 import React, { Component } from 'react';
 const deepstream = require('deepstream.io-client-js');
 const DeepstreamMixin = require('deepstream.io-tools-react');
@@ -39,6 +28,7 @@ export class User extends Component{
 
 
     componentDidMount() {
+        console.log('component User mounted');
     }
 
 

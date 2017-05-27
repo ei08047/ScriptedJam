@@ -20,8 +20,6 @@ export class Users extends Component{
         this.userList=[];
         this.recordName ='';
     }
-
-
     getActiveUsers(){
         const s= this.state.auth;
         if(s!=null) {
@@ -54,8 +52,8 @@ export class Users extends Component{
         }
     }
 
-
     componentDidMount() {
+        console.log('mounting Users')
         this.getActiveUsers();
     }
 

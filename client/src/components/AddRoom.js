@@ -26,7 +26,6 @@ export class AddRoom extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.validate = this.validate.bind(this);
         //this.handleChange = this.handleChange.bind(this);
-
     }
 
     handleChange(event) {
@@ -38,13 +37,12 @@ export class AddRoom extends Component{
             [name]: value
         });
     }
-
     //save record and set owner
     handleSubmit({formData}){
         console.log('A name was submitted: ' + {formData});
         const s = this.props.auth;
         if(s!=null)
-        {
+        { //console.log()
             if(s.client != null){
             if(s.client.getConnectionState()==='OPEN')
                 {

@@ -21,14 +21,50 @@
       <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
+            <state relative-caret-position="153">
+              <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
-                <element signature="e#117#158#0" expanded="true" />
                 <element signature="e#524#649#0" expanded="false" />
                 <element signature="e#697#849#0" expanded="false" />
+                <element signature="e#720#840#0" expanded="false" />
+                <element signature="e#759#837#0" expanded="false" />
                 <element signature="e#911#1288#0" expanded="false" />
+                <element signature="e#934#1279#0" expanded="false" />
+                <element signature="e#973#1276#0" expanded="false" />
+                <element signature="e#1116#1251#0" expanded="false" />
+                <element signature="e#1130#1248#0" expanded="false" />
+                <element signature="n#Main#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+                <element signature="n#!!block;n#getCookie#0;n#Main#0" expanded="false" />
                 <element signature="n#!!block;n#componentDidMount#0;n#Main#0" expanded="false" />
+                <element signature="e#1608#4110#0" expanded="false" />
+                <element signature="e#1767#2460#0" expanded="false" />
+                <element signature="e#1926#2444#0" expanded="false" />
+                <element signature="e#1960#2235#0" expanded="false" />
+                <element signature="e#2261#2426#0" expanded="false" />
+                <element signature="e#2506#3707#0" expanded="false" />
+                <element signature="e#2694#3652#0" expanded="false" />
+                <element signature="e#2771#2854#0" expanded="false" />
+                <element signature="e#2877#3634#0" expanded="false" />
+                <element signature="e#3711#4100#0" expanded="false" />
+                <element signature="e#3826#4086#0" expanded="false" />
+                <element signature="e#3926#4018#0" expanded="false" />
+                <element signature="e#4123#4176#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Main#0" expanded="false" />
+                <element signature="e#4278#4949#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddRoom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/AddRoom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+              <folding>
+                <element signature="n#!!block;n#handleChange#0;n#AddRoom#0" expanded="false" />
+                <element signature="n#!!block;n#validate#0;n#AddRoom#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,28 +82,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rooms.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
+      <file leaf-file-name="PrivateHome.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PrivateHome.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Login2.js">
+      <file leaf-file-name="Rooms.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="91" column="105" lean-forward="false" selection-start-line="91" selection-start-column="97" selection-end-line="91" selection-end-column="105" />
+            <state relative-caret-position="323">
+              <caret line="79" column="41" lean-forward="false" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <element signature="n#!!block;n#handleChange#0;n#Login2#0" expanded="false" />
-                <element signature="e#1112#1644#0" expanded="false" />
-                <element signature="e#2484#2645#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#getSharedRooms#0;n#Rooms#0" expanded="false" />
+                <element signature="n#!!block;n#getUserRooms#0;n#Rooms#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,69 +111,70 @@
       <file leaf-file-name="PlayGround.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PlayGround.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#handlePause#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#handleChange#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#handleSubmit#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#componentDidMount#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#componentWillUnmount#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#PlayGround#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/App.test.js">
+      <file leaf-file-name="Room.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="119" column="46" lean-forward="false" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+              <folding>
+                <element signature="n#!!block;n#componentWillUnmount#0;n#Room#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Login.js">
+      <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/User.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="203">
+              <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+              <folding>
+                <element signature="e#232#395#0" expanded="false" />
+                <element signature="e#414#450#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#User#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#User#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Users.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#45#86#0" expanded="true" />
-                <element signature="n#!!block;n#handleChange#0;n#Login#0" expanded="false" />
+                <element signature="n#!!block;n#getActiveUsers#0;n#Users#0" expanded="false" />
+                <element signature="n#!!block;n#componentDidMount#0;n#Users#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Users#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Home.js">
+      <file leaf-file-name="Test.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+            <state relative-caret-position="325">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -214,17 +250,10 @@
         <option value="$PROJECT_DIR$/src/components/Dialog.js" />
         <option value="$PROJECT_DIR$/src/components/Logout.js" />
         <option value="$PROJECT_DIR$/src/components/DynForm.js" />
-        <option value="$PROJECT_DIR$/src/components/PlayGround.js" />
-        <option value="$PROJECT_DIR$/src/components/Script.js" />
         <option value="$PROJECT_DIR$/src/components/PrivateHome.js" />
-        <option value="$PROJECT_DIR$/src/components/Users.js" />
-        <option value="$PROJECT_DIR$/src/components/User.js" />
-        <option value="$PROJECT_DIR$/src/components/Rooms.js" />
         <option value="$PROJECT_DIR$/src/components/App.css" />
-        <option value="$PROJECT_DIR$/src/components/AddRoom.js" />
         <option value="$PROJECT_DIR$/src/components/AddPlayground.js" />
         <option value="$PROJECT_DIR$/src/components/Test.js" />
-        <option value="$PROJECT_DIR$/src/components/Room.js" />
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/postcss.config.js" />
         <option value="$PROJECT_DIR$/src/components/Register.js" />
@@ -234,6 +263,13 @@
         <option value="$PROJECT_DIR$/src/components/Main.js" />
         <option value="$PROJECT_DIR$/src/components/Login2.js" />
         <option value="$PROJECT_DIR$/src/components/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Users.js" />
+        <option value="$PROJECT_DIR$/src/components/User.js" />
+        <option value="$PROJECT_DIR$/src/components/Script.js" />
+        <option value="$PROJECT_DIR$/src/components/Rooms.js" />
+        <option value="$PROJECT_DIR$/src/components/Room.js" />
+        <option value="$PROJECT_DIR$/src/components/PlayGround.js" />
+        <option value="$PROJECT_DIR$/src/components/AddRoom.js" />
       </list>
     </option>
   </component>
@@ -273,8 +309,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,7 +365,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="javascript.nodejs.core.library.configured.version" value="6.10.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server_http_auth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -475,11 +511,12 @@
       <workItem from="1495712405390" duration="19063000" />
       <workItem from="1495794224325" duration="3391000" />
       <workItem from="1495805112483" duration="7102000" />
+      <workItem from="1495843688937" duration="2931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="309839000" />
+    <option name="totallyTimeSpent" value="312770000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -491,18 +528,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1444" height="876" extended-state="1" />
+    <frame x="-8" y="-8" width="1444" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15546219" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36553526" sideWeight="0.5168067" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36553526" sideWeight="0.51960784" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36553526" sideWeight="0.48039216" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36553526" sideWeight="0.48319328" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -550,41 +587,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -626,11 +628,34 @@
         <state relative-caret-position="1360">
           <caret line="87" column="50" lean-forward="false" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
           <folding>
-            <element signature="e#117#158#0" expanded="true" />
             <element signature="e#524#649#0" expanded="false" />
             <element signature="e#697#849#0" expanded="false" />
+            <element signature="e#720#840#0" expanded="false" />
+            <element signature="e#759#837#0" expanded="false" />
             <element signature="e#911#1288#0" expanded="false" />
+            <element signature="e#934#1279#0" expanded="false" />
+            <element signature="e#973#1276#0" expanded="false" />
+            <element signature="e#1116#1251#0" expanded="false" />
+            <element signature="e#1130#1248#0" expanded="false" />
+            <element signature="n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0;n#Main#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#Main#0" expanded="false" />
+            <element signature="e#1608#4110#0" expanded="false" />
+            <element signature="e#1767#2460#0" expanded="false" />
+            <element signature="e#1926#2444#0" expanded="false" />
+            <element signature="e#1960#2235#0" expanded="false" />
+            <element signature="e#2261#2426#0" expanded="false" />
+            <element signature="e#2506#3707#0" expanded="false" />
+            <element signature="e#2694#3652#0" expanded="false" />
+            <element signature="e#2771#2854#0" expanded="false" />
+            <element signature="e#2877#3634#0" expanded="false" />
+            <element signature="e#3711#4100#0" expanded="false" />
+            <element signature="e#3826#4086#0" expanded="false" />
+            <element signature="e#3926#4018#0" expanded="false" />
+            <element signature="e#4123#4176#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Main#0" expanded="false" />
+            <element signature="e#4278#4949#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,11 +747,34 @@
         <state relative-caret-position="799">
           <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding>
-            <element signature="e#117#158#0" expanded="true" />
             <element signature="e#524#649#0" expanded="false" />
             <element signature="e#697#849#0" expanded="false" />
+            <element signature="e#720#840#0" expanded="false" />
+            <element signature="e#759#837#0" expanded="false" />
             <element signature="e#911#1288#0" expanded="false" />
+            <element signature="e#934#1279#0" expanded="false" />
+            <element signature="e#973#1276#0" expanded="false" />
+            <element signature="e#1116#1251#0" expanded="false" />
+            <element signature="e#1130#1248#0" expanded="false" />
+            <element signature="n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0;n#Main#0" expanded="false" />
             <element signature="n#!!block;n#componentDidMount#0;n#Main#0" expanded="false" />
+            <element signature="e#1608#4110#0" expanded="false" />
+            <element signature="e#1767#2460#0" expanded="false" />
+            <element signature="e#1926#2444#0" expanded="false" />
+            <element signature="e#1960#2235#0" expanded="false" />
+            <element signature="e#2261#2426#0" expanded="false" />
+            <element signature="e#2506#3707#0" expanded="false" />
+            <element signature="e#2694#3652#0" expanded="false" />
+            <element signature="e#2771#2854#0" expanded="false" />
+            <element signature="e#2877#3634#0" expanded="false" />
+            <element signature="e#3711#4100#0" expanded="false" />
+            <element signature="e#3826#4086#0" expanded="false" />
+            <element signature="e#3926#4018#0" expanded="false" />
+            <element signature="e#4123#4176#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Main#0" expanded="false" />
+            <element signature="e#4278#4949#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,27 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Room.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="154" column="16" lean-forward="false" selection-start-line="154" selection-start-column="16" selection-end-line="154" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="34" column="63" lean-forward="false" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddRoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/webpack.config.js" />
     <entry file="file://$PROJECT_DIR$/src/postcss.config.js" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -874,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -886,41 +911,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding>
-            <element signature="n#Register#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PlayGround.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,31 +933,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
-          <folding>
-            <element signature="e#117#158#0" expanded="true" />
-            <element signature="e#524#649#0" expanded="false" />
-            <element signature="e#697#849#0" expanded="false" />
-            <element signature="e#911#1288#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Login2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="1105">
           <caret line="91" column="105" lean-forward="false" selection-start-line="91" selection-start-column="97" selection-end-line="91" selection-end-column="105" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -975,10 +956,163 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="155">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="40" column="46" lean-forward="false" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#Rooms#0" expanded="false" />
+            <element signature="n#!!block;n#getUserScripts#0;n#Rooms#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="79" column="41" lean-forward="false" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#getSharedRooms#0;n#Rooms#0" expanded="false" />
+            <element signature="n#!!block;n#getUserRooms#0;n#Rooms#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Room.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="119" column="46" lean-forward="false" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!block;n#componentWillUnmount#0;n#Room#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="n#Register#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PrivateHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlayGround.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#constructor#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#handlePause#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#handleChange#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#handleSubmit#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillUnmount#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#PlayGround#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+          <folding>
+            <element signature="e#232#395#0" expanded="false" />
+            <element signature="e#414#450#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#User#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#User#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#getActiveUsers#0;n#Users#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Users#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Users#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding>
+            <element signature="e#524#649#0" expanded="false" />
+            <element signature="e#697#849#0" expanded="false" />
+            <element signature="e#720#840#0" expanded="false" />
+            <element signature="e#759#837#0" expanded="false" />
+            <element signature="e#911#1288#0" expanded="false" />
+            <element signature="e#934#1279#0" expanded="false" />
+            <element signature="e#973#1276#0" expanded="false" />
+            <element signature="e#1116#1251#0" expanded="false" />
+            <element signature="e#1130#1248#0" expanded="false" />
+            <element signature="n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0;n#Main#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Main#0" expanded="false" />
+            <element signature="e#1608#4110#0" expanded="false" />
+            <element signature="e#1767#2460#0" expanded="false" />
+            <element signature="e#1926#2444#0" expanded="false" />
+            <element signature="e#1960#2235#0" expanded="false" />
+            <element signature="e#2261#2426#0" expanded="false" />
+            <element signature="e#2506#3707#0" expanded="false" />
+            <element signature="e#2694#3652#0" expanded="false" />
+            <element signature="e#2771#2854#0" expanded="false" />
+            <element signature="e#2877#3634#0" expanded="false" />
+            <element signature="e#3711#4100#0" expanded="false" />
+            <element signature="e#3826#4086#0" expanded="false" />
+            <element signature="e#3926#4018#0" expanded="false" />
+            <element signature="e#4123#4176#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Main#0" expanded="false" />
+            <element signature="e#4278#4949#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddRoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
+          <folding>
+            <element signature="n#!!block;n#handleChange#0;n#AddRoom#0" expanded="false" />
+            <element signature="n#!!block;n#validate#0;n#AddRoom#0" expanded="false" />
           </folding>
         </state>
       </provider>
