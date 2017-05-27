@@ -27,6 +27,9 @@ class Header extends Component{
                             <li><Link to='/rooms'>Rooms</Link></li>
                             <li><Link to='/privatehome'>Private home</Link></li>
                             <li><Link to='/users'>Users</Link></li>
+                            <li> <Link to='/login'>Login</Link> </li>
+                            <li> <Link to='/register'>Register</Link> </li>
+
                         </ul>
                     </nav>
 

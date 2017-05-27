@@ -93,8 +93,6 @@ class Room extends Component{
                             this.setState({users:curr});
                         }
                     })
-
-
                 }
                 else
                 {
@@ -105,6 +103,7 @@ class Room extends Component{
     }
 
     componentDidMount(){
+
         console.log('fetching data');
         this.getRoomData();
         console.log('entered room');

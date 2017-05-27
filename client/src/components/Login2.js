@@ -17,17 +17,8 @@ class Login2 extends Component{
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.printState = this.printState.bind(this);
     }
 
-    printState(){
-        console.log("state");
-        console.log(this.state);
-    }
-
-    componentDidMount(){
-        console.log('mounting componet login');
-    }
 
     handleChange(event){
         const target = event.target;
@@ -90,27 +81,9 @@ class Login2 extends Component{
             });
 
         this.props.handleAuth({username: this.state.username, token:cookies.get('access_token'), loggedIn: true});
-
-        /*
-         const client = deepstream('localhost:6020').login({username:this.state.username,password:this.state.password}, (success) => {
-         if(success) {
-         //DeepstreamMixin.setDeepstreamClient(client);
-         this.props.handleAuth({username: this.state.username, client: client, loggedIn: true});
-         }
-         else {
-         alert("login failed");
-         this.props.handleAuth({username: null, client: null, loggedIn: false});
-         }
-         });
-
-         */
-
     }
 
     render(){
-
-        this.printState();
-
         if(this.props.auth.isLoggedIn) //redirect away!!!
             return <Redirect to={{
                 pathname: "/",
@@ -137,8 +110,6 @@ class Login2 extends Component{
                         <input type="submit" value="Login"></input>
                     </form>
                 </div>
-
-
             );
     }
 }

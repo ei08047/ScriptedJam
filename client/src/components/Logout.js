@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
 
 class Logout extends Component{
     constructor(props){
@@ -6,7 +9,8 @@ class Logout extends Component{
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
     handleLogoutClick(event) {
-        this.props.handleAuth({username: null, client: null, loggedIn: false});
+        this.props.handleAuth({username: null, client: null, loggedIn: false, token:null});
+        cookies.remove('access_token');
     }
     render(){
         return (

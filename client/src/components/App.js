@@ -9,9 +9,33 @@ const cookies = new Cookies();
 class App extends Component {
     constructor(props){
         super(props);
-        this.state={auth: {isLoggedIn:false, username:null, token:null}};
+        this.getCookie = this.getCookie.bind(this);
         this.handleAuth = this.handleAuth.bind(this);
+        this.state={auth: {isLoggedIn:false, username:null, token:null}};
     }
+
+    componentWillMount(){
+        const t = this.getCookie();
+        if(t != null)
+        {
+            console.log("here sir :");
+            const client = deepstream('localhost:6020')
+                .login({token:t}, (success, clientData ) => {
+                    if(success) {
+                        console.log(client);
+                        console.log(clientData );
+                        this.setState({auth: {isLoggedIn:true, username:clientData.username, token:t, client:client}});
+                    }
+                    else {
+                        console.log("APP const login failed");
+                    }
+                })
+                .on( 'error', ( error ) => {
+                    console.error(error);
+                });
+        }
+    }
+
 
     handleAuth(res){
         console.log('handleAuth in app');
@@ -39,14 +63,11 @@ class App extends Component {
             }
 
         }else{
-            console.log('handle auth 36 (loggedIn)');
+            this.setState({auth:{username:res.username ,isLoggedIn:res.loggedIn,token:res.token }});
+            console.log('logout done');
         }
     }
 
-    componentDidMount(){
-        console.log('mounting component App');
-        //this.handleAuth();
-    }
 
   render() {
       console.log('check if state is updated');
@@ -59,6 +80,21 @@ class App extends Component {
         </div>
     );
   }
+
+
+    getCookie(){
+        console.log('get cookie');
+        const t= cookies.get('access_token');
+        console.log('t::' + t);
+        return t;
+    }
+
+
+    componentDidMount(){
+        console.log('mounting component App');
+    }
+
+
 }
 
 

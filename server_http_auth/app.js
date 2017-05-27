@@ -1,5 +1,3 @@
-
-
 var express = require('express');
 var cors = require('cors');
 var path = require('path');
@@ -10,6 +8,11 @@ var bodyParser = require('body-parser');
 const DeepstreamServer = require('deepstream.io');
 const C = DeepstreamServer.constants;
 var jwt = require('jsonwebtoken');
+
+
+var MongoClient = require('mongodb').MongoClient;
+
+
 
 function getCookie( src, name ) {
     var value = "; " + src;
@@ -84,6 +87,7 @@ app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
             password: 'password'
         }
     };
+
     var user = users[req.body.username];
     console.log("username::"+req.body.username);
     if (req.body.username === "chris") {
@@ -113,9 +117,9 @@ app.post('/check-token', function(req, res) {
             res.status(403).send('Failed to authenticate token.' );
         } else {
             res.status(200).json({
-                username: decoded.username
+                clientData: { username: decoded.username }
             });
-        }
+        } // username: decoded.username
     });
 
     /*
@@ -131,7 +135,15 @@ app.post('/check-token', function(req, res) {
     */
 })
 
-app.post('/handle-register', function(req,res){
+app.post('/handle-register',cors(corsOptionsDelegate) , function(req,res){
+
+    console.log("handle-register");
+    console.log("username::"+req.body.username);
+    console.log("password::"+req.body.password);
+
+    //server.hash
+
+
     // TODO:
     //generate hash with deepstream
     // save user and password to file

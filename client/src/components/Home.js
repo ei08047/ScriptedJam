@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import PlayGround from "./PlayGround";
 
-// <PlayGround handlePause={this.props.handlePause}/>
+
 
 class Home extends Component{
+
+    constructor(props)
+    {
+        super(props);
+        console.log(props);
+    }
+
     render(){
         return (
             <div>
