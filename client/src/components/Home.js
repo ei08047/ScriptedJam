@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddPlayGround from "./AddPlayground";
 import PlayGround from "./PlayGround";
 
 
@@ -16,6 +17,7 @@ class Home extends Component{
             <div>
                 <p>  home </p>
                 <div className="PublicSoundSpace">
+                    <PlayGround/>
                 </div>
             </div>
         );

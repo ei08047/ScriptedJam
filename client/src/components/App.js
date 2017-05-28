@@ -15,64 +15,29 @@ class App extends Component {
     }
 
     componentWillMount(){
-        const t = this.getCookie();
-        if(t != null)
-        {
-            console.log("here sir :");
-            const client = deepstream('localhost:6020')
-                .login({token:t}, (success, clientData ) => {
-                    if(success) {
-                        console.log(client);
-                        console.log(clientData );
-                        this.setState({auth: {isLoggedIn:true, username:clientData.username, token:t, client:client}});
-                    }
-                    else {
-                        console.log("APP const login failed");
-                    }
-                })
-                .on( 'error', ( error ) => {
-                    console.error(error);
-                });
-        }
+        this.handleAuth({token: this.getCookie()});
     }
 
 
     handleAuth(res){
-        console.log('handleAuth in app');
-        console.log(res);
-        if(res.loggedIn){
-            this.setState({auth:{username:res.username ,isLoggedIn:res.loggedIn,token:res.token }});
-            console.log('state handleAuth');
-            console.log(this.state.auth.isLoggedIn + '     '+this.state.auth.username + '   ' +this.state.auth.token);
-            if(this.state.token != null)
-            {
-                const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
-                    if(success) {
-                        //DeepstreamMixin.setDeepstreamClient(client);
-                        //console.log(client);
-                        console.log('huge!!');
-                    }
-                    else {
-                        console.log('handle auth 31 (terrible)');
-                        //this.props.handleAuth({username: null, token: null, loggedIn: false});
-                    }
-                });
-            }else
-            {
-                console.log('null token handle app 38');
-            }
-
-        }else{
-            this.setState({auth:{username:res.username ,isLoggedIn:res.loggedIn,token:res.token }});
-            console.log('logout done');
+        if(res.token != null)
+        {
+            const client = deepstream('localhost:6020').login({token:res.token}, (success, clientData) => {
+                if(success) {
+                    this.setState({auth:{username:clientData.username ,isLoggedIn:true,token:res.token,client: client}});
+                    console.log('Logged in!');
+                }
+                else {
+                    console.log('handle auth 31 (terrible)');
+                }
+            });
         }
+        else
+            this.setState({auth:{username:null ,isLoggedIn:false, token:null, client: null}});
     }
 
 
   render() {
-      console.log('check if state is updated');
-      console.log(this.state.auth.isLoggedIn + '     '+this.state.auth.username + '   ' +this.state.auth.token);
-
     return (
         <div className="App">
             <Header handleAuth={this.handleAuth} auth={this.state.auth} />
@@ -96,6 +61,5 @@ class App extends Component {
 
 
 }
-
 
 export default App;

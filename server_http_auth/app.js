@@ -5,19 +5,48 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+
+var crypto = require('crypto');
+var name = 'braitsch';
+
+
+
 const DeepstreamServer = require('deepstream.io');
 const C = DeepstreamServer.constants;
 var jwt = require('jsonwebtoken');
 
+var fs = require('fs');
+var users =[];
 
-var MongoClient = require('mongodb').MongoClient;
+function readContent(callback) {
+    fs.readFile("users.json", function (err, content) {
+        if (err) return callback(err)
+        callback(null, content)
+    })
+}
 
+readContent(function (err, content) {
+    users = JSON.parse(content);
+    //console.log(users);
+});
 
 
 function getCookie( src, name ) {
     var value = "; " + src;
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+
+function getUser(uName){
+    for(var i in users)
+    {
+        if(users[i].username === uName){
+                return users[i];
+        }
+    }
+    return null;
 }
 
 const server = new DeepstreamServer({
@@ -35,8 +64,8 @@ const server = new DeepstreamServer({
 });
 server.start();
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+
+
 var app = express();
 app.use(cors());
 
@@ -48,10 +77,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use('/', index);
-//app.use('/users', users);
+
 
 var whitelist = ['http://localhost:3000', 'http://localhost:3000/#/login'];
 var corsOptionsDelegate = function (req, callback) {
@@ -76,37 +103,20 @@ app.options("/*", function(req, res, next){
 
 app.post('/handle-login', cors(corsOptionsDelegate) , function(req, res) {
     console.log("(SERVER)entered auth-user route");
-    //TODO: get users from file
-    var users = {
-        wolfram: {
-            username: 'wolfram',
-            password: 'password'
-        },
-        chris: {
-            username: 'chris',
-            password: 'password'
+
+    var user = getUser(req.body.username);
+    var hash = crypto.createHash('md5').update(req.body.password).digest('hex');
+    if(user != null){
+        if(user.password === hash)
+        {
+            var token = jwt.sign(user, 'abrakadabra');
+            console.log("token::"+token); // ,
+            res.set('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
+            res.json({'access_token':token});
+            return;
         }
-    };
-
-    var user = users[req.body.username];
-    console.log("username::"+req.body.username);
-    if (req.body.username === "chris") {
-        /*
-        res.json({
-            username: 'chris',
-            clientData: { themeColor: 'pink' },
-            serverData: { role: 'admin' }
-        })*/
-        var token = jwt.sign(user, 'abrakadabra');
-        console.log("token::"+token); // ,
-        res.set('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
-        //res.json({'hello':'world'});
-        res.json({'access_token':token});
-        //res.cookie('access_token', token,{httpOnly: false}).status(301);//.redirect('http://localhost:3000/#/rooms')
-
-    } else {
-        res.status(403).send('Invalid Credentials')
     }
+    res.status(403).send('Invalid Credentials');
 });
 
 app.post('/check-token', function(req, res) {
@@ -138,15 +148,23 @@ app.post('/check-token', function(req, res) {
 app.post('/handle-register',cors(corsOptionsDelegate) , function(req,res){
 
     console.log("handle-register");
-    console.log("username::"+req.body.username);
-    console.log("password::"+req.body.password);
+    var hash = crypto.createHash('md5').update(req.body.password).digest('hex');
+    var user = getUser(req.body.username);
+    if(user === null){
+        users.push({username:req.body.username,password:hash});
+        var json = JSON.stringify(users);
+        fs.writeFileSync('users.json', json, 'utf8');
 
-    //server.hash
+        console.log(user);
 
+        var token = jwt.sign({username:req.body.username,password:hash}, 'abrakadabra');
+        console.log("token::"+token); // ,
+        res.set('Access-Control-Allow-Headers', req.headers['access-control-request-headers']);
+        res.json({'access_token':token});
 
-    // TODO:
-    //generate hash with deepstream
-    // save user and password to file
+    }
+    //res.status(403).send('USER EXISTS');
+
 })
 
 

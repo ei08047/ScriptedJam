@@ -5,17 +5,17 @@ import React, { Component } from 'react';
 import Form from "react-jsonschema-form";
 
 const log = (type) => console.log.bind(console, type);
-const schema = {
+var schema = {
     ugen: "flock.ugen",
     type: "object",
     required: ["ugen","freq","mul"],
     properties: {
         ugen: {type: "string", title: "ugen", default: "sinOsc"},
-        freq : {type: "number"  , title:"freq", default: "440"},
-        mul : {type: "number" , title:"mul", default: "0.25"},
-        done: {type: "boolean", title: "Done?", default: false}
+        freq : {type: "number"  , title:"freq", default: 440},
+        mul : {type: "number" , title:"mul", default: 5},
     }
-};
+    //done: {type: "boolean", title: "Done?", default: false}
+}
 const uiSchema = {
     freq: {"ui:widget": "range"}
 };
@@ -25,9 +25,13 @@ export class AddPlayground extends Component{
         super(props);
         this.state = {
             auth: props.auth,
-            roomname:props.roomname,
-            playground : null
+            roomname: props.roomname,
+            playground: {
+                ugen: "flock.ugen.sinOsc",
+                freq: 440,
+                mul: 5}
         };
+        this.environment;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         //this.playgroundExists = this.playgroundExists.bind(this);
@@ -42,10 +46,36 @@ export class AddPlayground extends Component{
             [name]: value
         });
     }
-    handleSubmit(event){
-        alert('A name was submitted: ' + this.input.value);
-        console.log("submit " + this.state.playground);
-        const s = this.props.auth.client;
+
+
+
+    handleSubmit(formData){
+        console.log(formData.formData);
+
+        this.setState({
+            auth: this.state.auth,
+            roomname: this.state.roomname,
+
+            playground: {
+                ugen: formData.formData.ugen,
+                freq: formData.formData.freq,
+                mul: formData.formData.mul
+            }
+        });
+
+        schema.properties.ugen = {type: "string", title: "ugen", default: formData.formData.ugen };
+        schema.properties.freq = {type: "number"  , title:"freq", default: formData.formData.freq};
+        schema.properties.mul = {type: "number" , title:"mul", default: formData.formData.mul};
+        this.synth.set({synthDef : this.state.playground})
+        console.log("current synth");
+        console.log(this.synth);
+
+
+
+       // const s = {synthDef :this.state.playground};
+        // this.synth.set({synthDef : s});
+
+        //const s = this.props.auth.client;
         //TODO:need to check if room name is already being used
         //TODO:create playgroundRec
         //s.record.getList({'/users/' + this.state.auth this.state.aut})
@@ -62,33 +92,37 @@ export class AddPlayground extends Component{
          }
          });*/
     }
+
     render() {
         return (
             <div >
                 <Form schema={schema} uiSchema={uiSchema}
                       onChange={log("changed")}
-                      onSubmit={log("submitted")}
+                      onSubmit={this.handleSubmit}
                       onError={log("errors")} />
             </div>);
+    }
+
+    componentDidMount() {
+        console.log("comp did mount");
+        /* global flock, fluid*/
+        fluid.registerNamespace("myStuff");
+        this.environment = flock.init();
+        this.synth = flock.synth(
+            //text area value here
+            {
+                synthDef : this.state.playground
+            }
+        );
+        console.log("current synth");
+        console.log(this.synth);
+        this.environment.start();
+        this.synth();
+    }
+
+    componentWillUnmount(){
+        this.environment.stop();
     }
 }
 
 export default AddPlayground;
-
-
-
-/*
-*                 <form onSubmit={this.handleSubmit}>
- <input
- name="playground"
- onChange={this.handleChange}
- type="text"
- placeholder="name"
- />
- <input name="owner" type="hidden" value={this.state.auth}/>
- <input type="submit" value="Submit">
- </input>
- </form>
-*
-*
-* */

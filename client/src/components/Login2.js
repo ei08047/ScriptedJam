@@ -15,6 +15,7 @@ class Login2 extends Component{
             username : "",
             password : "password"
         };
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
@@ -38,8 +39,8 @@ class Login2 extends Component{
             credentials:true,
             //headers: {'X-Requested-With': 'XMLHttpRequest'},
             data: {
-                username: 'chris',
-                password: 'password'
+                username: this.state.username,
+                password: this.state.password
             },
             responseType: 'json',
             //xsrfCookieName: 'XSRF-TOKEN',
@@ -49,38 +50,30 @@ class Login2 extends Component{
 
         };
 
+        var self = this;
+
         axios.request(config)
             .then(function (response) {
                 if(response.status == '200')
                 {
-                    console.log("response to login request");
-                    console.log("showing data");
-                    console.log(response.data);
 
                     if(typeof(response.data.access_token) !== "undefined")
                     {
-                        console.log("token about to be set on cookies:: "+response.data.access_token);
                         cookies.set('access_token',response.data.access_token);
+                        self.props.handleAuth({username: self.state.username, token:response.data.access_token});
                         //console.log("token about to be set on login State:: "+response.data.access_token);
                         //this.setState({token:cookies.get('access_token')});
                     }
                 }
                 else
                 {
-                    //this.props.handleAuth({username: null, token: null, loggedIn: false});
                     console.log("login failed");
                 }
-
-                //this.props.handleAuth({username: this.state.username, client: client, loggedIn: true});
-                //var cookie = [name, '=', JSON.stringify(response.cookie), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
-                //document.cookie = cookie;
 
             })
             .catch(function (error) {
                 console.log(error);
             });
-
-        this.props.handleAuth({username: this.state.username, token:cookies.get('access_token'), loggedIn: true});
     }
 
     render(){

@@ -9,7 +9,7 @@ class Logout extends Component{
         this.handleLogoutClick = this.handleLogoutClick.bind(this);
     }
     handleLogoutClick(event) {
-        this.props.handleAuth({username: null, client: null, loggedIn: false, token:null});
+        this.props.handleAuth({token:null});
         cookies.remove('access_token');
     }
     render(){

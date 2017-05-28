@@ -1,29 +1,13 @@
+/**
+ * Created by ei08047 on 27/04/2017.
+ */
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-const log = (type) => console.log.bind(console, type);
-
-const schema_playground = {
-    playground: "playground",
-    type: "object",
-    required: ["playground"],
-    properties: {
-        name: {type: "string", title: "name", default: ""},
-        shared : {type: "boolean"  , title:"shared", default: "false"},
-
-    }
-};
-
-const schema_playground_readOnly = {
-    name: "room.name",
-    type: "object",
-    required: ["name","shared"],
-    //TODO: define name domain (size,symbols)
-    properties: {
-        name: {type: "string", title: "name", default: ""},
-        shared : {type: "boolean"  , title:"shared", default: "false"},
-
-    }
-};
+/*
+ * <script src="%PUBLIC_URL%/flocking/flocking-all.js"></script>
+ <script src="myStuff.js"> </script>
+ *
+ * */
 
 
 class PlayGround extends Component{
@@ -32,7 +16,7 @@ class PlayGround extends Component{
         super(props);
         this.state = {
             pause:false,
-            value : {
+            defaultSynth : {
                 synthDef: {
                     ugen: "flock.ugen.sin",
                     freq: {
@@ -48,17 +32,38 @@ class PlayGround extends Component{
                 }
             }
         }
-        this.environment;
         this.handlePause = this.handlePause.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.addSynth = this.addSynth.bind(this);
     }
     handlePause(event){
-        console.log("entered handler");
+        console.log("entered pause");
         if(this.state.pause)
         {
             this.setState({pause:false});
+            /* global flock, fluid*/
+            fluid.registerNamespace("myStuff");
+            var environment = flock.init();
+
+            console.log(this.synth);
+
+            this.synth.set("synthDef" ,
+                {
+                    ugen: "flock.ugen.sin",
+                    freq: {
+                        ugen: "flock.ugen.latch",
+                        rate: "audio",
+                        source: {
+                            ugen: "flock.ugen.lfNoise",
+                            freq: 30,
+                            mul: 540,
+                            add: 660
+                        },
+                    }
+                }
+            );
+            environment.start();
             this.synth.play();
+
             console.log("set to false");
         }else
         {
@@ -68,58 +73,77 @@ class PlayGround extends Component{
         }
     }
 
-    handleChange(event){
-        this.setState({value: event.target.value});
-        console.log(this.state.value);
-    }
-    handleSubmit(event){
-        //get text area value
-        var s = JSON.parse(this.state.value);
-        console.log("parsed:");
-        console.log(s);
-        this.synth.pause();
-        this.synth.set({synthDef : s});
-        //this.synth();
+    addSynth(event){
+
+        var mySynth = flock.synth({
+            synthDef: {
+                ugen: "flock.ugen.sin",
+                freq: 200
+            },
+        });
+
 
     }
+
+    syntaxHighlight(json) {
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            var cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+
     componentDidMount() {
         /* global flock, fluid*/
         fluid.registerNamespace("myStuff");
-        this.environment = flock.init();
-
+        var environment = flock.init();
         this.synth = flock.synth(
             //text area value here
             {
                 synthDef: {
-                    synthDef: {
-                        ugen: "flock.ugen.sinOsc",
-                        freq: 440,
-                        mul: 0.25
+                    ugen: "flock.ugen.sin",
+                    freq: {
+                        ugen: "flock.ugen.latch",
+                        rate: "audio",
+                        source: {
+                            ugen: "flock.ugen.lfNoise",
+                            freq: 10,
+                            mul: 540,
+                            add: 660
+                        },
                     }
                 }
             }
 
-            );
-        console.log("current synth");
-        console.log(this.synth);
-        this.environment.start();
-        this.synth.play();
+        );
+        environment.start();
+        this.synth();
     }
 
-    componentWillUnmount(){
-        this.environment.stop();
-    }
 
     render(){
-        const v = JSON.stringify(this.state.value , undefined, 4);
+        const v = JSON.stringify(this.state.defaultSynth, undefined, 4);
         return(
-        <div className="PlayGround">
-            <p>playground</p>
-            <TextareaAutosize cols={50} minRows={10} maxRows={20} defaultValue={v} onChange={this.handleChange} />
-            <button onClick={this.handleSubmit} > submit</button>
-            <button onClick={this.handlePause} >{this.state.pause?'PLAY':'PAUSE'}</button>
-        </div>
+            <div className="PlayGround">
+                <p>playground</p>
+                <TextareaAutosize cols={50} minRows={10} maxRows={20} defaultValue={v}/>
+                <button onClick={this.handlePause} >{this.state.pause?'PLAY':'PAUSE'}</button>
+                <button onClick={this.addSynth} >add</button>
+            </div>
         );
     }
 }
+
+
 export default PlayGround;

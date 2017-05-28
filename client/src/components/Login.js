@@ -33,8 +33,6 @@ class Login extends Component{
     }
     handleSubmit(event){
         event.preventDefault();
-
-
         const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
             if(success) {
                 //DeepstreamMixin.setDeepstreamClient(client);

@@ -38,6 +38,7 @@ export class Rooms extends Component{
                     });
 
 
+
                     console.log('listening ^rooms/.*/ subsribers :');
                     s.client.event.listen('.*/rooms/.*', (eventName, isSubscribed, response) => {
                         console.log("listen: "+eventName + isSubscribed + response);

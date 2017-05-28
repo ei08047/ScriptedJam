@@ -80,7 +80,7 @@ class Main extends Component{
                 const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
                     if(success) {
                         //DeepstreamMixin.setDeepstreamClient(client);
-                        console.log('suc');
+                        console.log('suc111111111111111111111111111111111111111111111111111111111');
                     }
                     else {
                         alert("login failed");

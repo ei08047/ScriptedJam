@@ -75,8 +75,9 @@ class Register extends Component{
                 }
                 else
                 {
+                    // trump
                     //this.props.handleAuth({username: null, token: null, loggedIn: false});
-                    console.log("login failed");
+                    console.log("login failed??????????????????????????????????????????");
                 }
 
                 //this.props.handleAuth({username: this.state.username, client: client, loggedIn: true});
