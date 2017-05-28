@@ -13,6 +13,7 @@ var name = 'braitsch';
 
 
 const DeepstreamServer = require('deepstream.io');
+const MongoDBStorageConnector = require( 'deepstream.io-storage-mongodb' );
 const C = DeepstreamServer.constants;
 var jwt = require('jsonwebtoken');
 
@@ -31,13 +32,11 @@ readContent(function (err, content) {
     //console.log(users);
 });
 
-
 function getCookie( src, name ) {
     var value = "; " + src;
     var parts = value.split("; " + name + "=");
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
-
 
 function getUser(uName){
     for(var i in users)
@@ -50,6 +49,7 @@ function getUser(uName){
 }
 
 const server = new DeepstreamServer({
+    libDir: '../lib',
     host: 'localhost',
     port: 6020,
     auth :
@@ -60,8 +60,15 @@ const server = new DeepstreamServer({
             permittedStatusCodes: [ 200 ],
             requestTimeout: 2000
             }
-          },
+          }
 });
+
+server.set( 'storage', new MongoDBStorageConnector( {
+    connectionString:  'mongodb://ze:maradona10@ds061454.mlab.com:61454/scriptedjamdb',
+    splitChar: '/'
+}));
+
+
 server.start();
 
 

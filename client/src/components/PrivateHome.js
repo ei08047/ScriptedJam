@@ -24,9 +24,7 @@ class PrivateHome extends Component{
                 console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
                     const recordName = 'user/' + s.username + '/rooms' ;
-                    console.log('record name::' + recordName);
                     const rooms = s.client.record.getList(recordName );
-                    console.log("subscribing" + recordName );
                     rooms.subscribe( this.setRooms , true );
                 }
                 else

@@ -12,7 +12,6 @@ const schema = {
     }
 };
 
-
 export class Test extends Component{
     constructor(props){
         super(props);
@@ -36,12 +35,11 @@ export class Test extends Component{
                     let playgroundList = s.client.record.getList('shared/rooms/'+this.state.roomname+ '/playgrounds/');
                     playgroundList.whenReady( ()=>{
                         playgroundList.addEntry(this.state.auth.username);
-                    } )
+                    } );
                     let play = s.client.record.getRecord('shared/rooms/'+this.state.roomname + '/playgrounds/' + this.state.auth.username);
                     play.whenReady( ()=>{
                         play.set('example',formData.example);
                     } )
-
                 }
                 else
                 {
@@ -49,24 +47,8 @@ export class Test extends Component{
                 }
             }
         }
-
-
-        //const roomRec = this.state.client.record.getRecord('rooms/'+ this.state.roomname );
-        //roomRec.set('owner', this.state.owner);
         event.preventDefault();
-        /*React.createClass({
-         mixins: [ DeepstreamMixin ],
-         setValue: function( e ) {
-         this.setState({ value: e.target.value });
-         },
-         render: function() {
-         return (
-         <input value={this.state.value} onChange={this.setValue} />
-         )
-         }
-         });*/
     }
-
 
     render() {
         return (

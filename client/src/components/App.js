@@ -14,18 +14,12 @@ class App extends Component {
         this.state={auth: {isLoggedIn:false, username:null, token:null}};
     }
 
-    componentWillMount(){
-        this.handleAuth({token: this.getCookie()});
-    }
-
-
     handleAuth(res){
         if(res.token != null)
         {
             const client = deepstream('localhost:6020').login({token:res.token}, (success, clientData) => {
                 if(success) {
                     this.setState({auth:{username:clientData.username ,isLoggedIn:true,token:res.token,client: client}});
-                    console.log('Logged in!');
                 }
                 else {
                     console.log('handle auth 31 (terrible)');
@@ -36,6 +30,9 @@ class App extends Component {
             this.setState({auth:{username:null ,isLoggedIn:false, token:null, client: null}});
     }
 
+    componentWillMount(){
+        this.handleAuth({token: this.getCookie()});
+    }
 
   render() {
     return (
@@ -45,7 +42,6 @@ class App extends Component {
         </div>
     );
   }
-
 
     getCookie(){
         console.log('get cookie');

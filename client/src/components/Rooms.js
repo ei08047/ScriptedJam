@@ -25,28 +25,9 @@ export class Rooms extends Component{
                 console.log('connection on shared rooms');
                 console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
-                    this.recordName = 'shared/rooms';
-                    console.log('record name::' + this.recordName);
+                    this.recordName = 'rooms';
                     this.roomsList = s.client.record.getList(this.recordName );
                     this.roomsList.subscribe( (data) => {this.setState({sharedRooms:data})} , true );
-
-                    console.log('subscribing rooms/ :');
-                    s.client.event.subscribe('rooms/', data => {
-                        // handle published data
-                        console.log("subs: ");
-                        console.log(data);
-                    });
-
-
-
-                    console.log('listening ^rooms/.*/ subsribers :');
-                    s.client.event.listen('.*/rooms/.*', (eventName, isSubscribed, response) => {
-                        console.log("listen: "+eventName + isSubscribed + response);
-
-                    });
-
-
-
                 }
                 else
                 {

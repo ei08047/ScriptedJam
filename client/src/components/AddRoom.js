@@ -39,7 +39,9 @@ export class AddRoom extends Component{
     }
     //save record and set owner
     handleSubmit({formData}){
-        console.log('A name was submitted: ' + {formData});
+        console.log('A name was submitted: ');
+        console.log(formData);
+
         const s = this.props.auth;
         if(s!=null)
         { //console.log()
@@ -47,12 +49,23 @@ export class AddRoom extends Component{
             if(s.client.getConnectionState()==='OPEN')
                 {
                 console.log('connection on addRoom');
-                const shared = s.client.record.getList('shared/rooms');
+                let room = s.client.record.getRecord('rooms/' + formData.name);
+                //const roomPlay = s.client.record.getRecord(formData.name );
+                room.set('owner',this.state.auth.username);
+                room.set('users',[]);
+                room.set('playgrounds',[]);
+                const roomList = s.client.record.getList('rooms');
+                roomList.addEntry(formData.name);
+
+
+                /*
+
                 let roomRec = s.client.record.getRecord('shared/rooms/' + formData.name);
                 roomRec.set('owner',this.state.auth.username);
-                console.log("setting owner with" + this.state.auth.username);
-                roomRec.set('users',[]);
+                roomRec.set('users',['ze']);
+                roomRec.set('playgrounds',[]);
                 shared.addEntry(formData.name);
+                */
                 }
                 else
                 {

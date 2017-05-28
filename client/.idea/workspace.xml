@@ -18,53 +18,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="29" />
-              <folding>
-                <element signature="e#117#158#0" expanded="true" />
-                <element signature="e#559#684#0" expanded="false" />
-                <element signature="e#732#884#0" expanded="false" />
-                <element signature="e#755#875#0" expanded="false" />
-                <element signature="e#794#872#0" expanded="false" />
-                <element signature="e#946#1323#0" expanded="false" />
-                <element signature="e#969#1314#0" expanded="false" />
-                <element signature="e#1008#1311#0" expanded="false" />
-                <element signature="e#1151#1286#0" expanded="false" />
-                <element signature="e#1165#1283#0" expanded="false" />
-                <element signature="e#3613#4583#0" expanded="false" />
-                <element signature="e#3690#3773#0" expanded="false" />
-                <element signature="e#3796#4565#0" expanded="false" />
-                <element signature="e#4857#4949#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPlayground.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/AddPlayground.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="178">
+              <caret line="21" column="121" lean-forward="false" selection-start-line="21" selection-start-column="121" selection-end-line="21" selection-end-column="121" />
               <folding>
-                <element signature="e#45#86#0" expanded="true" />
-                <element signature="e#573#609#0" expanded="false" />
-                <element signature="n#!!block;n#handleChange#0;n#AddPlayground#0" expanded="false" />
-                <element signature="n#!!block;n#render#0;n#AddPlayground#0" expanded="false" />
+                <element signature="n#!!block;n#constructor#0;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#getCookie#0;n#App#0" expanded="false" />
+                <element signature="n#!!block;n#componentDidMount#0;n#App#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="43" column="43" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="43" />
+              <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <element signature="n#!!block;n#getUserRooms#0;n#Rooms#0" expanded="false" />
               </folding>
@@ -82,29 +56,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/App.css">
+      <file leaf-file-name="PlayGround.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PlayGround.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="116">
+              <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="85" selection-end-column="5" />
+              <folding>
+                <element signature="e#45#86#0" expanded="true" />
+                <element signature="n#!!block;n#constructor#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#addSynth#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#syntaxHighlight#0;n#PlayGround#0" expanded="false" />
+                <element signature="n#!!block;n#componentDidMount#0;n#PlayGround#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayGround.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/PlayGround.js">
+      <file leaf-file-name="Playground2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Playground2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#45#86#0" expanded="true" />
-                <element signature="n#!!block;n#constructor#0;n#PlayGround#0" expanded="false" />
-                <element signature="e#1114#1945#0" expanded="false" />
-                <element signature="e#1382#1814#0" expanded="false" />
-                <element signature="n#!!block;n#syntaxHighlight#0;n#PlayGround#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,32 +85,59 @@
       <file leaf-file-name="old_play" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/old_play">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="697">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/User.js">
+      <file leaf-file-name="Room.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="561">
+              <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
               <folding>
-                <element signature="n#!!block;n#componentDidMount#0;n#Users#0" expanded="false" />
-                <element signature="n#!!block;n#render#0;n#Users#0" expanded="false" />
+                <element signature="e#45#86#0" expanded="true" />
+                <element signature="n#!!block;n#handleChange#0;n#Room#0" expanded="false" />
+                <element signature="n#!!block;n#getRoomData#0;n#Room#0" expanded="false" />
+                <element signature="n#!!block;n#enterRoom#0;n#Room#0" expanded="false" />
+                <element signature="e#3404#3855#0" expanded="false" />
+                <element signature="e#3532#3623#0" expanded="false" />
+                <element signature="e#3629#3833#0" expanded="false" />
+                <element signature="e#3912#3985#0" expanded="false" />
+                <element signature="n#!!block;n#addPlay#0;n#Room#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Room#0" expanded="false" />
+                <element signature="e#6357#6466#0" expanded="false" />
+                <element signature="e#6569#6593#0" expanded="false" />
+                <element signature="e#6743#7172#0" expanded="false" />
+                <element signature="n#!!block;n#componentWillUnmount#0;n#Room#0" expanded="false" />
+                <element signature="e#7354#8367#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddRoom.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/AddRoom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="55" selection-end-column="43" />
+              <folding>
+                <element signature="e#206#406#0" expanded="false" />
+                <element signature="n#!!block;n#validate#0;n#AddRoom#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#AddRoom#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrivateHome.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/PrivateHome.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="597">
+              <caret line="42" column="76" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="76" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,9 +145,14 @@
       <file leaf-file-name="Test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="136">
+              <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+              <folding>
+                <element signature="e#156#354#0" expanded="false" />
+                <element signature="n#Test#0" expanded="false" />
+                <element signature="n#!!block;n#handleExample#0;n#Test#0" expanded="false" />
+                <element signature="n#!!block;n#render#0;n#Test#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,8 +168,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>w</find>
-      <find>webpack</find>
       <find>error</find>
       <find>getU</find>
       <find>Rooms</find>
@@ -193,6 +196,8 @@
       <find>check if state is updated</find>
       <find>handleAuth</find>
       <find>syn</find>
+      <find>deepstream</find>
+      <find>play</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -222,28 +227,29 @@
         <option value="$PROJECT_DIR$/src/components/Record.js" />
         <option value="$PROJECT_DIR$/src/components/Dialog.js" />
         <option value="$PROJECT_DIR$/src/components/DynForm.js" />
-        <option value="$PROJECT_DIR$/src/components/PrivateHome.js" />
         <option value="$PROJECT_DIR$/src/components/App.css" />
-        <option value="$PROJECT_DIR$/src/components/Test.js" />
         <option value="$PROJECT_DIR$/src/postcss.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/Users.js" />
         <option value="$PROJECT_DIR$/src/components/User.js" />
         <option value="$PROJECT_DIR$/src/components/Script.js" />
-        <option value="$PROJECT_DIR$/src/components/AddRoom.js" />
-        <option value="$PROJECT_DIR$/src/components/Room.js" />
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/components/Register.js" />
         <option value="$PROJECT_DIR$/src/components/Main.js" />
         <option value="$PROJECT_DIR$/src/components/Login2.js" />
         <option value="$PROJECT_DIR$/src/components/Logout.js" />
         <option value="$PROJECT_DIR$/src/components/Login.js" />
-        <option value="$PROJECT_DIR$/src/components/App.js" />
-        <option value="$PROJECT_DIR$/src/components/Rooms.js" />
         <option value="$PROJECT_DIR$/src/components/AddPlayground.js" />
+        <option value="$PROJECT_DIR$/src/components/PlayGround.js" />
+        <option value="$PROJECT_DIR$/src/components/Test.js" />
         <option value="$PROJECT_DIR$/src/components/old_play" />
         <option value="$PROJECT_DIR$/src/components/Home.js" />
-        <option value="$PROJECT_DIR$/src/components/PlayGround.js" />
+        <option value="$PROJECT_DIR$/src/components/Playground2.js" />
+        <option value="$PROJECT_DIR$/src/components/PrivateHome.js" />
+        <option value="$PROJECT_DIR$/src/components/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Rooms.js" />
+        <option value="$PROJECT_DIR$/src/components/AddRoom.js" />
+        <option value="$PROJECT_DIR$/src/components/Room.js" />
       </list>
     </option>
   </component>
@@ -284,6 +290,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -330,7 +337,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -488,11 +494,12 @@
       <workItem from="1495805112483" duration="7102000" />
       <workItem from="1495843688937" duration="2931000" />
       <workItem from="1495898170053" duration="24352000" />
+      <workItem from="1495983919759" duration="17933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337122000" />
+    <option name="totallyTimeSpent" value="355055000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,13 +511,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1444" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1444" height="876" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15546219" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36553526" sideWeight="0.52240896" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36553526" sideWeight="0.47759104" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36553526" sideWeight="0.47759104" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -557,50 +565,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="n#Register#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="87" column="50" lean-forward="false" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
           <folding>
             <element signature="e#117#158#0" expanded="true" />
-            <element signature="e#559#684#0" expanded="false" />
-            <element signature="e#732#884#0" expanded="false" />
-            <element signature="e#755#875#0" expanded="false" />
-            <element signature="e#794#872#0" expanded="false" />
-            <element signature="e#946#1323#0" expanded="false" />
-            <element signature="e#969#1314#0" expanded="false" />
-            <element signature="e#1008#1311#0" expanded="false" />
-            <element signature="e#1151#1286#0" expanded="false" />
-            <element signature="e#1165#1283#0" expanded="false" />
-            <element signature="e#3613#4583#0" expanded="false" />
-            <element signature="e#3690#3773#0" expanded="false" />
-            <element signature="e#3796#4565#0" expanded="false" />
-            <element signature="e#4857#4949#0" expanded="false" />
+            <marker date="1495983776973" expanded="true" signature="5212:5214" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -610,9 +586,9 @@
         <state relative-caret-position="816">
           <caret line="67" column="43" lean-forward="true" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#45#86#0" expanded="false" />
             <element signature="n#!!block;n#handleChange#0;n#Login#0" expanded="false" />
+            <element signature="n#!!block;n#handleSubmit#0;n#Login#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Login#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -628,9 +604,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -646,7 +620,11 @@
         <state relative-caret-position="204">
           <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
-            <element signature="e#0#41#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#App#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -663,7 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +659,8 @@
         <state relative-caret-position="425">
           <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
           <folding>
-            <element signature="n#Register#0" expanded="false" />
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="n#!!block;n#handleChange#0;n#Register#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,19 +671,7 @@
           <caret line="47" column="9" lean-forward="false" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding>
             <element signature="e#117#158#0" expanded="true" />
-            <element signature="e#559#684#0" expanded="false" />
-            <element signature="e#732#884#0" expanded="false" />
-            <element signature="e#755#875#0" expanded="false" />
-            <element signature="e#794#872#0" expanded="false" />
-            <element signature="e#946#1323#0" expanded="false" />
-            <element signature="e#969#1314#0" expanded="false" />
-            <element signature="e#1008#1311#0" expanded="false" />
-            <element signature="e#1151#1286#0" expanded="false" />
-            <element signature="e#1165#1283#0" expanded="false" />
-            <element signature="e#3613#4583#0" expanded="false" />
-            <element signature="e#3690#3773#0" expanded="false" />
-            <element signature="e#3796#4565#0" expanded="false" />
-            <element signature="e#4857#4949#0" expanded="false" />
+            <marker date="1495983776973" expanded="true" signature="5212:5214" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -736,7 +702,11 @@
         <state relative-caret-position="170">
           <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding>
-            <element signature="e#0#41#0" expanded="false" />
+            <element signature="n#!!block;n#constructor#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#App#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -775,9 +745,9 @@
         <state relative-caret-position="34">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="51" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#45#86#0" expanded="false" />
             <element signature="n#!!block;n#handleChange#0;n#Login#0" expanded="false" />
+            <element signature="n#!!block;n#handleSubmit#0;n#Login#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Login#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -831,34 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PrivateHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Room.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="44" column="35" lean-forward="false" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#enterRoom#0;n#Room#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddRoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -890,9 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,30 +857,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="n#App#0" expanded="false" />
-            <element signature="n#!!block;n#constructor#0;n#App#0" expanded="false" />
-            <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
-            <element signature="n#!!block;n#handleAuth#0;n#App#0" expanded="false" />
-            <element signature="e#655#1110#0" expanded="false" />
-            <element signature="e#763#1098#0" expanded="false" />
-            <element signature="e#793#981#0" expanded="false" />
-            <element signature="e#1003#1084#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#App#0" expanded="false" />
-            <element signature="e#1261#1444#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0;n#App#0" expanded="false" />
-            <element signature="n#!!block;n#componentDidMount#0;n#App#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
+        <state relative-caret-position="527">
           <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="37" />
           <folding>
             <element signature="n#!!block;n#componentDidMount#0;n#Users#0" expanded="false" />
@@ -959,24 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="43" column="43" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!block;n#getUserRooms#0;n#Rooms#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -987,69 +886,150 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="29" />
+        <state relative-caret-position="1088">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#117#158#0" expanded="true" />
-            <element signature="e#559#684#0" expanded="false" />
-            <element signature="e#732#884#0" expanded="false" />
-            <element signature="e#755#875#0" expanded="false" />
-            <element signature="e#794#872#0" expanded="false" />
-            <element signature="e#946#1323#0" expanded="false" />
-            <element signature="e#969#1314#0" expanded="false" />
-            <element signature="e#1008#1311#0" expanded="false" />
-            <element signature="e#1151#1286#0" expanded="false" />
-            <element signature="e#1165#1283#0" expanded="false" />
-            <element signature="e#3613#4583#0" expanded="false" />
-            <element signature="e#3690#3773#0" expanded="false" />
-            <element signature="e#3796#4565#0" expanded="false" />
-            <element signature="e#4857#4949#0" expanded="false" />
+            <marker date="1495983776973" expanded="true" signature="5212:5214" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AddPlayground.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="1141">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="e#45#86#0" expanded="true" />
-            <element signature="e#573#609#0" expanded="false" />
-            <element signature="n#!!block;n#handleChange#0;n#AddPlayground#0" expanded="false" />
-            <element signature="n#!!block;n#render#0;n#AddPlayground#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/old_play">
+    <entry file="file://$PROJECT_DIR$/src/myStuff.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+          <folding>
+            <element signature="e#156#354#0" expanded="false" />
+            <element signature="n#Test#0" expanded="false" />
+            <element signature="n#!!block;n#handleExample#0;n#Test#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Test#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/old_play">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlayGround.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="119" column="33" lean-forward="false" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="33" />
+        <state relative-caret-position="116">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="85" selection-end-column="5" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <element signature="e#45#86#0" expanded="true" />
             <element signature="n#!!block;n#constructor#0;n#PlayGround#0" expanded="false" />
-            <element signature="e#1114#1945#0" expanded="false" />
-            <element signature="e#1382#1814#0" expanded="false" />
+            <element signature="n#!!block;n#addSynth#0;n#PlayGround#0" expanded="false" />
             <element signature="n#!!block;n#syntaxHighlight#0;n#PlayGround#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#PlayGround#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Playground2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="21" column="121" lean-forward="false" selection-start-line="21" selection-start-column="121" selection-end-line="21" selection-end-column="121" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillMount#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#getCookie#0;n#App#0" expanded="false" />
+            <element signature="n#!!block;n#componentDidMount#0;n#App#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PrivateHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="42" column="76" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Rooms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!block;n#getUserRooms#0;n#Rooms#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddRoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="55" selection-end-column="43" />
+          <folding>
+            <element signature="e#206#406#0" expanded="false" />
+            <element signature="n#!!block;n#validate#0;n#AddRoom#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#AddRoom#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Room.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding>
+            <element signature="e#45#86#0" expanded="true" />
+            <element signature="n#!!block;n#handleChange#0;n#Room#0" expanded="false" />
+            <element signature="n#!!block;n#getRoomData#0;n#Room#0" expanded="false" />
+            <element signature="n#!!block;n#enterRoom#0;n#Room#0" expanded="false" />
+            <element signature="e#3404#3855#0" expanded="false" />
+            <element signature="e#3532#3623#0" expanded="false" />
+            <element signature="e#3629#3833#0" expanded="false" />
+            <element signature="e#3912#3985#0" expanded="false" />
+            <element signature="n#!!block;n#addPlay#0;n#Room#0" expanded="false" />
+            <element signature="n#!!block;n#render#0;n#Room#0" expanded="false" />
+            <element signature="e#6357#6466#0" expanded="false" />
+            <element signature="e#6569#6593#0" expanded="false" />
+            <element signature="e#6743#7172#0" expanded="false" />
+            <element signature="n#!!block;n#componentWillUnmount#0;n#Room#0" expanded="false" />
+            <element signature="e#7354#8367#0" expanded="false" />
           </folding>
         </state>
       </provider>

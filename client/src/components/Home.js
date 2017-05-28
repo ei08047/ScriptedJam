@@ -17,7 +17,6 @@ class Home extends Component{
             <div>
                 <p>  home </p>
                 <div className="PublicSoundSpace">
-                    <PlayGround/>
                 </div>
             </div>
         );

@@ -30,40 +30,21 @@ class PlayGround extends Component{
                         },
                     }
                 }
-            }
+            },
+            playgrounds:[ {synthDef: {ugen: "flock.ugen.tri",freq: 440}} , {synthDef: {ugen: "flock.ugen.tri",freq: 100}}]
+
+
         }
         this.handlePause = this.handlePause.bind(this);
         this.addSynth = this.addSynth.bind(this);
     }
+
     handlePause(event){
-        console.log("entered pause");
+        console.log("entered handler");
         if(this.state.pause)
         {
             this.setState({pause:false});
-            /* global flock, fluid*/
-            fluid.registerNamespace("myStuff");
-            var environment = flock.init();
-
-            console.log(this.synth);
-
-            this.synth.set("synthDef" ,
-                {
-                    ugen: "flock.ugen.sin",
-                    freq: {
-                        ugen: "flock.ugen.latch",
-                        rate: "audio",
-                        source: {
-                            ugen: "flock.ugen.lfNoise",
-                            freq: 30,
-                            mul: 540,
-                            add: 660
-                        },
-                    }
-                }
-            );
-            environment.start();
             this.synth.play();
-
             console.log("set to false");
         }else
         {
@@ -108,8 +89,8 @@ class PlayGround extends Component{
         /* global flock, fluid*/
         fluid.registerNamespace("myStuff");
         var environment = flock.init();
+        /*
         this.synth = flock.synth(
-            //text area value here
             {
                 synthDef: {
                     ugen: "flock.ugen.sin",
@@ -124,13 +105,17 @@ class PlayGround extends Component{
                         },
                     }
                 }
-            }
+            });
+        */
+        for(var i in this.state.playgrounds)
+        {
+            console.log(i);
+            var e = flock.synth(this.state.playgrounds[i]);
+            //console.log(e);
+        }
 
-        );
         environment.start();
-        this.synth();
     }
-
 
     render(){
         const v = JSON.stringify(this.state.defaultSynth, undefined, 4);
@@ -140,6 +125,12 @@ class PlayGround extends Component{
                 <TextareaAutosize cols={50} minRows={10} maxRows={20} defaultValue={v}/>
                 <button onClick={this.handlePause} >{this.state.pause?'PLAY':'PAUSE'}</button>
                 <button onClick={this.addSynth} >add</button>
+
+                <ul>{
+                    this.state.playgrounds.map( (synth) =>
+                        <li><TextareaAutosize cols={50} minRows={10} maxRows={20} defaultValue={JSON.stringify(synth, undefined, 4)}/> </li>)
+                }</ul>
+
             </div>
         );
     }
