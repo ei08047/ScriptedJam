@@ -8,7 +8,7 @@ export class Rooms extends Component{
     constructor(props){
         super(props);
         this.state={auth : props.auth , rooms:[], sharedRooms:[]};
-        this.getUserRooms = this.getUserRooms.bind(this);
+        //this.getUserRooms = this.getUserRooms.bind(this);
         this.getSharedRooms = this.getSharedRooms.bind(this);
         this.roomsList=[];
         this.recordName ='';
@@ -18,7 +18,6 @@ export class Rooms extends Component{
         const s= this.state.auth;
         if(s!=null) {
             if (s.client != null) {
-                console.log('connection on shared rooms');
                 console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
                     this.recordName = 'rooms';
@@ -33,6 +32,7 @@ export class Rooms extends Component{
         }
     }
 
+    /*
     getUserRooms(){
         const s= this.state.auth;
         if(s!=null) {
@@ -53,9 +53,9 @@ export class Rooms extends Component{
             }
         }
     }
+    */
 
     render(){
-
         return (
             <div>
                 <div className="RoomList">
@@ -70,7 +70,6 @@ export class Rooms extends Component{
     }
 
     componentDidMount() {
-        console.log('mount componetn room');
         this.getSharedRooms();
         //this.getUserRooms();
     }

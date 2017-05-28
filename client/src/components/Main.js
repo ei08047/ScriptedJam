@@ -42,13 +42,9 @@ const PrivateRoute = ({ component, redirectTo, ...rest }) => {
 class Main extends Component{
     constructor(props){
         super(props);
-        console.log("main props");
-        console.log(props);
     }
 
     render(){
-    console.log( 'getting cookie on main render');
-        console.log("main: " + this.props.auth.username + " : " + this.props.auth.isLoggedIn + ' ||token:' + this.props.auth.token  );
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -64,32 +60,24 @@ class Main extends Component{
 
     componentDidMount(){
         const s = this.props.auth;
-        console.log("main: " + s.username + " : " + s.isLoggedIn + ' ||token:' + s.token  );
         if(this.props.isLoggedIn)
         {
-
-            console.log("main: " + s.username + " : " + s.isLoggedIn + ' ||token:' + s.token  );
-
             if(s.token != null)
             {
-                console.log("here sir :" +s.token);
                 const client = deepstream('localhost:6020').login({token:this.state.token}, (success) => {
                     if(success) {
-                        //DeepstreamMixin.setDeepstreamClient(client);
-                        console.log('suc111111111111111111111111111111111111111111111111111111111');
+                        console.log("deepstream login");
                     }
                     else {
-                        alert("login failed");
+                        console.log("login failed");
                     }
                 });
             }
             if(s.client != null)
             {
-                console.log('connection in main');
                 console.log(s.client.getConnectionState());
                 if(s.client.getConnectionState()==='OPEN')
                 {
-
                     s.client.presence.subscribe((username, isLoggedIn) => {
 
                         console.log('entered: '+username);

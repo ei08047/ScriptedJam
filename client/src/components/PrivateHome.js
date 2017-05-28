@@ -13,7 +13,6 @@ class PrivateHome extends Component{
     }
 
     setRooms(data){
-        console.log(data);
         this.setState({rooms:data});
     }
 
@@ -21,8 +20,6 @@ class PrivateHome extends Component{
         const s= this.state.auth;
         if(s!=null) {
             if (s.client != null) {
-                console.log('connection');
-                console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
                     const recordName = 'user/' + s.username + '/rooms' ;
                     const rooms = s.client.record.getList(recordName );
@@ -46,7 +43,7 @@ class PrivateHome extends Component{
     }
 
     componentDidMount(){
-        this.handlerooms();
+        //this.handlerooms();
     }
 
 }

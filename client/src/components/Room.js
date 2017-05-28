@@ -20,15 +20,36 @@ class Room extends Component{
             currentPlayGrounds:[{synthDef: {ugen: "flock.ugen.tri",freq: 440}} , {synthDef: {ugen: "flock.ugen.tri",freq: 100}}]
         };
         this.recordName ='';
+        this.playList=[];
         this.enterRoom = this.enterRoom.bind(this);
         this.addPlay = this.addPlay.bind(this);
         this.getRoomData = this.getRoomData.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.eventCallback = this.eventCallback.bind(this);
     }
 
     handleChange(event){
         this.setState({value: event.target.value});
         console.log(this.state.value);
+    }
+
+    eventCallback(data) {
+        //callback for incoming events
+        var add = true;
+        for(var i in this.state.currentPlayGrounds)
+        {
+            if(this.state.currentPlayGrounds[i] === data)
+            {
+                add = false;
+            }else{}
+        }
+        if(add)
+        {
+            var temp = this.state.currentPlayGrounds;
+            temp.push(data);
+            this.setState({currentPlayGrounds:temp});
+        }
+
     }
 
     getRoomData(){
@@ -45,6 +66,10 @@ class Room extends Component{
 
                     //this.playList = s.client.record.getList(this.recordName + '/playgrounds');
                     //this.playList.subscribe( (data) => {this.setState({currentPlayGrounds:data})} , true );
+
+
+                    //Subscribing to an event
+                    s.client.event.subscribe(this.recordName, this.eventCallback);
 
 
                     roomRec.whenReady( ()=>{
@@ -125,9 +150,9 @@ class Room extends Component{
                      });
 */
                         let room = s.client.record.getRecord('rooms/' + this.state.roomname);
-                        room.set('playgrounds', this.state.currentPlayGrounds);
-
-
+                        room.set('playgrounds', temp);
+                        // Client B
+                        s.client.event.emit('rooms/' + this.state.roomname, a);
 
                     //this.recordName = 'shared/rooms/' + this.state.roomname + '/' + 'playgrounds';
                     //this.playList = s.client.record.getList(this.recordName );

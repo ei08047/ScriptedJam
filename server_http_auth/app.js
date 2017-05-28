@@ -5,22 +5,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-
 var crypto = require('crypto');
 var name = 'braitsch';
-
-
-
 const DeepstreamServer = require('deepstream.io');
 const MongoDBStorageConnector = require( 'deepstream.io-storage-mongodb' );
 const C = DeepstreamServer.constants;
-
-
 var jwt = require('jsonwebtoken');
-
-
-
 var fs = require('fs');
 var users =[];
 
@@ -52,8 +42,6 @@ function getUser(uName){
     return null;
 }
 
-
-
 const server = new DeepstreamServer({
     libDir: '../lib',
     host: 'localhost',
@@ -68,15 +56,11 @@ const server = new DeepstreamServer({
             }
           }
 });
-
 server.set( 'storage', new MongoDBStorageConnector( {
     connectionString:  'mongodb://ze:maradona10@ds061454.mlab.com:61454/scriptedjamdb',
     splitChar: '/'
 }));
-
 server.start();
-
-
 
 var app = express();
 app.use(cors());
