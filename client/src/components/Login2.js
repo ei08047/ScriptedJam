@@ -20,7 +20,6 @@ class Login2 extends Component{
         this.handleChange = this.handleChange.bind(this);
     }
 
-
     handleChange(event){
         const target = event.target;
         const value = target.value;
@@ -29,6 +28,7 @@ class Login2 extends Component{
             [name] : value
         });
     }
+
     handleSubmit(event){
         event.preventDefault();
 
@@ -105,8 +105,7 @@ class Login2 extends Component{
                 </div>
             );
     }
+
 }
+
 export default Login2;
-
-
-//action="http://localhost:3002/auth-user" method="POST"

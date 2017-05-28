@@ -1,5 +1,3 @@
-const deepstream = require('deepstream.io-client-js');
-const DeepstreamMixin = require('deepstream.io-tools-react');
 import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Login2 from "./Login2";
@@ -10,8 +8,8 @@ import Users from "./Users";
 import PrivateHome from "./PrivateHome";
 import Register from "./Register";
 
-import Cookies from 'universal-cookie';
-const cookies = new Cookies();
+const deepstream = require('deepstream.io-client-js');
+
 
 const renderMergedProps = (component, ...rest) => {
     const finalProps = Object.assign({}, ...rest);
@@ -48,7 +46,6 @@ class Main extends Component{
         console.log(props);
     }
 
-
     render(){
     console.log( 'getting cookie on main render');
         console.log("main: " + this.props.auth.username + " : " + this.props.auth.isLoggedIn + ' ||token:' + this.props.auth.token  );
@@ -64,7 +61,6 @@ class Main extends Component{
             </Switch>
         );
     }
-
 
     componentDidMount(){
         const s = this.props.auth;
@@ -135,8 +131,6 @@ class Main extends Component{
 
         }
     }
-
-
 
 }
 export default Main;

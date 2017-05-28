@@ -3,6 +3,7 @@ import AddRoom from './AddRoom';
 import Rooms from "./Rooms";
 
 class PrivateHome extends Component{
+
     constructor(props){
         super(props);
         this.state={auth : props.auth
@@ -10,11 +11,11 @@ class PrivateHome extends Component{
         this.handlerooms=this.handlerooms.bind(this);
         this.setRooms = this.setRooms.bind(this);
     }
+
     setRooms(data){
         console.log(data);
         this.setState({rooms:data});
     }
-
 
     handlerooms(){
         const s= this.state.auth;
@@ -34,9 +35,7 @@ class PrivateHome extends Component{
             }
         }
     }
-    componentDidMount(){
-        this.handlerooms();
-    }
+
     render(){
         return (
         <div className="PrivateSoundSpace">
@@ -45,5 +44,10 @@ class PrivateHome extends Component{
         </div>
         );
     }
+
+    componentDidMount(){
+        this.handlerooms();
+    }
+
 }
 export default PrivateHome;

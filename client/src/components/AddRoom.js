@@ -1,7 +1,3 @@
-/**
- * Created by ei08047 on 01/05/2017.
- */
-
 import React, { Component } from 'react';
 import Form from "react-jsonschema-form";
 
@@ -130,26 +126,3 @@ export class AddRoom extends Component{
     }
 }
 export default AddRoom;
-
-/*
-*                 <form onSubmit={this.handleSubmit}>
- <input
- name="roomname"
- onChange={this.handleChange}
- type="text"
- placeholder="name"
- />
- <input name="owner" type="hidden" value={this.state.auth.username}/>
- <input id ="type" name="type"
- defaultChecked={false}
- onChange={this.handleChange}
- type="checkbox"
- />
- <label for="type">{this.state.type?"ON":"OFF"} </label>
- <input type="submit" value="Submit">
-
- </input>
- </form>
-*
-*
-* */

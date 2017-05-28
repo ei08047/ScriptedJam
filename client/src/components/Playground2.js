@@ -1,7 +1,5 @@
-
 import React, { Component } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-
 
 class PlayGround2 extends Component{
 
@@ -17,21 +15,16 @@ class PlayGround2 extends Component{
     }
 
     handlePause(event){
-        console.log("entered handler");
         if(this.state.pause)
         {
             this.setState({pause:false});
             this.synth.play();
-            console.log("set to false");
         }else
         {
             this.setState({pause:true});
             this.synth.pause();
-            console.log("set to true");
         }
     }
-
-
 
     render(){
         const v = JSON.stringify(this.state.defaultSynth, undefined, 4);
@@ -43,8 +36,6 @@ class PlayGround2 extends Component{
             </div>
         );
     }
-
-
 
     componentDidMount() {
         /* global flock, fluid*/
@@ -58,10 +49,9 @@ class PlayGround2 extends Component{
     }
 
     componentWillUnmount(){
-        console.log("unmount comp playground");
         this.environment.stop();
     }
-}
 
+}
 
 export default PlayGround2;

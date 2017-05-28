@@ -6,14 +6,8 @@ import axios from 'axios';
 const cookies = new Cookies();
 const deepstream = require('deepstream.io-client-js');
 
-/*
- *                 ReactDOM.render(
- <SyncedInput dsRecord="some-input" />,
- document.getElementById('root')
- )
- * */
-
 class Register extends Component{
+
     constructor(props){
         super(props);
         console.log('building register comp');
@@ -27,7 +21,6 @@ class Register extends Component{
         this.handleChange = this.handleChange.bind(this);
     }
 
-
     handleChange(event){
         const target = event.target;
         const value = target.value;
@@ -36,6 +29,7 @@ class Register extends Component{
             [name] : value
         });
     }
+
     handleSubmit(event){
         event.preventDefault();
 
@@ -92,7 +86,6 @@ class Register extends Component{
         this.props.handleAuth({username: this.state.username, token:cookies.get('access_token'), loggedIn: true});
     }
 
-
     render(){
         if(this.props.auth.isLoggedIn) //redirect away!!!
             return <Redirect to={{
@@ -122,5 +115,6 @@ class Register extends Component{
                 </div>
             );
     }
+
 }
 export default Register;

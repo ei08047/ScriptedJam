@@ -1,16 +1,9 @@
-/**
- * Created by ei08047 on 29/04/2017.
- */
-
-/**
- * Created by ei08047 on 28/04/2017.
- */
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Logout from './Logout'
 import logo from '../logo.svg';
-class Header extends Component{
 
+class Header extends Component{
 
     render(){
         return (
@@ -38,5 +31,6 @@ class Header extends Component{
             </div>
         );
     }
+
 }
 export default Header;

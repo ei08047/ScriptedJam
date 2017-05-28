@@ -1,18 +1,9 @@
-/**
- * Created by ei08047 on 11/05/2017.
- */
-
-/**
- * Created by ei08047 on 27/04/2017.
- */
 import React, { Component } from 'react';
 const deepstream = require('deepstream.io-client-js');
-const DeepstreamMixin = require('deepstream.io-tools-react');
-import {Link, Switch, Route} from 'react-router-dom';
-import Room from './Room';
 
 
 export class Users extends Component{
+
     constructor(props){
         super(props);
         this.state={auth : props.auth , users:[]};
@@ -20,6 +11,7 @@ export class Users extends Component{
         this.userList=[];
         this.recordName ='';
     }
+
     getActiveUsers(){
         const s= this.state.auth;
         if(s!=null) {
@@ -52,12 +44,6 @@ export class Users extends Component{
         }
     }
 
-    componentDidMount() {
-        console.log('mounting Users')
-        this.getActiveUsers();
-    }
-
-
     render(){
         return (
 
@@ -69,6 +55,11 @@ export class Users extends Component{
                 </div>
 
         )
+    }
+
+    componentDidMount() {
+        console.log('mounting Users')
+        this.getActiveUsers();
     }
 }
 

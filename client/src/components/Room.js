@@ -2,8 +2,6 @@
  * Created by ei08047 on 01/05/2017.
  */
 import React, { Component } from 'react';
-import AddPlayground from "./AddPlayground";
-import Test from "./Test";
 import TextareaAutosize from 'react-textarea-autosize';
 import PlayGround2 from "./Playground2";
 const deepstream = require('deepstream.io-client-js');
@@ -21,9 +19,7 @@ class Room extends Component{
             users: [],
             currentPlayGrounds:[{synthDef: {ugen: "flock.ugen.tri",freq: 440}} , {synthDef: {ugen: "flock.ugen.tri",freq: 100}}]
         };
-        this.playList=[];
         this.recordName ='';
-        this.currentMembers=[];
         this.enterRoom = this.enterRoom.bind(this);
         this.addPlay = this.addPlay.bind(this);
         this.getRoomData = this.getRoomData.bind(this);
@@ -35,7 +31,6 @@ class Room extends Component{
         console.log(this.state.value);
     }
 
-    //currently grabs owner
     getRoomData(){
         console.log("fetching room "+this.state.roomname + "   data");
         const s= this.state.auth;
@@ -147,8 +142,6 @@ class Room extends Component{
 
     }
 
-
-
     render(){
         return (
             <div className="Room" >
@@ -191,8 +184,6 @@ class Room extends Component{
         console.log('component Room mounted');
     }
 
-    //TODO: remove user to room members
-    exitRoom(){}
     componentWillUnmount(){
         /*
         const s= this.state.auth;
@@ -223,6 +214,3 @@ class Room extends Component{
     }
 }
 export default Room;
-
-
-//                <AddPlayground  roomname={this.state.roomname} auth={this.state.auth}/>

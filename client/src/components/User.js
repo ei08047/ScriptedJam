@@ -1,8 +1,5 @@
-
 import React, { Component } from 'react';
 const deepstream = require('deepstream.io-client-js');
-const DeepstreamMixin = require('deepstream.io-tools-react');
-
 
 const log = (type) => console.log.bind(console, type);
 const schema = {
@@ -17,20 +14,11 @@ const uiSchema = {
     freq: {"ui:widget": "range"}
 };
 
-
 export class User extends Component{
     constructor(props){
         super(props);
         this.state={auth : props.auth};
     }
-
-
-
-
-    componentDidMount() {
-        console.log('component User mounted');
-    }
-
 
     render(){
         return ( <Form schema={schema} uiSchema={uiSchema}
@@ -41,6 +29,11 @@ export class User extends Component{
             </Form>
         )
     }
+
+    componentDidMount() {
+        console.log('component User mounted');
+    }
+
 }
 
 export default User;

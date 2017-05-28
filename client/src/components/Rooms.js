@@ -1,14 +1,10 @@
-/**
- * Created by ei08047 on 27/04/2017.
- */
 import React, { Component } from 'react';
-const deepstream = require('deepstream.io-client-js');
-const DeepstreamMixin = require('deepstream.io-tools-react');
 import {Link} from 'react-router-dom';
-
+const deepstream = require('deepstream.io-client-js');
 
 
 export class Rooms extends Component{
+
     constructor(props){
         super(props);
         this.state={auth : props.auth , rooms:[], sharedRooms:[]};
@@ -36,6 +32,7 @@ export class Rooms extends Component{
             }
         }
     }
+
     getUserRooms(){
         const s= this.state.auth;
         if(s!=null) {
@@ -57,14 +54,6 @@ export class Rooms extends Component{
         }
     }
 
-
-    componentDidMount() {
-        console.log('mount componetn room');
-        this.getSharedRooms();
-        //this.getUserRooms();
-    }
-
-
     render(){
 
         return (
@@ -79,10 +68,13 @@ export class Rooms extends Component{
             </div>
         )
     }
+
+    componentDidMount() {
+        console.log('mount componetn room');
+        this.getSharedRooms();
+        //this.getUserRooms();
+    }
+
 }
 
 export default Rooms;
-
-
-
-

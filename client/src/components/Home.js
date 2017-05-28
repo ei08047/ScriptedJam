@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import AddPlayGround from "./AddPlayground";
-import PlayGround from "./PlayGround";
+import AddPlayGround from "../backlog/AddPlayground";
+import PlayGround from "../backlog/PlayGround";
 
 
 
