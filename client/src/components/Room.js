@@ -17,15 +17,15 @@ class Room extends Component{
             roomname : props.match.params.roomname,
             owner : '',
             users: [],
-            currentPlayGrounds:[{synthDef: {ugen: "flock.ugen.tri",freq: 440}} , {synthDef: {ugen: "flock.ugen.tri",freq: 100}}]
+            currentPlayGrounds:[]
         };
         this.recordName ='';
-        this.playList=[];
         this.enterRoom = this.enterRoom.bind(this);
         this.addPlay = this.addPlay.bind(this);
         this.getRoomData = this.getRoomData.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.eventCallback = this.eventCallback.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleChange(event){
@@ -34,22 +34,8 @@ class Room extends Component{
     }
 
     eventCallback(data) {
-        //callback for incoming events
-        var add = true;
-        for(var i in this.state.currentPlayGrounds)
-        {
-            if(this.state.currentPlayGrounds[i] === data)
-            {
-                add = false;
-            }else{}
-        }
-        if(add)
-        {
-            var temp = this.state.currentPlayGrounds;
-            temp.push(data);
-            this.setState({currentPlayGrounds:temp});
-        }
-
+        this.setState({currentPlayGrounds: []});
+        this.setState({currentPlayGrounds: data});
     }
 
     getRoomData(){
@@ -63,15 +49,7 @@ class Room extends Component{
 
                     this.recordName = 'rooms/' + this.state.roomname;
                     const roomRec = s.client.record.getRecord(this.recordName);
-
-                    //this.playList = s.client.record.getList(this.recordName + '/playgrounds');
-                    //this.playList.subscribe( (data) => {this.setState({currentPlayGrounds:data})} , true );
-
-
-                    //Subscribing to an event
                     s.client.event.subscribe(this.recordName, this.eventCallback);
-
-
                     roomRec.whenReady( ()=>{
                         console.log(roomRec);
                         const ow = roomRec.get('owner');
@@ -127,36 +105,26 @@ class Room extends Component{
     }
 
     addPlay(event) {
-        var a = JSON.parse(this.state.value);
-        var temp = this.state.currentPlayGrounds;
-        temp.push(a);
-        this.setState({currentPlayGrounds: temp});
 
+        var a = JSON.parse(this.state.value);
+        //get owner
+        var u =this.state.auth.username;
+        var o = {owner:u , body:a};
+        //add to a
+
+        var temp = this.state.currentPlayGrounds;
+        temp.push(o);
+        this.setState({currentPlayGrounds: temp});
         const s= this.state.auth;
         if(s!=null) {
             if (s.client != null) {
                 console.log(s.client.getConnectionState());
                 if (s.client.getConnectionState() === 'OPEN') {
+                    let room = s.client.record.getRecord('rooms/' + this.state.roomname);
+                    room.set('playgrounds', temp);
 
-                    /*
-                    const t =  s.client.getUid();
-                    const playRec = s.client.record.getRecord('playgrounds/' + t );
-                    playRec.whenReady( ()=>{
-                        const playList = s.client.record.getList('playgrounds');
-                        playList.addEntry(t);
-
-                        const u = playRec.get('playgrounds');
-                        this.setState({currentPlayGrounds:u });
-                     });
-*/
-                        let room = s.client.record.getRecord('rooms/' + this.state.roomname);
-                        room.set('playgrounds', temp);
-                        // Client B
-                        s.client.event.emit('rooms/' + this.state.roomname, a);
-
-                    //this.recordName = 'shared/rooms/' + this.state.roomname + '/' + 'playgrounds';
-                    //this.playList = s.client.record.getList(this.recordName );
-                    //this.playList.subscribe( (data) => {this.setState({currentPlayGrounds:data})} , true );
+                    // Client B
+                    s.client.event.emit('rooms/' + this.state.roomname, temp);
                 }
                 else
                 {
@@ -164,6 +132,42 @@ class Room extends Component{
                 }
             }
         }
+
+    }
+
+    handleDelete(event){
+        var temp=[];
+
+        var plays = this.state.currentPlayGrounds;
+
+        var index = 0;
+
+        for(var i in plays) {
+            if (plays[i].owner === event.owner && plays[i].body === event.body) {
+                index = i;
+            } else {
+                temp.push(plays[i]);
+            }
+        }
+
+        const s= this.state.auth;
+        if(s!=null) {
+            if (s.client != null) {
+                console.log(s.client.getConnectionState());
+                if (s.client.getConnectionState() === 'OPEN') {
+                    let room = s.client.record.getRecord('rooms/' + this.state.roomname);
+                    room.set('playgrounds', temp);
+                    // Client B
+                    s.client.event.emit('rooms/' + this.state.roomname, temp);
+                    this.setState({currentPlayGrounds: temp});
+                }
+                else
+                {
+                    console.log("this cant be null");
+                }
+            }
+        }
+
 
     }
 
@@ -178,7 +182,7 @@ class Room extends Component{
                 }</ul>
                 <ul>{
                     this.state.currentPlayGrounds.map( (synth) =>
-                        <li> <PlayGround2 synth={synth} /> </li>)
+                        <li> <PlayGround2 auth={this.state.auth} synth={synth.body} owner={synth.owner} handleDelete={this.handleDelete}/> </li>)
                 }</ul>
                 <div className="AddPlayGround">
                     <p>New playground</p>
